@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/reset.css";
+import $ from "jquery";
 import "./style/superfish.css";
 import "./style/prettyPhoto.css";
 import "./style/jquery.qtip.css";

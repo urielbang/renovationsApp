@@ -91,20 +91,16 @@ export default function NavBar() {
                     <Link to="/services">SERVICES</Link>
                     <ul>
                       <li>
-                        <a
-                          href="service_interior_renovation.html"
-                          title="Interior Renovation"
-                        >
-                          Interior Renovation
-                        </a>
+                        <Link to="/serviceInterior">Interior Renovation</Link>
                       </li>
                       <li>
-                        <a
+                        <Link
+                          to="/serviceDesign"
                           href="service_design_build.html"
                           title="Design and Build"
                         >
                           Design and Build
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <a
@@ -141,9 +137,8 @@ export default function NavBar() {
                     </ul>
                   </li>
                   <li>
-                    <a href="projects.html" title="Projects">
-                      PROJECTS
-                    </a>
+                    <Link to="/projects">PROJECTS</Link>
+
                     <ul>
                       <li>
                         <a
@@ -185,14 +180,11 @@ export default function NavBar() {
                     </ul>
                   </li>
                   <li>
-                    <a href="team.html" title="Our Team">
-                      OUR TEAM
-                    </a>
+                    <Link to="ourTeam">OUR TEAM</Link>
                   </li>
                   <li>
-                    <a href="about.html" title="Pages">
-                      PAGES
-                    </a>
+                    <Link to="about">ABOUT</Link>
+
                     <ul>
                       <li>
                         <a href="about.html" title="About">
@@ -223,9 +215,7 @@ export default function NavBar() {
                         </a>
                       </li>
                       <li>
-                        <a href="projects.html" title="Projects">
-                          Projects
-                        </a>
+                        <Link to="/projects">Projects</Link>
                       </li>
                       <li>
                         <a
@@ -248,15 +238,8 @@ export default function NavBar() {
                     </ul>
                   </li>
                   <li>
-                    <a href="blog.html" title="Blog">
-                      BLOG
-                    </a>
+                    <Link to="/blog">BLOG</Link>
                     <ul>
-                      <li>
-                        <a href="blog.html" title="Blog">
-                          Blog
-                        </a>
-                      </li>
                       <li>
                         <a href="blog_left_sidebar.html" title="Blog">
                           Blog Left Sidebar
@@ -285,24 +268,14 @@ export default function NavBar() {
                     </ul>
                   </li>
                   <li>
-                    <a href="cost_calculator.html" title="Authors">
-                      COST CALCULATOR
-                    </a>
+                    <Link to="/calculator"> COST CALCULATOR</Link>
                   </li>
                   <li className="left-flyout">
-                    <a href="contact.html" title="Contact">
-                      CONTACT
-                    </a>
+                    <Link to="/contact"> CONTACT</Link>
+
                     <ul>
                       <li>
-                        <a href="contact.html" title="Contact Style 1">
-                          Contact Style 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="contact_2.html" title="Contact Style 2">
-                          Contact Style 2
-                        </a>
+                        <Link to="/contact"> Contact</Link>
                       </li>
                     </ul>
                   </li>
@@ -387,9 +360,8 @@ export default function NavBar() {
                       </ul>
                     </li>
                     <li>
-                      <a href="projects.html" title="Projects">
-                        PROJECTS
-                      </a>
+                      <Link to="/projects">Projects</Link>
+
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
