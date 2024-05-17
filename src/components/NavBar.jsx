@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { FaUserCheck } from "react-icons/fa";
+import { IoLogInSharp } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
+import { UserContext } from "../context/User";
 
 export default function NavBar() {
+  const { logedUser, setLogedUser, setToken } = useContext(UserContext);
+
+  const handlClick = () => {
+    localStorage.removeItem("token");
+    setToken({});
+    setLogedUser({});
+  };
   return (
     <>
       <div className="header-top-bar-container clearfix">
@@ -48,6 +59,7 @@ export default function NavBar() {
                 title="twitter"
               />
             </li>
+
             <li>
               <a
                 href="https://pinterest.com/quanticalabs/"
@@ -276,6 +288,18 @@ export default function NavBar() {
                     <ul>
                       <li>
                         <Link to="/contact"> Contact</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="logdUser">
+                    <a>
+                      <FaUserCheck />
+                      {logedUser?.email}
+                    </a>
+
+                    <ul>
+                      <li>
+                        <a onClick={handlClick}> log Out {<IoLogInSharp />}</a>
                       </li>
                     </ul>
                   </li>

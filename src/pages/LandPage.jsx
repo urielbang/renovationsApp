@@ -729,26 +729,6 @@ function LandPage() {
             </div>
           </div>
         </div>
-        <div className="row align-center padding-top-bottom-30">
-          <span className="copyright">
-            © Copyright 2021{" "}
-            <a
-              href="https://1.envato.market/renovate-construction-renovation-template"
-              title="Renovate Template"
-              target="_blank"
-            >
-              Renovate Template
-            </a>{" "}
-            by{" "}
-            <a
-              href="https://quanticalabs.com"
-              title="QuanticaLabs"
-              target="_blank"
-            >
-              QuanticaLabs
-            </a>
-          </span>
-        </div>
       </div>
       <a
         href="#top"

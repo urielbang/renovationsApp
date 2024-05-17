@@ -2,3 +2,18 @@
   display: flex;
   flex-direction: column;
 }
+
+.menu-container nav {
+  display: flex;
+  width: 70vw;
+
+  margin-left: 2rem;
+}
+.logdUser {
+  cursor: pointer;
+}
+.logdUser a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
