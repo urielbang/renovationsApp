@@ -1,6 +1,6 @@
 import React from "react";
 import "./style/reset.css";
-import $ from "jquery";
+
 import "./style/superfish.css";
 import "./style/prettyPhoto.css";
 import "./style/jquery.qtip.css";
@@ -12,8 +12,29 @@ import "./fonts/streamline-small/styles.css";
 import "./fonts/streamline-large/styles.css";
 import "./fonts/template/styles.css";
 import "./fonts/social/styles.css";
+import img from "../assets/images/samples/390x260/image_01.jpg";
+import img2 from "../assets/images/samples/390x260/image_02.jpg";
+import img3 from "../assets/images/samples/390x260/image_03.jpg";
+
+import projectImg from "../assets/images/samples/480x320/image_04.jpg";
+import projectImg1 from "../assets/images/samples/480x320/image_05.jpg";
+import projectImg2 from "../assets/images/samples/480x320/image_06.jpg";
+import projectImg3 from "../assets/images/samples/480x320/image_07.jpg";
+import warper from "../assets/images/samples/480x480/image_10.jpg";
+import logo from "../assets/images/logos/logo_01.png";
+import logo1 from "../assets/images/logos/logo_02.png";
+import logo2 from "../assets/images/logos/logo_03.png";
+import logo3 from "../assets/images/logos/logo_04.png";
+import logo4 from "../assets/images/logos/logo_05.png";
+import logo5 from "../assets/images/logos/logo_06.png";
+import logo6 from "../assets/images/logos/logo_06.png";
+import logo7 from "../assets/images/logos/logo_04.png";
+import logo8 from "../assets/images/logos/logo_03.png";
+import logo9 from "../assets/images/logos/logo_02.png";
+import logo10 from "../assets/images/logos/logo_01.png";
 import Sliderr from "../components/Slider";
 
+import { Link } from "react-router-dom";
 function LandPage() {
   return (
     <div>
@@ -40,13 +61,9 @@ function LandPage() {
                   <li className="column-right column-1-4">
                     <div className="vertical-align">
                       <div className="vertical-align-cell">
-                        <a
-                          className="more"
-                          href="cost_calculator.html"
-                          title="REQUEST A QUOTE"
-                        >
+                        <Link to="/calculator" className="more">
                           REQUEST A QUOTE
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </li>
@@ -65,19 +82,13 @@ function LandPage() {
                 </p>
                 <ul className="services-list clearfix page-margin-top">
                   <li>
-                    <a
-                      href="service_interior_renovation.html"
-                      title="Interior Renovation"
-                    >
-                      <img src="images/samples/390x260/image_01.jpg" alt="" />
-                    </a>
+                    <Link to="/serviceInterior" title="Interior Renovation">
+                      <img src={img} alt="" />
+                    </Link>
                     <h4 className="box-header">
-                      <a
-                        href="service_interior_renovation.html"
-                        title="Interior Renovation"
-                      >
+                      <Link to="/serviceInterior" title="Interior Renovation">
                         INTERIOR RENOVATION
-                      </a>
+                      </Link>
                     </h4>
                     <p>
                       We can help you bring new life to existing rooms and
@@ -85,12 +96,9 @@ function LandPage() {
                     </p>
                   </li>
                   <li>
-                    <a
-                      href="service_design_build.html"
-                      title="Design and Build"
-                    >
-                      <img src="images/samples/390x260/image_02.jpg" alt="" />
-                    </a>
+                    <Link to="/serviceDesign">
+                      <img src={img3} alt="" />
+                    </Link>
                     <h4 className="box-header">
                       <a
                         href="service_design_build.html"
@@ -105,12 +113,9 @@ function LandPage() {
                     </p>
                   </li>
                   <li>
-                    <a
-                      href="service_tiling_painting.html"
-                      title="Tiling and Painting"
-                    >
-                      <img src="images/samples/390x260/image_03.jpg" alt="" />
-                    </a>
+                    <Link to="/serviceDesign">
+                      <img src={img2} alt="" />
+                    </Link>
                     <h4 className="box-header">
                       <a
                         href="service_tiling_painting.html"
@@ -126,13 +131,9 @@ function LandPage() {
                   </li>
                 </ul>
                 <div className="align-center margin-top-67 padding-bottom-87">
-                  <a
-                    className="more"
-                    href="services.html"
-                    title="VIEW ALL SERVICES"
-                  >
+                  <Link to="/services" className="more">
                     VIEW ALL SERVICES
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -149,83 +150,61 @@ function LandPage() {
               </div>
               <ul className="projects-list clearfix page-margin-top">
                 <li>
-                  <a href="project_design_build.html" title="Design and Build">
-                    <img src="images/samples/480x320/image_07.jpg" alt="" />
-                  </a>
+                  <Link to="/oneProject/:id">
+                    <img src={projectImg3} alt="" />
+                  </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Design and Build</p>
-                        <a
-                          className="more simple"
-                          href="project_design_build.html"
-                          title="VIEW PROJECT"
-                        >
+                        <Link to="/projectDesign" className="more simple">
                           VIEW PROJECT
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <a
-                    href="project_garden_renovation.html"
-                    title="Garden Renovation"
-                  >
-                    <img src="images/samples/480x320/image_04.jpg" alt="" />
-                  </a>
+                  <Link to="/oneProject/:id">
+                    <img src={projectImg} alt="" />
+                  </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Garden Renovation</p>
-                        <a
-                          className="more simple"
-                          href="project_garden_renovation.html"
-                          title="VIEW PROJECT"
-                        >
+                        <Link to="/oneProject/:id" className="more simple">
                           VIEW PROJECT
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <a
-                    href="project_interior_renovation.html"
-                    title="Interior Renovation"
-                  >
-                    <img src="images/samples/480x320/image_05.jpg" alt="" />
-                  </a>
+                  <Link to="/oneProject/:id">
+                    <img src={projectImg1} alt="" />
+                  </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Interior Renovation</p>
-                        <a
-                          className="more simple"
-                          href="project_interior_renovation.html"
-                          title="VIEW PROJECT"
-                        >
+                        <Link to="/oneProject/:id" className="more simple">
                           VIEW PROJECT
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <a href="project_solar_systems.html" title="Solar Systems">
-                    <img src="images/samples/480x320/image_06.jpg" alt="" />
-                  </a>
+                  <Link to="/oneProject/:id">
+                    <img src={projectImg2} alt="" />
+                  </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Solar Systems</p>
-                        <a
-                          className="more simple"
-                          href="project_solar_systems.html"
-                          title="VIEW PROJECT"
-                        >
+                        <Link to="/oneProject/:id" className="more simple">
                           VIEW PROJECT
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -235,25 +214,12 @@ function LandPage() {
             <div className="row gray full-width padding-top-54 padding-bottom-61 align-center">
               <h3>
                 <span className="button-label">EXPLORE OUR PROJECTS</span>{" "}
-                <a
-                  className="more"
-                  href="projects.html"
-                  title="VIEW ALL PROJECTS"
-                >
+                <Link to="/projects" className="more">
                   VIEW ALL PROJECTS
-                </a>
+                </Link>
               </h3>
             </div>
-            {/*<div class="row gray full-width padding-top-bottom-50">
-                    <div class="row">
-                        <div class="column column-1-2 align-right padding-top-7">
-                            <h3>EXPLORE OUR PROJECTS</h3>
-                        </div>
-                        <div class="column column-1-2">
-                            <a class="more float" href="projects.html" title="VIEW ALL PROJECTS">VIEW ALL PROJECTS</a>
-                        </div>
-                    </div>
-                </div>*/}
+
             <div className="row page-margin-top-section">
               <div className="row">
                 <h2 className="box-header">ABOUT US</h2>
@@ -268,11 +234,7 @@ function LandPage() {
               <div className="row page-margin-top">
                 <div className="column column-1-2 align-center re-preload">
                   <div className="image-wrapper">
-                    <img
-                      src="images/samples/480x480/image_10.jpg"
-                      alt=""
-                      className="radius"
-                    />
+                    <img src={warper} alt="" className="radius" />
                   </div>
                 </div>
                 <div className="column column-1-2">
@@ -310,33 +272,15 @@ function LandPage() {
                 <div className="tabs no-scroll clearfix">
                   <ul className="tabs-navigation clearfix">
                     <li>
-                      <a
-                        href="#we-offer"
-                        title="We Offer"
-                        className="sl-small-bubble-check"
-                      >
-                        We Offer
-                      </a>
+                      <Link className="sl-small-bubble-check">We Offer</Link>
                       <span />
                     </li>
                     <li>
-                      <a
-                        href="#we-guarantee"
-                        title="We Guarantee"
-                        className="sl-small-shield"
-                      >
-                        We Guarantee
-                      </a>
+                      <Link className="sl-small-shield">We Guarantee</Link>
                       <span />
                     </li>
                     <li>
-                      <a
-                        href="#we-provide"
-                        title="We Provide"
-                        className="sl-small-truck"
-                      >
-                        We Provide
-                      </a>
+                      <Link className="sl-small-truck">We Provide</Link>
                       <span />
                     </li>
                   </ul>
@@ -430,102 +374,47 @@ function LandPage() {
                 </div>
               </div>
             </div>
-            <div className="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">
-              <div className="row testimonials-container">
-                <a
-                  href="#"
-                  className="slider-control left template-arrow-left-1"
-                />
-                <ul className="testimonials-list">
-                  <li className="sl-small-conversation">
-                    <div className="ornament" />
-                    <p>
-                      "We would like to thank Renovate Company for an
-                      outstanding effort on this recently completed project
-                      located in the Moscow. The project involved a very
-                      aggressive schedule and it was completed on time. We would
-                      certainly like to use their professional services again."
-                    </p>
-                    <div className="author">MITCHEL SMITH</div>
-                    <div className="author-details">
-                      CEO OF NEW PORT COMPANY
-                    </div>
-                  </li>
-                  <li className="sl-small-conversation">
-                    <div className="ornament" />
-                    <p>
-                      "We would like to thank Renovate Company for an
-                      outstanding effort on this recently completed project
-                      located in the Moscow. The project involved a very
-                      aggressive schedule and it was completed on time. We would
-                      certainly like to use their professional services again."
-                    </p>
-                    <div className="author">MITCHEL SMITH</div>
-                    <div className="author-details">
-                      CEO OF NEW PORT COMPANY
-                    </div>
-                  </li>
-                  <li className="sl-small-conversation">
-                    <div className="ornament" />
-                    <p>
-                      "We would like to thank Renovate Company for an
-                      outstanding effort on this recently completed project
-                      located in the Moscow. The project involved a very
-                      aggressive schedule and it was completed on time. We would
-                      certainly like to use their professional services again."
-                    </p>
-                    <div className="author">MITCHEL SMITH</div>
-                    <div className="author-details">
-                      CEO OF NEW PORT COMPANY
-                    </div>
-                  </li>
-                </ul>
-                <a
-                  href="#"
-                  className="slider-control right template-arrow-left-1"
-                />
-              </div>
-            </div>
+
             <div className="row gray full-width page-padding-top-section padding-bottom-66">
               <div className="row">
                 <h2 className="box-header">WE WORK WITH</h2>
                 <div className="our-clients-list-container page-margin-top">
                   <ul className="our-clients-list">
                     <li>
-                      <img src="images/logos/logo_01.png" alt="" />
+                      <img src={logo} alt="" />
                     </li>
                     <li>
-                      <img src="images/logos/logo_02.png" alt="" />
+                      <img src={logo1} alt="" />
                     </li>
                     <li>
-                      <img src="images/logos/logo_03.png" alt="" />
+                      <img src={logo2} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_04.png" alt="" />
+                      <img src={logo3} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_05.png" alt="" />
+                      <img src={logo4} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_06.png" alt="" />
+                      <img src={logo5} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_06.png" alt="" />
+                      <img src={logo6} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_05.png" alt="" />
+                      <img src={logo7} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_04.png" alt="" />
+                      <img src={logo8} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_03.png" alt="" />
+                      <img src={logo9} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_02.png" alt="" />
+                      <img src={logo10} alt="" />{" "}
                     </li>
                     <li>
-                      <img src="images/logos/logo_01.png" alt="" />
+                      <img src={logo} alt="" />{" "}
                     </li>
                   </ul>
                   <div className="re-carousel-pagination" />
@@ -564,8 +453,8 @@ function LandPage() {
                   <p>
                     E-mail:
                     <br />
-                    <a href="mailto:kevin.smith@connect.com">
-                      renovate@mail.com
+                    <a href="mailto:adiSambata@gmail.com">
+                      adiSambata@gmail.com
                     </a>
                   </p>
                 </li>
@@ -584,35 +473,16 @@ function LandPage() {
               </p>
               <ul className="social-icons yellow margin-top-26">
                 <li>
-                  <a
-                    target="_blank"
-                    href="https://facebook.com/QuanticaLabs"
-                    className="social-facebook"
-                    title="facebook"
-                  />
+                  <Link className="social-facebook" />
                 </li>
                 <li>
-                  <a
-                    target="_blank"
-                    href="https://twitter.com/QuanticaLabs"
-                    className="social-twitter"
-                    title="twitter"
-                  />
+                  <Link className="social-twitter" />
                 </li>
                 <li>
-                  <a
-                    target="_blank"
-                    href="https://1.envato.market/quanticalabs-portfolio"
-                    className="social-linkedin"
-                    title="linkedin"
-                  />
+                  <Link className="social-linkedin" />
                 </li>
                 <li>
-                  <a
-                    href="https://pinterest.com/quanticalabs/"
-                    className="social-pinterest"
-                    title="pinterest"
-                  />
+                  <Link className="social-pinterest" />
                 </li>
               </ul>
             </div>

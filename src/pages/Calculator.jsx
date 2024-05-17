@@ -3,7 +3,6 @@ import React from "react";
 export default function Calculator() {
   return (
     <div>
-      div class="theme-page padding-bottom-66"&gt;
       <div className="row gray full-width page-header vertical-align-table">
         <div className="row full-width padding-top-bottom-50 vertical-align-cell">
           <div className="row">

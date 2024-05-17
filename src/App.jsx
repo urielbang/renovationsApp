@@ -15,7 +15,7 @@ import SignIn from "./pages/signin/SignIn";
 import SignUp from "./pages/SignUp";
 import { UserContext } from "./context/User";
 import { useContext } from "react";
-import Auth from "./pages/Auth";
+import ProjectDising from "./components/ProjectDising";
 
 function App() {
   const { logedUser } = useContext(UserContext);
@@ -37,11 +37,13 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projectDesign" element={<ProjectDising />} />
+            <Route path="/oneProject/:id" element={<ProjectDising />} />
           </Routes>
         </>
       ) : (
         <Routes>
-          <Route path="/" element={<Auth />} />
+          <Route path="/" element={<SignIn />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
         </Routes>

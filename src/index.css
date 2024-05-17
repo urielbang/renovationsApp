@@ -17,3 +17,13 @@
   align-items: center;
   gap: 0.5rem;
 }
+.services-list li img {
+  display: flex;
+}
+.projects-list {
+  display: flex;
+}
+
+.re-preload > .image-wrapper > img {
+  display: flex;
+}

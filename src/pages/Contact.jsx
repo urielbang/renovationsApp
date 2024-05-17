@@ -1,18 +1,12 @@
 import React from "react";
+import Map from "../components/Map";
 
 export default function Contact() {
   return (
     <div>
       <div className="theme-page padding-bottom-66">
         <div className="clearfix">
-          <div className="row full-width">
-            <div
-              className="contact-map"
-              id="map"
-              data-scroll-wheel={0}
-              data-draggable={0}
-            />
-          </div>
+          <Map />
           <div className="row page-margin-top">
             <div className="column column-1-3">
               <ul className="features-list">
