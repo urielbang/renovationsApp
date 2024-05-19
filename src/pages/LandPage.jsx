@@ -1,6 +1,5 @@
 import React from "react";
 import "./style/reset.css";
-
 import "./style/superfish.css";
 import "./style/prettyPhoto.css";
 import "./style/jquery.qtip.css";
@@ -15,7 +14,6 @@ import "./fonts/social/styles.css";
 import img from "../assets/images/samples/390x260/image_01.jpg";
 import img2 from "../assets/images/samples/390x260/image_02.jpg";
 import img3 from "../assets/images/samples/390x260/image_03.jpg";
-
 import projectImg from "../assets/images/samples/480x320/image_04.jpg";
 import projectImg1 from "../assets/images/samples/480x320/image_05.jpg";
 import projectImg2 from "../assets/images/samples/480x320/image_06.jpg";
