@@ -1,11 +1,60 @@
-import React, { useEffect } from "react";
-import js from "./jquery.costCalculator";
-import $ from "jquery";
+import React, { useState, useRef } from "react";
+import CostCalculator from "../components/CostCalculator";
+import { Link } from "react-router-dom";
+import img from "../assets/images/samples/480x320/image_05.jpg";
+import img1 from "../assets/images/samples/480x320/image_03.jpg";
+import img2 from "../assets/images/samples/480x320/image_01.jpg";
+import img3 from "../assets/images/samples/90x90/image_10.jpg";
+import img4 from "../assets/images/samples/90x90/image_07.jpg";
 
+`       
+
+
+
+`;
 export default function Calculator() {
-  useEffect(() => {
-    js;
+  const irTotalCostRef = useRef(null);
+
+  const feTotalCostRef = useRef(null);
+  const pwTotalCostRef = useRef(null);
+  const [interiorRenovationValues, setInteriorRenovationValues] = useState({
+    squareFeet: 300,
+    walls: 0,
+    floors: 0,
+    doors: 6,
+    windows: 4,
   });
+
+  const [fenceValues, setFenceValues] = useState({
+    length: 0,
+    height: 5,
+    panel: 0,
+    gate: 0,
+    extras: 0,
+  });
+
+  const [paverWalkwayValues, setPaverWalkwayValues] = useState({
+    areaWidth: 25,
+    areaLength: 20,
+    blockPaving: 0,
+    surface: 0,
+    stoneWalling: 0,
+  });
+  const handleInteriorRenovationChange = (e) => {
+    const { name, value } = e.target;
+    setInteriorRenovationValues({ ...interiorRenovationValues, [name]: value });
+  };
+
+  const handleFenceChange = (e) => {
+    const { name, value } = e.target;
+    setFenceValues({ ...fenceValues, [name]: value });
+  };
+
+  const handlePaverWalkwayChange = (e) => {
+    const { name, value } = e.target;
+    setPaverWalkwayValues({ ...paverWalkwayValues, [name]: value });
+  };
+
   return (
     <div>
       <div className="row gray full-width page-header vertical-align-table">
@@ -19,9 +68,7 @@ export default function Calculator() {
                 <label>You Are Here:</label>
                 <ul className="bread-crumb">
                   <li>
-                    <a title="HOME" href="index.html">
-                      HOME
-                    </a>
+                    <Link title="HOME">HOME</Link>
                   </li>
                   <li className="separator">/</li>
                   <li>COST CALCULATOR</li>
@@ -53,9 +100,10 @@ export default function Calculator() {
                     <input
                       id="ir-square-feet"
                       className="cost-slider-input"
-                      name="square-feet"
+                      name="squareFeet"
                       type="number"
-                      defaultValue={300}
+                      value={interiorRenovationValues.squareFeet}
+                      onChange={handleInteriorRenovationChange}
                     />
                     <div
                       className="cost-slider"
@@ -69,7 +117,13 @@ export default function Calculator() {
                 </div>
                 <div className="cost-calculator-box clearfix">
                   <label>Walls &amp; Ceilings:</label>
-                  <select name="walls" id="ir-walls" className="cost-dropdown">
+                  <select
+                    name="walls"
+                    id="ir-walls"
+                    className="cost-dropdown"
+                    value={interiorRenovationValues.walls}
+                    onChange={handleInteriorRenovationChange}
+                  >
                     <option value selected="selected">
                       Choose...
                     </option>
@@ -93,6 +147,8 @@ export default function Calculator() {
                     name="floors"
                     id="ir-floors"
                     className="cost-dropdown"
+                    value={interiorRenovationValues.floors}
+                    onChange={handleInteriorRenovationChange}
                   >
                     <option value selected="selected">
                       Choose...
@@ -119,7 +175,8 @@ export default function Calculator() {
                       className="cost-slider-input"
                       name="doors"
                       type="number"
-                      defaultValue={6}
+                      value={interiorRenovationValues.doors}
+                      onChange={handleInteriorRenovationChange}
                     />
                     <input
                       id="ir-doors-value"
@@ -147,7 +204,8 @@ export default function Calculator() {
                       className="cost-slider-input"
                       name="windows"
                       type="number"
-                      defaultValue={4}
+                      value={interiorRenovationValues.windows}
+                      onChange={handleInteriorRenovationChange}
                     />
                     <input
                       id="ir-windows-value"
@@ -168,12 +226,10 @@ export default function Calculator() {
                   </div>
                 </div>
                 <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <span
-                    className="cost-calculator-price"
-                    id="interior-renovation-cost"
-                  >
-                    $2,300.00
-                  </span>
+                  <CostCalculator
+                    formula={`ir-square-feet*${interiorRenovationValues.squareFeet}+ir-walls*${interiorRenovationValues.walls}+ir-floors*${interiorRenovationValues.floors}+ir-doors*${interiorRenovationValues.doors}*250+ir-windows*${interiorRenovationValues.windows}*200`}
+                    updateHidden={irTotalCostRef.current}
+                  />
                   <p className="description t1">Approximate Project Cost</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
@@ -233,7 +289,7 @@ export default function Calculator() {
                         type="hidden"
                         name="total-cost"
                         id="ir-total-cost"
-                        defaultValue="$2,300.00"
+                        ref={irTotalCostRef}
                       />
                       <input
                         type="submit"
@@ -259,7 +315,8 @@ export default function Calculator() {
                     className="cost-slider-input big"
                     name="length"
                     type="number"
-                    defaultValue
+                    value={fenceValues.length}
+                    onChange={handleFenceChange}
                     placeholder="Fence Length"
                   />
                 </div>
@@ -271,7 +328,8 @@ export default function Calculator() {
                       className="cost-slider-input"
                       name="height"
                       type="number"
-                      defaultValue={5}
+                      value={fenceValues.height}
+                      onChange={handleFenceChange}
                     />
                     <div
                       className="cost-slider"
@@ -285,7 +343,13 @@ export default function Calculator() {
                 </div>
                 <div className="cost-calculator-box clearfix">
                   <label>Choose Panel Style:</label>
-                  <select name="panel" id="fe-panel" className="cost-dropdown">
+                  <select
+                    name="panel"
+                    id="fe-panel"
+                    className="cost-dropdown"
+                    value={fenceValues.panel}
+                    onChange={handleFenceChange}
+                  >
                     <option value selected="selected">
                       Choose...
                     </option>
@@ -306,7 +370,13 @@ export default function Calculator() {
                 </div>
                 <div className="cost-calculator-box clearfix">
                   <label>Choose Gate Type:</label>
-                  <select name="gate" id="fe-gate" className="cost-dropdown">
+                  <select
+                    name="gate"
+                    id="fe-gate"
+                    className="cost-dropdown"
+                    value={fenceValues.gate}
+                    onChange={handleFenceChange}
+                  >
                     <option value selected="selected">
                       Choose...
                     </option>
@@ -337,6 +407,8 @@ export default function Calculator() {
                     name="extras"
                     id="fe-extras"
                     className="cost-dropdown"
+                    value={fenceValues.extras}
+                    onChange={handleFenceChange}
                   >
                     <option value selected="selected">
                       Choose...
@@ -354,9 +426,10 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <span className="cost-calculator-price" id="fence-cost">
-                    $0.00
-                  </span>
+                  <CostCalculator
+                    formula={`fe-length*${fenceValues.length}*${fenceValues.height}+fe-panel*${fenceValues.panel}+fe-gate*${fenceValues.gate}+fe-extras*${fenceValues.extras}`}
+                    updateHidden={feTotalCostRef.current}
+                  />
                   <p className="description t1">Approximate Project Cost</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
@@ -412,7 +485,7 @@ export default function Calculator() {
                         type="hidden"
                         name="total-cost"
                         id="fe-total-cost"
-                        defaultValue="$0.00"
+                        ref={feTotalCostRef}
                       />
                       <input
                         type="submit"
@@ -437,9 +510,10 @@ export default function Calculator() {
                     <input
                       id="pw-area-width"
                       className="cost-slider-input"
-                      name="area-width"
+                      name="areaWidth"
                       type="number"
-                      defaultValue={25}
+                      value={paverWalkwayValues.areaWidth}
+                      onChange={handlePaverWalkwayChange}
                     />
                     <div
                       className="cost-slider"
@@ -457,9 +531,10 @@ export default function Calculator() {
                     <input
                       id="pw-area-length"
                       className="cost-slider-input"
-                      name="area-length"
+                      name="areaLength"
                       type="number"
-                      defaultValue={20}
+                      value={paverWalkwayValues.areaLength}
+                      onChange={handlePaverWalkwayChange}
                     />
                     <div
                       className="cost-slider"
@@ -474,9 +549,11 @@ export default function Calculator() {
                 <div className="cost-calculator-box clearfix">
                   <label>Choose Block Paving:</label>
                   <select
-                    name="block-paving"
+                    name="blockPaving"
                     id="pw-block-paving"
                     className="cost-dropdown"
+                    value={paverWalkwayValues.blockPaving}
+                    onChange={handlePaverWalkwayChange}
                   >
                     <option value selected="selected">
                       Choose...
@@ -501,6 +578,8 @@ export default function Calculator() {
                     name="surface"
                     id="pw-surface"
                     className="cost-dropdown"
+                    value={paverWalkwayValues.surface}
+                    onChange={handlePaverWalkwayChange}
                   >
                     <option value selected="selected">
                       Choose...
@@ -521,9 +600,10 @@ export default function Calculator() {
                     <input
                       id="pw-stone-walling"
                       className="cost-slider-input"
-                      name="stone-walling"
+                      name="stoneWalling"
                       type="number"
-                      defaultValue={0}
+                      value={paverWalkwayValues.stoneWalling}
+                      onChange={handlePaverWalkwayChange}
                     />
                     <input
                       id="pw-stone-walling-value"
@@ -544,12 +624,10 @@ export default function Calculator() {
                   </div>
                 </div>
                 <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <span
-                    className="cost-calculator-price"
-                    id="paver-walkway-cost"
-                  >
-                    $0.00
-                  </span>
+                  <CostCalculator
+                    formula={`pw-area-width*${paverWalkwayValues.areaWidth}*${paverWalkwayValues.areaLength}*${paverWalkwayValues.blockPaving}+pw-surface*${paverWalkwayValues.surface}+pw-stone-walling*${paverWalkwayValues.stoneWalling}*30`}
+                    updateHidden={pwTotalCostRef.current}
+                  />
                   <p className="description t1">Approximate Project Cost</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
@@ -609,7 +687,7 @@ export default function Calculator() {
                         type="hidden"
                         name="total-cost"
                         id="pw-total-cost"
-                        defaultValue="$0.00"
+                        ref={pwTotalCostRef}
                       />
                       <input
                         type="submit"
@@ -626,31 +704,28 @@ export default function Calculator() {
         </div>
         <div className="column column-1-3">
           <div className="row">
-            <a
-              href="images/samples/750x500/image_03.jpg"
+            <Link
               className="prettyPhoto re-preload"
               title="Interior Renovation"
             >
-              <img src="images/samples/480x320/image_03.jpg" alt="img" />
-            </a>
+              <img src={img} alt="img" />
+            </Link>
           </div>
           <div className="row margin-top-30">
-            <a
-              href="images/samples/750x500/image_01.jpg"
+            <Link
               className="prettyPhoto re-preload"
               title="Interior Renovation"
             >
-              <img src="images/samples/480x320/image_01.jpg" alt="img" />
-            </a>
+              <img src={img1} alt="img" />
+            </Link>
           </div>
           <div className="row margin-top-30">
-            <a
-              href="images/samples/750x500/image_05.jpg"
+            <Link
               className="prettyPhoto re-preload"
               title="Interior Renovation"
             >
-              <img src="images/samples/480x320/image_05.jpg" alt="img" />
-            </a>
+              <img src={img3} alt="img" />
+            </Link>
           </div>
           <div className="row page-margin-top">
             <h4 className="box-header">WHAT YOU GET</h4>
@@ -668,12 +743,10 @@ export default function Calculator() {
                 Superior Quality and Craftsmanship
               </li>
               <li className="template-bullet">
-                Quality and Value to the{" "}
-                <a href="projects.html">Projects We Deliver</a>
+                Quality and Value to the <Link>Projects We Deliver</Link>
               </li>
               <li className="template-bullet">
-                Highest Standards in{" "}
-                <a href="cost_calculator.html">Cost Control</a>
+                Highest Standards in <Link>Cost Control</Link>
               </li>
               <li className="template-bullet">On Time and on Budget</li>
               <li className="template-bullet">
@@ -713,7 +786,7 @@ export default function Calculator() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSmbata@gmil.com</a>
                 </p>
               </li>
             </ul>
@@ -731,35 +804,16 @@ export default function Calculator() {
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a
-                  target="_blank"
-                  href="https://facebook.com/QuanticaLabs"
-                  className="social-facebook"
-                  title="facebook"
-                />
+                <Link className="social-facebook" title="facebook" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://twitter.com/QuanticaLabs"
-                  className="social-twitter"
-                  title="twitter"
-                />
+                <Link className="social-twitter" title="twitter" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://1.envato.market/quanticalabs-portfolio"
-                  className="social-linkedin"
-                  title="linkedin"
-                />
+                <Link className="social-linkedin" title="linkedin" />
               </li>
               <li>
-                <a
-                  href="https://pinterest.com/quanticalabs/"
-                  className="social-pinterest"
-                  title="pinterest"
-                />
+                <Link className="social-pinterest" title="pinterest" />
               </li>
             </ul>
           </div>
@@ -778,24 +832,16 @@ export default function Calculator() {
             <h6 className="box-header">Categories</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
-                  BUILD
-                </a>
+                <Link title="BUILD">BUILD</Link>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
-                  DESIGN
-                </a>
+                <Link title="DESIGN">DESIGN</Link>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
-                  FLOORING
-                </a>
+                <Link title="FLOORING">FLOORING</Link>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
-                  PAINTING
-                </a>
+                <Link title="PAINTING">PAINTING</Link>
               </li>
               <li>
                 <a href="category.html" title="PAVERS">
@@ -803,29 +849,19 @@ export default function Calculator() {
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
-                  PLUMBING
-                </a>
+                <Link title="PLUMBING">PLUMBING</Link>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
-                  RENOVATION
-                </a>
+                <Link title="RENOVATION">RENOVATION</Link>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
-                  REPAIRS
-                </a>
+                <Link title="REPAIRS">REPAIRS</Link>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
-                </a>
+                <Link title="SOLAR SYSTEMS">SOLAR SYSTEMS</Link>
               </li>
               <li>
-                <a href="category.html" title="TILING">
-                  TILING
-                </a>
+                <Link title="TILING">TILING</Link>
               </li>
             </ul>
           </div>
@@ -833,40 +869,32 @@ export default function Calculator() {
             <h6 className="box-header">Latest Posts</h6>
             <ul className="blog small margin-top-30">
               <li>
-                <a
-                  href="post.html"
+                <Link
                   title="What a Difference a Few Months Make"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_10.jpg" alt="" />
-                </a>
+                  <img src={img4} alt="" />
+                </Link>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="What a Difference a Few Months Make"
-                  >
+                  <Link title="What a Difference a Few Months Make">
                     What a Difference a Few Months Make
-                  </a>
+                  </Link>
                   <ul className="post-details">
                     <li className="date">April 25, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  href="post.html"
+                <Link
                   title="Kitchen and Living Room Renovation"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_07.jpg" alt="" />
-                </a>
+                  <img src="" alt="" />
+                </Link>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
+                  <Link title="Kitchen and Living Room Renovation">
                     Kitchen and Living Room Renovation
-                  </a>
+                  </Link>
                   <ul className="post-details">
                     <li className="date">April 17, 2015</li>
                   </ul>

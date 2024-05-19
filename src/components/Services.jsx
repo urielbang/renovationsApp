@@ -1,4 +1,21 @@
 import React from "react";
+import img from "../assets/images/samples/390x260/image_01.jpg";
+import img1 from "../assets/images/samples/390x260/image_02.jpg";
+import img2 from "../assets/images/samples/390x260/image_03.jpg";
+import img3 from "../assets/images/samples/390x260/image_04.jpg";
+import img4 from "../assets/images/samples/390x260/image_05.jpg";
+import img5 from "../assets/images/samples/390x260/image_06.jpg";
+import img6 from "../assets/images/samples/90x90/image_10.jpg";
+import img7 from "../assets/images/samples/90x90/image_07.jpg";
+
+`   
+
+
+
+
+
+
+`;
 
 export default function Services() {
   return (
@@ -15,7 +32,7 @@ export default function Services() {
                   <label>You Are Here:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <a title="Home" href="index.html">
+                      <a title="Home" href="#">
                         HOME
                       </a>
                     </li>
@@ -31,17 +48,11 @@ export default function Services() {
           <div className="row">
             <ul className="services-list clearfix padding-top-70">
               <li>
-                <a
-                  href="service_interior_renovation.html"
-                  title="Interior Renovation"
-                >
-                  <img src="images/samples/390x260/image_01.jpg" alt="" />
+                <a href="#" title="Interior Renovation">
+                  <img src={img} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a
-                    href="service_interior_renovation.html"
-                    title="Interior Renovation"
-                  >
+                  <a href="#" title="Interior Renovation">
                     INTERIOR RENOVATION
                   </a>
                 </h4>
@@ -51,11 +62,11 @@ export default function Services() {
                 </p>
               </li>
               <li>
-                <a href="service_design_build.html" title="Design and Build">
-                  <img src="images/samples/390x260/image_02.jpg" alt="" />
+                <a href="#" title="Design and Build">
+                  <img src={img1} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="service_design_build.html" title="Design and Build">
+                  <a href="#" title="Design and Build">
                     DESIGN AND BUILD
                   </a>
                 </h4>
@@ -65,17 +76,11 @@ export default function Services() {
                 </p>
               </li>
               <li>
-                <a
-                  href="service_tiling_painting.html"
-                  title="Tiling and Painting"
-                >
-                  <img src="images/samples/390x260/image_03.jpg" alt="" />
+                <a href="#" title="Tiling and Painting">
+                  <img src={img3} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a
-                    href="service_tiling_painting.html"
-                    title="Tiling and Painting"
-                  >
+                  <a href="#" title="Tiling and Painting">
                     TILING AND PAINTING
                   </a>
                 </h4>
@@ -85,14 +90,11 @@ export default function Services() {
                 </p>
               </li>
               <li>
-                <a href="service_paver_walkways.html" title="Paver Walkways">
-                  <img src="images/samples/390x260/image_04.jpg" alt="" />
+                <a href="#" title="Paver Walkways">
+                  <img src={img4} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a
-                    href="service_interior_renovation.html"
-                    title="PAVER WALKWAYS"
-                  >
+                  <a href="#" title="PAVER WALKWAYS">
                     PAVER WALKWAYS
                   </a>
                 </h4>
@@ -102,14 +104,11 @@ export default function Services() {
                 </p>
               </li>
               <li>
-                <a
-                  href="service_household_repairs.html"
-                  title="Household Repairs"
-                >
-                  <img src="images/samples/390x260/image_05.jpg" alt="" />
+                <a href="#" title="Household Repairs">
+                  <img src={img5} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="service_design_build.html" title="Household Repairs">
+                  <a href="#" title="Household Repairs">
                     HOUSEHOLD REPAIRS
                   </a>
                 </h4>
@@ -119,11 +118,11 @@ export default function Services() {
                 </p>
               </li>
               <li>
-                <a href="service_solar_systems.html" title="Solar Systems">
-                  <img src="images/samples/390x260/image_06.jpg" alt="" />
+                <a href="#" title="Solar Systems">
+                  <img src={img} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="service_tiling_painting.html" title="Solar Systems">
+                  <a href="#" title="Solar Systems">
                     SOLAR SYSTEMS
                   </a>
                 </h4>
@@ -166,7 +165,7 @@ export default function Services() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSambta@gmail.com">adiSambata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -184,35 +183,16 @@ export default function Services() {
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a
-                  target="_blank"
-                  href="https://facebook.com/QuanticaLabs"
-                  className="social-facebook"
-                  title="facebook"
-                />
+                <a href="#" className="social-facebook" title="facebook" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://twitter.com/QuanticaLabs"
-                  className="social-twitter"
-                  title="twitter"
-                />
+                <a href="#" className="social-twitter" title="twitter" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://1.envato.market/quanticalabs-portfolio"
-                  className="social-linkedin"
-                  title="linkedin"
-                />
+                <a href="#" className="social-linkedin" title="linkedin" />
               </li>
               <li>
-                <a
-                  href="https://pinterest.com/quanticalabs/"
-                  className="social-pinterest"
-                  title="pinterest"
-                />
+                <a href="#" className="social-pinterest" title="pinterest" />
               </li>
             </ul>
           </div>
@@ -231,52 +211,53 @@ export default function Services() {
             <h6 className="box-header">Categories</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
+                <a href="#" title="BUILD">
                   BUILD
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
+                <a href="#" title="DESIGN">
                   DESIGN
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
+                <a href="#" title="FLOORING">
                   FLOORING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
+                <a href="#" title="PAINTING">
                   PAINTING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
+                <a href="#" title="PAVERS">
                   PAVERS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
+                <a href="#" title="PLUMBING">
                   PLUMBING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
+                <a href="#" title="RENOVATION">
                   RENOVATION
                 </a>
               </li>
+
               <li>
-                <a href="category.html" title="REPAIRS">
+                <a href="#" title="REPAIRS">
                   REPAIRS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
+                <a href="#" title="SOLAR SYSTEMS">
                   SOLAR SYSTEMS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
+                <a href="#" title="TILING">
                   TILING
                 </a>
               </li>
@@ -287,17 +268,14 @@ export default function Services() {
             <ul className="blog small margin-top-30">
               <li>
                 <a
-                  href="post.html"
+                  href="#"
                   title="What a Difference a Few Months Make"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_10.jpg" alt="" />
+                  <img src={img6} alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="What a Difference a Few Months Make"
-                  >
+                  <a href="#" title="What a Difference a Few Months Make">
                     What a Difference a Few Months Make
                   </a>
                   <ul className="post-details">
@@ -307,17 +285,14 @@ export default function Services() {
               </li>
               <li>
                 <a
-                  href="post.html"
+                  href="#"
                   title="Kitchen and Living Room Renovation"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_07.jpg" alt="" />
+                  <img src={img7} alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
+                  <a href="#" title="Kitchen and Living Room Renovation">
                     Kitchen and Living Room Renovation
                   </a>
                   <ul className="post-details">
@@ -328,26 +303,6 @@ export default function Services() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="row align-center padding-top-bottom-30">
-        <span className="copyright">
-          © Copyright 2021{" "}
-          <a
-            href="https://1.envato.market/renovate-construction-renovation-template"
-            title="Renovate Template"
-            target="_blank"
-          >
-            Renovate Template
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://quanticalabs.com"
-            title="QuanticaLabs"
-            target="_blank"
-          >
-            QuanticaLabs
-          </a>
-        </span>
       </div>
     </div>
   );
