@@ -14,15 +14,19 @@ import Contact from "./pages/Contact";
 import SignIn from "./pages/signin/SignIn";
 import SignUp from "./pages/SignUp";
 import { UserContext } from "./context/User";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProjectDising from "./components/ProjectDising";
 
 function App() {
-  const { logedUser } = useContext(UserContext);
+  const { logedUser, token } = useContext(UserContext);
+  const [userLogIn, setUserLogin] = useState(null);
 
+  useEffect(() => {
+    setUserLogin(logedUser);
+  }, [logedUser]);
   return (
     <BrowserRouter>
-      {logedUser?.email ? (
+      {userLogIn != null ? (
         <>
           <NavBar />
           <Routes>

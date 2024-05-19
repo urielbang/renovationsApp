@@ -1,5 +1,15 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import img11 from "../assets/images/samples/270x180/image_01.jpg";
+import img from "../assets/images/samples/270x180/image_04.jpg";
+import img1 from "../assets/images/samples/270x180/image_07.jpg";
+import img2 from "../assets/images/samples/270x180/image_10.jpg";
+import img3 from "../assets/images/samples/270x180/image_08.jpg";
+import img4 from "../assets/images/samples/270x180/image_05.jpg";
+import img5 from "../assets/images/samples/270x180/image_09.jpg";
+import img6 from "../assets/images/samples/270x180/image_06.jpg";
+import img7 from "../assets/images/samples/90x90/image_10.jpg";
+import img8 from "../assets/images/samples/90x90/image_07.jpg";
 export default function Projects() {
   return (
     <div>
@@ -8,19 +18,17 @@ export default function Projects() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>OUR PROJECTS</h1>
+                <h1>MY PROJECTS</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
                   <label>You Are Here:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <a title="Home" href="index.html">
-                        HOME
-                      </a>
+                      <Link title="Home">MY PROJECTS</Link>
                     </li>
                     <li className="separator">/</li>
-                    <li>OUR PROJECTS</li>
+                    <li>MY PROJECTS</li>
                   </ul>
                 </div>
               </div>
@@ -67,19 +75,15 @@ export default function Projects() {
                   href="project_interior_renovation.html"
                   title="Interior Renovation"
                 >
-                  <img src="images/samples/270x180/image_01.jpg" alt="" />
+                  <img src={img11} alt="" />
                 </a>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Interior Renovation</p>
-                      <a
-                        className="more simple"
-                        href="project_interior_renovation.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -89,7 +93,7 @@ export default function Projects() {
                   href="project_garden_renovation.html"
                   title="Garden Renovation"
                 >
-                  <img src="images/samples/270x180/image_04.jpg" alt="" />
+                  <img src={img} alt="" />
                 </a>
                 <div className="view align-center">
                   <div className="vertical-align-table">
@@ -107,118 +111,94 @@ export default function Projects() {
                 </div>
               </li>
               <li className="design-and-build painting">
-                <a href="project_painting.html" title="Painting">
-                  <img src="images/samples/270x180/image_07.jpg" alt="" />
-                </a>
+                <Link title="Painting">
+                  <img src={img1} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Painting</p>
-                      <a
-                        className="more simple"
-                        href="project_painting.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation design-and-build">
-                <a href="project_design_build.html" title="Design and Build">
-                  <img src="images/samples/270x180/image_10.jpg" alt="" />
-                </a>
+                <Link href="project_design_build.html" title="Design and Build">
+                  <img src={img2} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Design and Build</p>
-                      <a
-                        className="more simple"
-                        href="project_design_build.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="design-and-build solar-systems">
-                <a href="project_design_build.html" title="Design and Build">
-                  <img src="images/samples/270x180/image_08.jpg" alt="" />
-                </a>
+                <Link href="project_design_build.html" title="Design and Build">
+                  <img src={img3} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Design and Build</p>
-                      <a
-                        className="more simple"
-                        href="project_design_build.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation">
-                <a
+                <Link
                   href="project_interior_renovation.html"
                   title="Interior Renovation"
                 >
-                  <img src="images/samples/270x180/image_05.jpg" alt="" />
-                </a>
+                  <img src={img4} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Interior Renovation</p>
-                      <a
-                        className="more simple"
-                        href="project_interior_renovation.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation painting">
-                <a href="project_painting.html" title="Painting">
-                  <img src="images/samples/270x180/image_09.jpg" alt="" />
-                </a>
+                <Link title="Painting">
+                  <img src={img5} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Painting</p>
-                      <a
-                        className="more simple"
-                        href="project_painting.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="solar-systems">
-                <a href="project_solar_systems.html" title="Solar Systems">
-                  <img src="images/samples/270x180/image_06.jpg" alt="" />
-                </a>
+                <Link href="project_solar_systems.html" title="Solar Systems">
+                  <img src={img6} alt="" />
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
                       <p className="description">Solar Systems</p>
-                      <a
-                        className="more simple"
-                        href="project_solar_systems.html"
-                        title="VIEW PROJECT"
-                      >
+                      <Link className="more simple" title="VIEW PROJECT">
                         VIEW PROJECT
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -257,7 +237,7 @@ export default function Projects() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSmbata@gmail.com">adiSmabta@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -275,35 +255,16 @@ export default function Projects() {
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a
-                  target="_blank"
-                  href="https://facebook.com/QuanticaLabs"
-                  className="social-facebook"
-                  title="facebook"
-                />
+                <Link className="social-facebook" title="facebook" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://twitter.com/QuanticaLabs"
-                  className="social-twitter"
-                  title="twitter"
-                />
+                <Link className="social-twitter" title="twitter" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://1.envato.market/quanticalabs-portfolio"
-                  className="social-linkedin"
-                  title="linkedin"
-                />
+                <Link className="social-linkedin" title="linkedin" />
               </li>
               <li>
-                <a
-                  href="https://pinterest.com/quanticalabs/"
-                  className="social-pinterest"
-                  title="pinterest"
-                />
+                <Link className="social-pinterest" title="pinterest" />
               </li>
             </ul>
           </div>
@@ -322,52 +283,52 @@ export default function Projects() {
             <h6 className="box-header">Categories</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
+                <a href="#" title="BUILD">
                   BUILD
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
+                <a href="#" title="DESIGN">
                   DESIGN
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
+                <a href="#" title="FLOORING">
                   FLOORING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
+                <a href="#" title="PAINTING">
                   PAINTING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
+                <a href="#" title="PAVERS">
                   PAVERS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
+                <a href="#" title="PLUMBING">
                   PLUMBING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
+                <a href="#" title="RENOVATION">
                   RENOVATION
                 </a>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
+                <a href="#" title="REPAIRS">
                   REPAIRS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
+                <a href="#" title="SOLAR SYSTEMS">
                   SOLAR SYSTEMS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
+                <a href="#" title="TILING">
                   TILING
                 </a>
               </li>
@@ -377,40 +338,29 @@ export default function Projects() {
             <h6 className="box-header">Latest Posts</h6>
             <ul className="blog small margin-top-30">
               <li>
-                <a
-                  href="post.html"
-                  title="What a Difference a Few Months Make"
-                  className="post-image"
-                >
-                  <img src="images/samples/90x90/image_10.jpg" alt="" />
-                </a>
+                <Link className="post-image">
+                  <img src={img7} alt="" />
+                </Link>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="What a Difference a Few Months Make"
-                  >
+                  <Link title="What a Difference a Few Months Make">
                     What a Difference a Few Months Make
-                  </a>
+                  </Link>
                   <ul className="post-details">
                     <li className="date">April 25, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  href="post.html"
+                <Link
                   title="Kitchen and Living Room Renovation"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_07.jpg" alt="" />
-                </a>
+                  <img src={img8} alt="" />
+                </Link>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
+                  <Link title="Kitchen and Living Room Renovation">
                     Kitchen and Living Room Renovation
-                  </a>
+                  </Link>
                   <ul className="post-details">
                     <li className="date">April 17, 2015</li>
                   </ul>
@@ -419,26 +369,6 @@ export default function Projects() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="row align-center padding-top-bottom-30">
-        <span className="copyright">
-          © Copyright 2021{" "}
-          <a
-            href="https://1.envato.market/renovate-construction-renovation-template"
-            title="Renovate Template"
-            target="_blank"
-          >
-            Renovate Template
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://quanticalabs.com"
-            title="QuanticaLabs"
-            target="_blank"
-          >
-            QuanticaLabs
-          </a>
-        </span>
       </div>
     </div>
   );

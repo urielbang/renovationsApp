@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import js from "./jquery.costCalculator";
+import $ from "jquery";
 
 export default function Calculator() {
+  useEffect(() => {
+    js;
+  });
   return (
     <div>
       <div className="row gray full-width page-header vertical-align-table">
@@ -36,23 +41,6 @@ export default function Calculator() {
             to make an appointment with us and obtain a more accurate quote.
           </p>
           <div className="tabs small no-scroll align-left clearfix margin-top-40">
-            <ul className="tabs-navigation small gray clearfix">
-              <li>
-                <a href="#interior-renovation" title="Interior Renovation">
-                  Interior Renovation
-                </a>
-              </li>
-              <li>
-                <a href="#fence" title="Fence">
-                  Fence
-                </a>
-              </li>
-              <li>
-                <a href="#paver-walkway" title="Paver Walkway">
-                  Paver Walkway
-                </a>
-              </li>
-            </ul>
             <div id="interior-renovation" className="margin-top-30">
               <form
                 className="contact-form cost-calculator-container"

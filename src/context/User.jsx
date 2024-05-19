@@ -24,9 +24,11 @@ export default function UserProvider({ children }) {
       });
       const data = await res.data;
 
+      setToken(token);
       setLogedUser(data);
     } catch (error) {
       console.log(error);
+      setLogedUser(null);
     }
   };
   const handleSignUp = async (e) => {
@@ -34,6 +36,7 @@ export default function UserProvider({ children }) {
     const signUpUser = await axios.post(`${apiUrl}/users/singIn`, userData);
 
     localStorage.setItem("token", signUpUser.data.token);
+
     setToken(signUpUser.data.token);
 
     setInputValue({ name: "", email: "", password: "" });

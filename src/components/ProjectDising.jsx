@@ -1,4 +1,9 @@
 import React from "react";
+import img from "../assets/images/samples/570x380/image_01.jpg";
+import img1 from "../assets/images/samples/570x380/image_08.jpg";
+import img2 from "../assets/images/samples/570x380/image_02.jpg";
+import img3 from "../assets/images/samples/570x380/image_10.jpg";
+import { Link } from "react-router-dom";
 
 export default function ProjectDising() {
   return (
@@ -35,7 +40,7 @@ export default function ProjectDising() {
                 className="prettyPhoto re-preload"
                 title="Design and Build"
               >
-                <img src="images/samples/570x380/image_10.jpg" alt="img" />
+                <img src={img} alt="img" />
               </a>
               <div className="row margin-top-30">
                 <div className="column column-1-2">
@@ -44,7 +49,7 @@ export default function ProjectDising() {
                     className="prettyPhoto re-preload"
                     title="Design and Build"
                   >
-                    <img src="images/samples/570x380/image_02.jpg" alt="img" />
+                    <img src={img1} alt="img" />
                   </a>
                 </div>
                 <div className="column column-1-2">
@@ -53,7 +58,7 @@ export default function ProjectDising() {
                     className="prettyPhoto re-preload"
                     title="Design and Build"
                   >
-                    <img src="images/samples/570x380/image_08.jpg" alt="img" />
+                    <img src={img2} alt="img" />
                   </a>
                 </div>
               </div>
@@ -63,7 +68,7 @@ export default function ProjectDising() {
                   className="prettyPhoto re-preload"
                   title="Design and Build"
                 >
-                  <img src="images/samples/570x380/image_01.jpg" alt="img" />
+                  <img src={img3} alt="img" />
                 </a>
               </div>
             </div>
@@ -105,15 +110,10 @@ export default function ProjectDising() {
               <div className="tabs small no-scroll align-left clearfix margin-top-40">
                 <ul className="tabs-navigation small gray clearfix">
                   <li>
-                    <a href="#client-info" title="Client Info">
-                      {" "}
-                      Client Info{" "}
-                    </a>
+                    <Link title="Client Info"> Client Info </Link>
                   </li>
                   <li>
-                    <a href="#scope-of-work" title="Scope Of Work">
-                      Scope Of Work
-                    </a>
+                    <Link title="Scope Of Work">Scope Of Work</Link>
                   </li>
                 </ul>
                 <div id="client-info">
@@ -191,7 +191,7 @@ export default function ProjectDising() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSambata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -353,26 +353,6 @@ export default function ProjectDising() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="row align-center padding-top-bottom-30">
-        <span className="copyright">
-          © Copyright 2021
-          <a
-            href="https://1.envato.market/renovate-construction-renovation-template"
-            title="Renovate Template"
-            target="_blank"
-          >
-            Renovate Template
-          </a>
-          by
-          <a
-            href="https://quanticalabs.com"
-            title="QuanticaLabs"
-            target="_blank"
-          >
-            QuanticaLabs
-          </a>
-        </span>
       </div>
     </div>
   );

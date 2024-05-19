@@ -150,7 +150,7 @@ function LandPage() {
               </div>
               <ul className="projects-list clearfix page-margin-top">
                 <li>
-                  <Link to="/oneProject/:id">
+                  <Link>
                     <img src={projectImg3} alt="" />
                   </Link>
                   <div className="view align-center">
@@ -165,46 +165,40 @@ function LandPage() {
                   </div>
                 </li>
                 <li>
-                  <Link to="/oneProject/:id">
+                  <Link>
                     <img src={projectImg} alt="" />
                   </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Garden Renovation</p>
-                        <Link to="/oneProject/:id" className="more simple">
-                          VIEW PROJECT
-                        </Link>
+                        <Link className="more simple">VIEW PROJECT</Link>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <Link to="/oneProject/:id">
+                  <Link>
                     <img src={projectImg1} alt="" />
                   </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Interior Renovation</p>
-                        <Link to="/oneProject/:id" className="more simple">
-                          VIEW PROJECT
-                        </Link>
+                        <Link className="more simple">VIEW PROJECT</Link>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <Link to="/oneProject/:id">
+                  <Link>
                     <img src={projectImg2} alt="" />
                   </Link>
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
                         <p className="description">Solar Systems</p>
-                        <Link to="/oneProject/:id" className="more simple">
-                          VIEW PROJECT
-                        </Link>
+                        <Link className="more simple">VIEW PROJECT</Link>
                       </div>
                     </div>
                   </div>

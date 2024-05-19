@@ -26,7 +26,7 @@ export default function Map() {
     <MapContainer
       center={location}
       zoom={13}
-      style={{ height: "60vh", width: "100%" }}
+      style={{ height: "50vh", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

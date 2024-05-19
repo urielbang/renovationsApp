@@ -21,9 +21,18 @@
   display: flex;
 }
 .projects-list {
-  display: flex;
+  display: block;
+}
+.projects-list li a img {
+  display: block;
 }
 
 .re-preload > .image-wrapper > img {
+  display: flex;
+}
+.leaflet-container {
+  z-index: 2;
+}
+.column-1-2 a img {
   display: flex;
 }
