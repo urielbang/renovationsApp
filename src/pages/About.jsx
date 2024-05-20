@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import img from "../assets/images/samples/480x480/image_10.jpg";
+import img1 from "../assets/images/samples/90x90/image_10.jpg";
+import img2 from "../assets/images/samples/90x90/image_07.jpg";
 
 export default function PagesPage() {
   return (
@@ -15,9 +19,7 @@ export default function PagesPage() {
                   <label>You Are Here:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <a title="HOME" href="index.html">
-                        HOME
-                      </a>
+                      <Link title="HOME">HOME</Link>
                     </li>
                     <li className="separator">/</li>
                     <li>ABOUT US</li>
@@ -31,11 +33,7 @@ export default function PagesPage() {
           <div className="row margin-top-70">
             <div className="column column-1-2 align-center re-preload">
               <div className="image-wrapper">
-                <img
-                  src="images/samples/480x480/image_10.jpg"
-                  alt=""
-                  className="radius"
-                />
+                <img src={img} alt="" className="radius" />
               </div>
             </div>
             <div className="column column-1-2">
@@ -70,9 +68,9 @@ export default function PagesPage() {
                 </li>
               </ul>
               <div className="page-margin-top">
-                <a className="more" href="services.html" title="OUR SERVICES">
+                <Link to="/services" className="more" title="OUR SERVICES">
                   OUR SERVICES
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -115,43 +113,7 @@ export default function PagesPage() {
               </div>
             </div>
           </div>
-          <div className="row full-width padding-top-70 padding-bottom-66 parallax parallax-2">
-            <div className="row">
-              <h2 className="box-header">WHY CHOOSE US</h2>
-            </div>
-            <div className="row page-margin-top">
-              <div className="column column-1-3">
-                <ul className="features-list big">
-                  <li className="sl-large-globe">
-                    <div className="ornament" />
-                    <span className="number animated-element" data-value={15} />
-                    <p>Years on the International Market.</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="column column-1-3">
-                <ul className="features-list big">
-                  <li className="sl-large-house-2">
-                    <div className="ornament" />
-                    <span
-                      className="number animated-element"
-                      data-value={135}
-                    />
-                    <p>Completed Projects and Investments.</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="column column-1-3">
-                <ul className="features-list big">
-                  <li className="sl-large-briefcase">
-                    <div className="ornament" />
-                    <span className="number animated-element" data-value={12} />
-                    <p>Skilled Professionals.</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+
           <div className="row page-margin-top-section">
             <div className="column column-1-2">
               <h3 className="box-header">OUR MISSION</h3>
@@ -171,9 +133,9 @@ export default function PagesPage() {
                 suscipit lacus <a href="#">modest elementum</a>.
               </p>
               <div className="page-margin-top">
-                <a className="more" href="projects.html" title="OUR PROJECTS">
+                <Link className="more" to="/projects">
                   OUR PROJECTS
-                </a>
+                </Link>
               </div>
             </div>
             <div className="column column-1-2">
@@ -266,7 +228,7 @@ export default function PagesPage() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSmabata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -284,35 +246,16 @@ export default function PagesPage() {
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a
-                  target="_blank"
-                  href="https://facebook.com/QuanticaLabs"
-                  className="social-facebook"
-                  title="facebook"
-                />
+                <a href="#" className="social-facebook" title="facebook" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://twitter.com/QuanticaLabs"
-                  className="social-twitter"
-                  title="twitter"
-                />
+                <a href="#" className="social-twitter" title="twitter" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://1.envato.market/quanticalabs-portfolio"
-                  className="social-linkedin"
-                  title="linkedin"
-                />
+                <a href="#" className="social-linkedin" title="linkedin" />
               </li>
               <li>
-                <a
-                  href="https://pinterest.com/quanticalabs/"
-                  className="social-pinterest"
-                  title="pinterest"
-                />
+                <a href="#" className="social-pinterest" title="pinterest" />
               </li>
             </ul>
           </div>
@@ -331,52 +274,52 @@ export default function PagesPage() {
             <h6 className="box-header">Categories</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
+                <a href="#" title="BUILD">
                   BUILD
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
+                <a href="#" title="DESIGN">
                   DESIGN
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
+                <a href="#" title="FLOORING">
                   FLOORING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
+                <a href="#" title="PAINTING">
                   PAINTING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
+                <a href="#" title="PAVERS">
                   PAVERS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
+                <a href="#" title="PLUMBING">
                   PLUMBING
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
+                <a href="#" title="RENOVATION">
                   RENOVATION
                 </a>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
+                <a href="#" title="REPAIRS">
                   REPAIRS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
+                <a href="#" title="SOLAR SYSTEMS">
                   SOLAR SYSTEMS
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
+                <a href="#" title="TILING">
                   TILING
                 </a>
               </li>
@@ -387,17 +330,14 @@ export default function PagesPage() {
             <ul className="blog small margin-top-30">
               <li>
                 <a
-                  href="post.html"
+                  href="#"
                   title="What a Difference a Few Months Make"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_10.jpg" alt="" />
+                  <img src={img1} alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="What a Difference a Few Months Make"
-                  >
+                  <a href="#" title="What a Difference a Few Months Make">
                     What a Difference a Few Months Make
                   </a>
                   <ul className="post-details">
@@ -407,17 +347,14 @@ export default function PagesPage() {
               </li>
               <li>
                 <a
-                  href="post.html"
+                  href="#"
                   title="Kitchen and Living Room Renovation"
                   className="post-image"
                 >
-                  <img src="images/samples/90x90/image_07.jpg" alt="" />
+                  <img src={img2} alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
+                  <a href="#" title="Kitchen and Living Room Renovation">
                     Kitchen and Living Room Renovation
                   </a>
                   <ul className="post-details">

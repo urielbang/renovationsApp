@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FaUserCheck } from "react-icons/fa";
 import { IoLogInSharp } from "react-icons/io5";
 
@@ -13,6 +13,8 @@ export default function NavBar() {
     setToken({});
     setLogedUser({});
   };
+  console.log(logedUser);
+
   return (
     <>
       <div className="header-top-bar-container clearfix">
@@ -44,35 +46,20 @@ export default function NavBar() {
           </div>
           <ul className="social-icons">
             <li>
-              <a
-                target="_blank"
-                href="https://facebook.com/QuanticaLabs"
-                className="social-facebook"
-                title="facebook"
-              />
+              <a href="#" className="social-facebook" title="facebook" />
             </li>
             <li>
-              <a
-                target="_blank"
-                href="https://twitter.com/QuanticaLabs"
-                className="social-twitter"
-                title="twitter"
-              />
+              <a href="#" className="social-twitter" title="twitter" />
             </li>
 
             <li>
-              <a
-                href="https://pinterest.com/quanticalabs/"
-                className="social-pinterest"
-                title="pinterest"
-              />
+              <a href="#" className="social-pinterest" title="pinterest" />
             </li>
           </ul>
         </div>
         <a href="#" className="header-toggle template-arrow-up" />
       </div>
       <div className="header-container">
-        {/*<div class="header-container sticky">*/}
         <div className="vertical-align-table column-1-1">
           <div className="header clearfix">
             <div className="logo vertical-align-cell">
@@ -90,14 +77,6 @@ export default function NavBar() {
                 <ul className="sf-menu">
                   <li className="selected">
                     <Link to="/">HOME</Link>
-                    <ul>
-                      <li className="selected">
-                        <Link to="/">Home Style 1</Link>
-                      </li>
-                      <li>
-                        <Link to="/home2">Home Style 2</Link>
-                      </li>
-                    </ul>
                   </li>
                   <li>
                     <Link to="/services">SERVICES</Link>
@@ -153,148 +132,32 @@ export default function NavBar() {
 
                     <ul>
                       <li>
-                        <a
-                          href="project_interior_renovation.html"
-                          title="Interior Renovation"
-                        >
-                          Interior Renovation
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="project_garden_renovation.html"
-                          title="Garden Renovation"
-                        >
-                          Garden Renovation
-                        </a>
-                      </li>
-                      <li>
-                        <a href="project_painting.html" title="Painting">
-                          Painting
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="project_design_build.html"
-                          title="Design and Build"
-                        >
-                          Design and Build
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="project_solar_systems.html"
-                          title="Solar Systems"
-                        >
-                          Solar Systems
-                        </a>
+                        <Link>new project</Link>
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <Link to="ourTeam">OUR TEAM</Link>
-                  </li>
+
                   <li>
                     <Link to="about">ABOUT</Link>
+                  </li>
 
-                    <ul>
-                      <li>
-                        <a href="about.html" title="About">
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a href="404.html" title="404 Not Found">
-                          404 Not Found
-                        </a>
-                      </li>
-                      <li>
-                        <a href="services.html" title="Services Style 1">
-                          Services Style 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="services2.html" title="Services Style 2">
-                          Services Style 2
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="service_interior_renovation.html"
-                          title="Single Service"
-                        >
-                          Single Service
-                        </a>
-                      </li>
-                      <li>
-                        <Link to="/projects">Projects</Link>
-                      </li>
-                      <li>
-                        <a
-                          href="project_interior_renovation.html"
-                          title="Single Project"
-                        >
-                          Single Project
-                        </a>
-                      </li>
-                      <li>
-                        <a href="team.html" title="Team">
-                          Team
-                        </a>
-                      </li>
-                      <li>
-                        <a href="team_mark_whilberg.html" title="Single Team">
-                          Single Team
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="/blog">BLOG</Link>
-                    <ul>
-                      <li>
-                        <a href="blog_left_sidebar.html" title="Blog">
-                          Blog Left Sidebar
-                        </a>
-                      </li>
-                      <li>
-                        <a href="blog_2_columns.html" title="Blog 2 Columns">
-                          Blog 2 Columns
-                        </a>
-                      </li>
-                      <li>
-                        <a href="blog_3_columns.html" title="Blog 3 Columns">
-                          Blog 3 Columns
-                        </a>
-                      </li>
-                      <li>
-                        <a href="post.html" title="Single Post">
-                          Single Post
-                        </a>
-                      </li>
-                      <li>
-                        <a href="search.html?s=ipsum" title="Search Template">
-                          Search Template
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
                   <li>
                     <Link to="/calculator"> COST CALCULATOR</Link>
                   </li>
                   <li className="left-flyout">
                     <Link to="/contact"> CONTACT</Link>
-
-                    <ul>
-                      <li>
-                        <Link to="/contact"> Contact</Link>
-                      </li>
-                    </ul>
                   </li>
+                  {logedUser?.data?.role == "admin" ? (
+                    <li className="left-flyout">
+                      <Link to="/adminPage"> ADMIN</Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
                   <li className="logdUser">
                     <a>
                       <FaUserCheck />
-                      {logedUser?.email}
+                      {logedUser?.data?.email}
                     </a>
 
                     <ul>

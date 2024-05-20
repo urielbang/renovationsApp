@@ -17,7 +17,7 @@ export default function UserProvider({ children }) {
   const getUser = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`${apiUrl}/users/init-user`, {
+      const res = await axios.get(`${apiUrl}/users/init`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
