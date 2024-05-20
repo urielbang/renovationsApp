@@ -5,7 +5,9 @@ import { UserContext } from "../context/User";
 
 export default function AdminPage() {
   const { token } = useContext(UserContext);
+  const [userId, setUSerId] = useState(null);
   const [users, setUsers] = useState([]);
+  const [editData, setEditData] = useState({ name: "", email: "", role: "" });
 
   const getAllUsers = async () => {
     const res = await axios.get(`${apiUrl}/users`);
@@ -22,6 +24,32 @@ export default function AdminPage() {
       return user._id != deletedUser.data.data.data._id;
     });
     setUsers(filterdUSers);
+  };
+  const handleClickEdit = (user) => {
+    setEditData({ name: user.name, email: user.email, role: user.role });
+    setUSerId(user._id);
+  };
+  const handleClickUpdate = async (id) => {
+    const updateUser = await axios.patch(`${apiUrl}/users/${id}`, editData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const updateUsers = users.map((user) => {
+      if (user.id == updateUser.data.data.updatedUser._id) {
+        return updateUser.data.data.updatedUser;
+      }
+      return user;
+    });
+
+    setUSerId(null);
+    setEditData({ name: "", email: "", role: "" });
+
+    setUsers(updateUsers);
+  };
+  const handleChange = (e) => {
+    setEditData({ ...editData, [e.target.name]: e.target.value });
   };
   useEffect(() => {
     getAllUsers();
@@ -40,17 +68,73 @@ export default function AdminPage() {
         <tbody>
           {users.map((user) => (
             <tr key={user._id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
               <td>
-                <button className="edit-button">Edit</button>
+                {user.id == userId ? (
+                  <form>
+                    <input
+                      type="text"
+                      name="name"
+                      value={editData.name}
+                      onChange={handleChange}
+                    ></input>
+                  </form>
+                ) : (
+                  user.name
+                )}
+              </td>
+              <td>
+                {" "}
+                {user.id == userId ? (
+                  <form>
+                    <input
+                      type="text"
+                      value={editData.email}
+                      name="email"
+                      onChange={handleChange}
+                    ></input>
+                  </form>
+                ) : (
+                  user.email
+                )}
+              </td>
+              <td>
+                {" "}
+                {user.id == userId ? (
+                  <form>
+                    <input
+                      type="text"
+                      value={editData.role}
+                      name="role"
+                      onChange={handleChange}
+                    ></input>
+                  </form>
+                ) : (
+                  user.role
+                )}
+              </td>
+              <td>
+                <button
+                  className="edit-button"
+                  onClick={() => handleClickEdit(user)}
+                >
+                  Edit
+                </button>
                 <button
                   className="delete-button"
                   onClick={async () => handleClickDelete(user)}
                 >
                   Delete
                 </button>
+                {user.id == userId ? (
+                  <button
+                    className="update-button"
+                    onClick={() => handleClickUpdate(user.id)}
+                  >
+                    Update
+                  </button>
+                ) : (
+                  ""
+                )}
               </td>
             </tr>
           ))}

@@ -1,22 +1,21 @@
 import React, { useState, useRef } from "react";
 import CostCalculator from "../components/CostCalculator";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../config/apiConfig";
 import img from "../assets/images/samples/480x320/image_05.jpg";
 import img1 from "../assets/images/samples/480x320/image_03.jpg";
 import img2 from "../assets/images/samples/480x320/image_01.jpg";
 import img3 from "../assets/images/samples/90x90/image_10.jpg";
 import img4 from "../assets/images/samples/90x90/image_07.jpg";
+import axios from "axios";
 
-`       
-
-
-
-`;
 export default function Calculator() {
   const irTotalCostRef = useRef(null);
-
   const feTotalCostRef = useRef(null);
   const pwTotalCostRef = useRef(null);
+
+  const [messageReceive, setmessageReceive] = useState(false);
+  const [messageReceiveFe, setmessageReceiveFe] = useState(false);
   const [interiorRenovationValues, setInteriorRenovationValues] = useState({
     squareFeet: 300,
     walls: 0,
@@ -42,17 +41,108 @@ export default function Calculator() {
   });
   const handleInteriorRenovationChange = (e) => {
     const { name, value } = e.target;
+
     setInteriorRenovationValues({ ...interiorRenovationValues, [name]: value });
+    setPriceQuoteData({ ...priceQuoteData, [name]: value });
   };
 
   const handleFenceChange = (e) => {
     const { name, value } = e.target;
     setFenceValues({ ...fenceValues, [name]: value });
+    setPriceQuoteDatafe({ ...priceQuoteDataFe, [name]: value });
   };
+  const [priceQuoteData, setPriceQuoteData] = useState({
+    doors: interiorRenovationValues.doors,
+    email: "",
+    floors: interiorRenovationValues.floors,
+    message: "",
+    name: "",
+    phone: "",
+    squareFeet: interiorRenovationValues.squareFeet,
+    windows: interiorRenovationValues.windows,
+  });
+  const [priceQuoteDataFe, setPriceQuoteDatafe] = useState({
+    email: "",
+    extras: fenceValues.extras,
+    gate: fenceValues.gate,
+    height: fenceValues.height,
+    length: fenceValues.length,
+    message: "",
+    name: "",
+    panel: fenceValues.panel,
+    phone: "",
+  });
 
   const handlePaverWalkwayChange = (e) => {
     const { name, value } = e.target;
+
     setPaverWalkwayValues({ ...paverWalkwayValues, [name]: value });
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const total = irTotalCostRef.current.value?.replace("$", "");
+
+    setPriceQuoteData({
+      ...priceQuoteData,
+      [name]: value,
+      totalPrice: total,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const priceQuote = await axios.post(`${apiUrl}/priceQuote`, priceQuoteData);
+    console.log(priceQuote);
+    e.target[0].value = 0;
+    e.target[5].value = 0;
+    e.target[7].value = 0;
+    e.target[10].value = "";
+    e.target[11].value = "";
+    e.target[12].value = "";
+    e.target[13].value = "";
+    setPriceQuoteData({
+      doors: "",
+      email: "",
+      floors: "",
+      message: "",
+      name: "",
+      phone: "",
+      squareFeet: "",
+      windows: "",
+      totalPrice: "",
+    });
+    setmessageReceive(true);
+  };
+  const handleChangeFence = (e) => {
+    const { name, value } = e.target;
+    const total = feTotalCostRef.current.value?.replace("$", "");
+
+    setPriceQuoteDatafe({
+      ...priceQuoteDataFe,
+      [name]: value,
+      totalPrice: total,
+    });
+  };
+  const handleSubmitFence = async (e) => {
+    e.preventDefault();
+    const priceQuote = await axios.post(
+      `${apiUrl}/priceQuote`,
+      priceQuoteDataFe
+    );
+    console.log(priceQuote);
+    setPriceQuoteDatafe({
+      email: "",
+      extras: "",
+      gate: "",
+      height: "",
+      length: "",
+      message: "",
+      name: "",
+      panel: "",
+      phone: "",
+    });
+    setmessageReceiveFe(true);
   };
 
   return (
@@ -89,10 +179,10 @@ export default function Calculator() {
           </p>
           <div className="tabs small no-scroll align-left clearfix margin-top-40">
             <div id="interior-renovation" className="margin-top-30">
+              <h2>interior Calculator</h2>
               <form
+                onSubmit={handleSubmit}
                 className="contact-form cost-calculator-container"
-                method="post"
-                action="contact_form/contact_form.php"
               >
                 <div className="cost-calculator-box clearfix">
                   <label>Area to be Renovated in Square Feet:</label>
@@ -241,38 +331,42 @@ export default function Calculator() {
                       <input
                         className="text-input"
                         name="name"
+                        onChange={handleChange}
                         type="text"
-                        defaultValue="Your Name *"
                         placeholder="Your Name *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
-                        defaultValue="Your Email *"
+                        onChange={handleChange}
                         placeholder="Your Email *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
-                        defaultValue="Your Phone"
+                        onChange={handleChange}
                         placeholder="Your Phone"
                       />
                     </fieldset>
                     <fieldset className="column column-1-2">
                       <textarea
                         name="message"
+                        onChange={handleChange}
                         placeholder="Message *"
-                        defaultValue={"Message *"}
                       />
                     </fieldset>
                   </div>
                   <div className="row margin-top-30">
                     <div className="column column-1-2">
-                      <p className="description t1">
-                        We will contact you within one business day.
-                      </p>
+                      {messageReceive == true ? (
+                        <p className="description t1">
+                          We will contact you within one business day.
+                        </p>
+                      ) : (
+                        ""
+                      )}
                     </div>
                     <div className="column column-1-2 align-right">
                       <input
@@ -303,10 +397,10 @@ export default function Calculator() {
               </form>
             </div>
             <div id="fence" className="margin-top-30">
+              <h2>fence calculator</h2>
               <form
+                onSubmit={handleSubmitFence}
                 className="contact-form cost-calculator-container"
-                method="post"
-                action="contact_form/contact_form.php"
               >
                 <div className="cost-calculator-box clearfix">
                   <label>Length of your Fence in feet:</label>
@@ -442,21 +536,21 @@ export default function Calculator() {
                         className="text-input"
                         name="name"
                         type="text"
-                        defaultValue="Your Name *"
+                        onChange={handleChangeFence}
                         placeholder="Your Name *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
-                        defaultValue="Your Email *"
+                        onChange={handleChangeFence}
                         placeholder="Your Email *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
-                        defaultValue="Your Phone"
+                        onChange={handleChangeFence}
                         placeholder="Your Phone"
                       />
                     </fieldset>
@@ -464,15 +558,19 @@ export default function Calculator() {
                       <textarea
                         name="message"
                         placeholder="Message *"
-                        defaultValue={"Message *"}
+                        onChange={handleChangeFence}
                       />
                     </fieldset>
                   </div>
                   <div className="row margin-top-30">
                     <div className="column column-1-2">
-                      <p className="description t1">
-                        We will contact you within one business day.
-                      </p>
+                      {messageReceiveFe == true ? (
+                        <p className="description t1">
+                          We will contact you within one business day.
+                        </p>
+                      ) : (
+                        ""
+                      )}
                     </div>
                     <div className="column column-1-2 align-right">
                       <input
@@ -499,6 +597,7 @@ export default function Calculator() {
               </form>
             </div>
             <div id="paver-walkway" className="margin-top-30">
+              <h1>paver walkway Calculator</h1>
               <form
                 className="contact-form cost-calculator-container"
                 method="post"

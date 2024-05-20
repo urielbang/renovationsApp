@@ -85,3 +85,11 @@ button {
   background-color: #ff1a1a;
   transform: scale(1.05);
 }
+.update-button {
+  background-color: orange;
+  color: white;
+}
+.update-button:hover {
+  background-color: rgb(155, 102, 4);
+  transform: scale(1.05);
+}
