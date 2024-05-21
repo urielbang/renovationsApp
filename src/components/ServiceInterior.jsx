@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import img from "../assets/images/samples/480x320/image_01.jpg";
+import img1 from "../assets/images/samples/480x320/image_07.jpg";
 
 export default function ServiceInterior() {
   return (
@@ -30,50 +33,17 @@ export default function ServiceInterior() {
         <div className="row margin-top-70">
           <div className="column column-1-4">
             <ul className="vertical-menu">
-              <li className="selected">
-                <a
-                  href="service_interior_renovation.html"
-                  title="Interior Renovation"
-                >
+              <li>
+                <Link to="/serviceInterior" title="Interior Renovation">
                   Interior Renovation
                   <span className="template-arrow-menu" />
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="service_design_build.html" title="Design and Build">
+              <li className="selected">
+                <Link to="/serviceDesign" title="Design and Build">
                   Design and Build
                   <span className="template-arrow-menu" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="service_tiling_painting.html"
-                  title="Tiling and Painting"
-                >
-                  Tiling and Painting
-                  <span className="template-arrow-menu" />
-                </a>
-              </li>
-              <li>
-                <a href="service_paver_walkways.html" title="Paver Walkways">
-                  Paver Walkways
-                  <span className="template-arrow-menu" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="service_household_repairs.html"
-                  title="Household Repair"
-                >
-                  Household Repair
-                  <span className="template-arrow-menu" />
-                </a>
-              </li>
-              <li>
-                <a href="service_solar_systems.html" title="Solar Systems">
-                  Solar Systems
-                  <span className="template-arrow-menu" />
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="call-to-action sl-small-wallet page-margin-top">
@@ -82,13 +52,9 @@ export default function ServiceInterior() {
                 Use our form to estimate the initial cost of renovation or
                 installation.
               </p>
-              <a
-                className="more"
-                href="cost_calculator.html"
-                title="REQUEST A QUOTE"
-              >
+              <Link className="more" to="/calculator" title="REQUEST A QUOTE">
                 REQUEST A QUOTE
-              </a>
+              </Link>
             </div>
             <h6 className="box-header page-margin-top">Download Brochures</h6>
             <ul className="buttons margin-top-30">
@@ -108,20 +74,20 @@ export default function ServiceInterior() {
             <div className="row">
               <div className="column column-1-2">
                 <a
-                  href="images/samples/750x500/image_01.jpg"
+                  href="#"
                   className="prettyPhoto re-preload"
                   title="Interior Renovation"
                 >
-                  <img src="images/samples/480x320/image_01.jpg" alt="img" />
+                  <img src={img} alt="img" />
                 </a>
               </div>
               <div className="column column-1-2">
                 <a
-                  href="images/samples/750x500/image_07.jpg"
+                  href="#"
                   className="prettyPhoto re-preload"
                   title="Interior Renovation"
                 >
-                  <img src="images/samples/480x320/image_07.jpg" alt="img" />
+                  <img src={img1} alt="img" />
                 </a>
               </div>
             </div>

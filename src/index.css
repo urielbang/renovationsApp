@@ -93,3 +93,22 @@ button {
   background-color: rgb(155, 102, 4);
   transform: scale(1.05);
 }
+.parentButtonNewProject {
+  display: flex;
+
+  justify-content: center;
+}
+.containerDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.containerDelete svg {
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.containerDelete svg:hover {
+  color: #ff1a1a;
+}

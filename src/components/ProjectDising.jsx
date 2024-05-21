@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../assets/images/samples/570x380/image_01.jpg";
 import img1 from "../assets/images/samples/570x380/image_08.jpg";
 import img2 from "../assets/images/samples/570x380/image_02.jpg";
 import img3 from "../assets/images/samples/570x380/image_10.jpg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { apiUrl } from "../config/apiConfig";
 
 export default function ProjectDising() {
+  const [projectData, setProjectData] = useState({});
+  const { id } = useParams();
+
+  const fetchProject = async () => {
+    const res = await axios.get(`${apiUrl}/projects/${id}`);
+    const data = await res.data;
+
+    setProjectData(data.data);
+  };
+
+  useEffect(() => {
+    fetchProject();
+  }, []);
+
   return (
     <div>
       <div className="theme-page padding-bottom-66">
@@ -13,21 +29,7 @@ export default function ProjectDising() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>DESIGN AND BUILD</h1>
-              </div>
-              <div className="page-header-right">
-                <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
-                  <ul className="bread-crumb">
-                    <li>
-                      <a title="Our Projects" href="projects.html">
-                        OUR PROJECTS
-                      </a>
-                    </li>
-                    <li className="separator">/</li>
-                    <li>DESIGN AND BUILD</li>
-                  </ul>
-                </div>
+                <h1>Project card</h1>
               </div>
             </div>
           </div>
@@ -75,34 +77,33 @@ export default function ProjectDising() {
             <div className="column column-1-2">
               <h3 className="box-header">BRIEF DESCRIPTION</h3>
               <p className="description t1">
-                Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                accumsan est in tempus etos ullamcorper, sem quam suscipit lacus
-                maecenas tortor. Erates vitae node metus. Suspendisse gravida
-                ornare non mattis velit rutrum modest. Morbi suspendisse a
-                tortor velim pellentesque uter justo magna gravida.
+                The house includes four spacious bedrooms, each with built-in
+                closets and large windows. The master suite is a private oasis,
+                complete with a walk-in closet and an en-suite bathroom
+                featuring a luxurious soaking tub and a walk-in shower.
               </p>
               <h4 className="box-header page-margin-top">AT A GLANCE</h4>
               <table className="margin-top-40">
                 <tbody>
                   <tr>
                     <td>Project Type</td>
-                    <td>Office Building</td>
+                    <td>{projectData?.projectType}</td>
                   </tr>
                   <tr>
                     <td>Client</td>
-                    <td>New York City</td>
+                    <td>{projectData?.client}</td>
                   </tr>
                   <tr>
                     <td>Completion Date</td>
-                    <td>August 2008</td>
+                    <td>{projectData?.completionDate}</td>
                   </tr>
                   <tr>
                     <td>Project Size</td>
-                    <td>3350 Square Feet</td>
+                    <td>{projectData?.projectSize}</td>
                   </tr>
                   <tr>
                     <td>Contract Value</td>
-                    <td>$10,250,000</td>
+                    <td>{projectData?.contractValue}</td>
                   </tr>
                 </tbody>
               </table>

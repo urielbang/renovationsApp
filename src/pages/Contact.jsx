@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Map from "../components/Map";
+import { apiUrl } from "../config/apiConfig";
+import axios from "axios";
 
 export default function Contact() {
+  const [inputsData, setInputsData] = useState({});
+  const [toglleText, setToglleText] = useState(false);
+  const handleChange = (e) => {
+    setInputsData({ ...inputsData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await axios.post(`${apiUrl}/contact`, inputsData);
+    console.log(res.data);
+    setToglleText(true);
+  };
   return (
     <div>
       <div className="theme-page padding-bottom-66">
@@ -46,8 +60,7 @@ export default function Contact() {
             <form
               className="contact-form"
               id="contact-form"
-              method="post"
-              action="contact_form/contact_form.php"
+              onSubmit={handleSubmit}
             >
               <div className="row">
                 <fieldset className="column column-1-2">
@@ -55,37 +68,41 @@ export default function Contact() {
                     className="text-input"
                     name="name"
                     type="text"
-                    defaultValue="Your Name *"
+                    onChange={handleChange}
                     placeholder="Your Name *"
                   />
                   <input
                     className="text-input"
                     name="email"
                     type="text"
-                    defaultValue="Your Email *"
+                    onChange={handleChange}
                     placeholder="Your Email *"
                   />
                   <input
                     className="text-input"
                     name="phone"
-                    type="text"
-                    defaultValue="Your Phone"
+                    type="number"
+                    onChange={handleChange}
                     placeholder="Your Phone"
                   />
                 </fieldset>
                 <fieldset className="column column-1-2">
                   <textarea
                     name="message"
+                    onChange={handleChange}
                     placeholder="Message *"
-                    defaultValue={"Message *"}
                   />
                 </fieldset>
               </div>
               <div className="row margin-top-30">
                 <div className="column column-1-2">
-                  <p className="description t1">
-                    We will contact you within one business day.
-                  </p>
+                  {toglleText ? (
+                    <p className="description t1">
+                      We will contact you within one business day.
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="column column-1-2 align-right">
                   <input
@@ -116,35 +133,16 @@ export default function Contact() {
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a
-                  target="_blank"
-                  href="https://facebook.com/QuanticaLabs"
-                  className="social-facebook"
-                  title="facebook"
-                />
+                <a href="#" className="social-facebook" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://twitter.com/QuanticaLabs"
-                  className="social-twitter"
-                  title="twitter"
-                />
+                <a href="#" className="social-twitter" title="twitter" />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://1.envato.market/quanticalabs-portfolio"
-                  className="social-linkedin"
-                  title="linkedin"
-                />
+                <a href="#" className="social-linkedin" title="linkedin" />
               </li>
               <li>
-                <a
-                  href="https://pinterest.com/quanticalabs/"
-                  className="social-pinterest"
-                  title="pinterest"
-                />
+                <a href="#" className="social-pinterest" title="pinterest" />
               </li>
             </ul>
           </div>

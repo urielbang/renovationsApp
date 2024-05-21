@@ -93,38 +93,6 @@ export default function NavBar() {
                           Design and Build
                         </Link>
                       </li>
-                      <li>
-                        <a
-                          href="service_tiling_painting.html"
-                          title="Design and Build"
-                        >
-                          Tiling and Painting
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="service_paver_walkways.html"
-                          title="Paver Walkways"
-                        >
-                          Paver Walkways
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="service_household_repairs.html"
-                          title="Household Repairs"
-                        >
-                          Household Repairs
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="service_solar_systems.html"
-                          title="Solar Systems"
-                        >
-                          Solar Systems
-                        </a>
-                      </li>
                     </ul>
                   </li>
                   <li>
@@ -132,7 +100,7 @@ export default function NavBar() {
 
                     <ul>
                       <li>
-                        <Link>new project</Link>
+                        <Link to="/newProject">new project</Link>
                       </li>
                     </ul>
                   </li>

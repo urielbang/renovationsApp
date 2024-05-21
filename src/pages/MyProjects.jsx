@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import img11 from "../assets/images/samples/270x180/image_01.jpg";
 import img from "../assets/images/samples/270x180/image_04.jpg";
@@ -10,7 +10,25 @@ import img5 from "../assets/images/samples/270x180/image_09.jpg";
 import img6 from "../assets/images/samples/270x180/image_06.jpg";
 import img7 from "../assets/images/samples/90x90/image_10.jpg";
 import img8 from "../assets/images/samples/90x90/image_07.jpg";
-export default function Projects() {
+import ProjectCard from "../components/ProjectCard";
+import { UserContext } from "../context/User";
+import axios from "axios";
+import { apiUrl } from "../config/apiConfig";
+
+export default function MyProjects() {
+  const { logedUser } = useContext(UserContext);
+
+  const [projects, setProjects] = useState([]);
+
+  const getAllProjects = async (id) => {
+    const res = await axios.get(`${apiUrl}/users/${id}`);
+    const data = await res.data;
+
+    setProjects(data.data.projects);
+  };
+  useEffect(() => {
+    getAllProjects(logedUser?.data._id);
+  }, [logedUser]);
   return (
     <div>
       <div className="theme-page padding-bottom-70">
@@ -18,7 +36,7 @@ export default function Projects() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>ALL PROJECTS</h1>
+                <h1>MY PROJECTS</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
@@ -39,154 +57,24 @@ export default function Projects() {
           <div className="row">
             <ul className="tabs-navigation small gray isotope-filters margin-top-70">
               <li>
-                <Link className="selected" to="/projects" title="All Projects">
+                <Link to="/projects" title="All Projects">
                   All Projects
                 </Link>
               </li>
               <li>
-                <Link title="All Projects" to="/myProjects">
+                <Link
+                  className="selected"
+                  title="All Projects"
+                  to="/myProjects"
+                >
                   My Projects
                 </Link>
               </li>
             </ul>
             <ul className="projects-list isotope">
-              <li className="renovation">
-                <a
-                  href="project_interior_renovation.html"
-                  title="Interior Renovation"
-                >
-                  <img src={img11} alt="" />
-                </a>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Interior Renovation</p>
-                      <Link
-                        className="more simple"
-                        to="/projectDesign"
-                        title="VIEW PROJECT"
-                      >
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="pavers">
-                <a
-                  href="project_garden_renovation.html"
-                  title="Garden Renovation"
-                >
-                  <img src={img} alt="" />
-                </a>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Garden Renovation</p>
-                      <a
-                        className="more simple"
-                        href="project_garden_renovation.html"
-                        title="VIEW PROJECT"
-                      >
-                        VIEW PROJECT
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="design-and-build painting">
-                <Link title="Painting">
-                  <img src={img1} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Painting</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="renovation design-and-build">
-                <Link href="project_design_build.html" title="Design and Build">
-                  <img src={img2} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Design and Build</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="design-and-build solar-systems">
-                <Link href="project_design_build.html" title="Design and Build">
-                  <img src={img3} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Design and Build</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="renovation">
-                <Link
-                  href="project_interior_renovation.html"
-                  title="Interior Renovation"
-                >
-                  <img src={img4} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Interior Renovation</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="renovation painting">
-                <Link title="Painting">
-                  <img src={img5} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Painting</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="solar-systems">
-                <Link href="project_solar_systems.html" title="Solar Systems">
-                  <img src={img6} alt="" />
-                </Link>
-                <div className="view align-center">
-                  <div className="vertical-align-table">
-                    <div className="vertical-align-cell">
-                      <p className="description">Solar Systems</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              {projects?.map((project) => {
+                return <ProjectCard key={project._id} project={project} />;
+              })}
             </ul>
           </div>
         </div>

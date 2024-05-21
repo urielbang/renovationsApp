@@ -1,153 +1,183 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import img from "../assets/images/samples/570x380/image_01.jpg";
+import img1 from "../assets/images/samples/570x380/image_08.jpg";
+import img2 from "../assets/images/samples/570x380/image_02.jpg";
+import img3 from "../assets/images/samples/570x380/image_10.jpg";
 import { Link } from "react-router-dom";
-import img from "../assets/images/samples/480x320/image_01.jpg";
-import img1 from "../assets/images/samples/480x320/image_07.jpg";
+import { UserContext } from "../context/User";
+import axios from "axios";
+import { apiUrl } from "../config/apiConfig";
 
-export default function ServiceDesign() {
+export default function NewProject() {
+  const { logedUser } = useContext(UserContext);
+  const [user, setUSer] = useState(null);
+  const [inputsData, setInputsData] = useState({});
+  const [toggle, setToglle] = useState(false);
+
+  const handleChange = (e) => {
+    setInputsData({ ...inputsData, user: user.data.id });
+
+    setInputsData({ ...inputsData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setInputsData({ ...inputsData, user: user.data.id });
+
+    const res = await axios.post(`${apiUrl}/projects`, inputsData);
+    console.log(res.data);
+    e.target[0].value = "";
+    e.target[1].value = "";
+    e.target[2].value = "";
+    e.target[3].value = "";
+    e.target[4].value = "";
+    setToglle(true);
+  };
+  useEffect(() => {
+    setUSer(logedUser);
+  }, [logedUser]);
   return (
-    <div className="site-container">
-      <div className="theme-page">
+    <div>
+      <div className="theme-page padding-bottom-66">
         <div className="row gray full-width page-header vertical-align-table">
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>DESIGN AND BUILD</h1>
-              </div>
-              <div className="page-header-right">
-                <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
-                  <ul className="bread-crumb">
-                    <li>
-                      <a title="Our Services" href="#">
-                        OUR SERVICES
-                      </a>
-                    </li>
-                    <li className="separator">/</li>
-                    <li>DESIGN AND BUILD</li>
-                  </ul>
-                </div>
+                <h1>Make a new Project</h1>
               </div>
             </div>
           </div>
         </div>
         <div className="clearfix">
           <div className="row margin-top-70">
-            <div className="column column-1-4">
-              <ul className="vertical-menu">
-                <li>
-                  <Link to="/serviceInterior" title="Interior Renovation">
-                    Interior Renovation
-                    <span className="template-arrow-menu" />
-                  </Link>
-                </li>
-                <li className="selected">
-                  <Link to="/serviceDesign" title="Design and Build">
-                    Design and Build
-                    <span className="template-arrow-menu" />
-                  </Link>
-                </li>
-              </ul>
-              <div className="call-to-action sl-small-wallet page-margin-top">
-                <h4>COST CALCULATOR</h4>
-                <p className="description t1">
-                  Use our form to estimate the initial cost of renovation or
-                  installation.
-                </p>
-                <Link className="more" to="/calculator">
-                  REQUEST A QUOTE
-                </Link>
-              </div>
-              <h6 className="box-header page-margin-top">Download Brochures</h6>
-              <ul className="buttons margin-top-30">
-                <li className="template-arrow-circle-down">
-                  <a href="#" title="Download Brochure">
-                    Download Brochure
-                  </a>
-                </li>
-                <li className="template-arrow-circle-down">
-                  <a href="#" title="Download Summary">
-                    Download Summary
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="column column-3-4">
-              <div className="row">
+            <div className="column column-1-2">
+              <a
+                href="images/samples/750x500/image_10.jpg"
+                className="prettyPhoto re-preload"
+                title="Design and Build"
+              >
+                <img src={img} alt="img" />
+              </a>
+              <div className="row margin-top-30">
                 <div className="column column-1-2">
                   <a
-                    href="#"
+                    href="images/samples/750x500/image_02.jpg"
                     className="prettyPhoto re-preload"
-                    title="Interior Renovation"
-                  >
-                    <img src={img} alt="img" />
-                  </a>
-                </div>
-                <div className="column column-1-2">
-                  <a
-                    href="#"
-                    className="prettyPhoto re-preload"
-                    title="Interior Renovation"
+                    title="Design and Build"
                   >
                     <img src={img1} alt="img" />
                   </a>
                 </div>
-              </div>
-              <div className="row page-margin-top">
-                <div className="column-1-1">
-                  <h3 className="box-header">SERVICE OVERVIEW</h3>
-                  <p className="description t1">
-                    When it comes to choosing a renovator to transfor the
-                    interior of your home, quality and trust should never be
-                    compromised. Working with a professional is an absolute
-                    must. With over 15 years experience and a real focus on
-                    customer satisfaction, you can rely on us for your next
-                    renovation, driveway sett on home repair. Our installations
-                    are carried out by fully trained staff to the highest
-                    professional standards. Always on time and on budget.
-                  </p>
-                  <p className="description t1">
-                    Renovate has proven results for setting exceptional
-                    standards in cost control, planning, scheduling and project
-                    safety. We have experience that gives us a competitive
-                    advantage over others in our field.
-                  </p>
-                  <h3 className="box-header page-margin-top">
-                    PLAN AND DETAILS
-                  </h3>
-                  <table className="margin-top-40">
-                    <tbody>
-                      <tr>
-                        <td>Prepare Home Remodeling Ideas</td>
-                        <td>$600 - $1150</td>
-                      </tr>
-                      <tr>
-                        <td>Specify Materials</td>
-                        <td>$250 - $350</td>
-                      </tr>
-                      <tr>
-                        <td>Paint Rooms</td>
-                        <td>$2.50 - $3.50 Per Square Feet</td>
-                      </tr>
-                      <tr>
-                        <td>Install Interior Door</td>
-                        <td>$150 - $350 Per Door</td>
-                      </tr>
-                      <tr>
-                        <td>Install Light Switch</td>
-                        <td>$100</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="column column-1-2">
+                  <a
+                    href="images/samples/750x500/image_08.jpg"
+                    className="prettyPhoto re-preload"
+                    title="Design and Build"
+                  >
+                    <img src={img2} alt="img" />
+                  </a>
                 </div>
               </div>
-              <div className="row page-margin-top padding-bottom-70">
-                <div className="column column-1-2">
-                  <h4 className="box-header">WHY CHOOSE US</h4>
-                  <p className="description t1 margin-top-34">
-                    With over 15 years experience and a real focus on customer
-                    satisfaction, you can rely on us for your next project. We
-                    provide a professional renovation and installation services
-                    with a real focus on customer satisfaction.
+              <div className="row margin-top-30">
+                <a
+                  href="images/samples/750x500/image_01.jpg"
+                  className="prettyPhoto re-preload"
+                  title="Design and Build"
+                >
+                  <img src={img3} alt="img" />
+                </a>
+              </div>
+            </div>
+            <div className="column column-1-2">
+              <h3 className="box-header">BRIEF DESCRIPTION</h3>
+              <p className="description t1">
+                The house includes four spacious bedrooms, each with built-in
+                closets and large windows. The master suite is a private oasis,
+                complete with a walk-in closet and an en-suite bathroom
+                featuring a luxurious soaking tub and a walk-in shower.
+              </p>
+              <h4 className="box-header page-margin-top">AT A GLANCE</h4>
+              <form onSubmit={handleSubmit}>
+                <table className="margin-top-40">
+                  <tbody>
+                    <tr>
+                      <td>Project Type</td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={handleChange}
+                          name="projectType"
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Client</td>
+                      <td>
+                        {" "}
+                        <input
+                          type="number"
+                          onChange={handleChange}
+                          name="client"
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Completion Date</td>
+                      <td>
+                        <input
+                          type="Date"
+                          onChange={handleChange}
+                          name="completionDate"
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Project Size</td>
+                      <td>
+                        <input
+                          type="number"
+                          onChange={handleChange}
+                          name="projectSize"
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Contract Value</td>
+                      <td>
+                        {" "}
+                        <input
+                          type="number"
+                          onChange={handleChange}
+                          name="contractValue"
+                        ></input>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className="parentButtonNewProject">
+                  <button className="more active">Submit</button>
+                  {toggle == true ? (
+                    <p className="description t1">
+                      We will contact you within one business day.
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </form>
+              <h4 className="box-header page-margin-top">SCOPE OF WORK</h4>
+              <div className="tabs small no-scroll align-left clearfix margin-top-40">
+                <ul className="tabs-navigation small gray clearfix">
+                  <li>
+                    <Link title="Client Info"> Client Info </Link>
+                  </li>
+                  <li>
+                    <Link title="Scope Of Work">Scope Of Work</Link>
+                  </li>
+                </ul>
+                <div id="client-info">
+                  <p>
+                    Morbi nulla tortor, dignissim est node cursus euismod est
+                    arcu. Nomad at vehicula novum justo magna.
                   </p>
                   <ul className="list margin-top-20">
                     <li className="template-bullet">
@@ -157,61 +187,30 @@ export default function ServiceDesign() {
                       Superior Quality and Craftsmanship
                     </li>
                     <li className="template-bullet">
-                      Quality and Value to the{" "}
+                      Quality and Value to the
                       <a href="projects.html">Projects We Deliver</a>
                     </li>
                     <li className="template-bullet">
-                      Highest Standards in{" "}
+                      Highest Standards in
                       <a href="cost_calculator.html">Cost Control</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="scope-of-work">
+                  <p>
+                    Morbi nulla tortor, dignissim est node cursus euismod est
+                    arcu. Nomad at vehicula novum justo magna.
+                  </p>
+                  <ul className="list margin-top-20">
+                    <li className="template-bullet">
+                      Financial Responsibility to Our Clients
+                    </li>
+                    <li className="template-bullet">
+                      Superior Quality and Craftsmanship
                     </li>
                     <li className="template-bullet">On Time and on Budget</li>
                     <li className="template-bullet">
                       Real Focus on Customer Satisfaction
-                    </li>
-                  </ul>
-                </div>
-                <div className="column column-1-2">
-                  <h4 className="box-header">POPULAR QUESTIONS</h4>
-                  <ul className="accordion margin-top-40 clearfix">
-                    <li>
-                      <div id="accordion-renovation-cost">
-                        <h5>Why does a renovation project cost so much?</h5>
-                      </div>
-                      <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
-                      </p>
-                    </li>
-                    <li>
-                      <div id="accordion-project-timeline">
-                        <h5>What is the timeline for the project?</h5>
-                      </div>
-                      <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
-                      </p>
-                    </li>
-                    <li>
-                      <div id="accordion-construction-budget">
-                        <h5>What is the total budget for construction?</h5>
-                      </div>
-                      <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
-                      </p>
-                    </li>
-                    <li>
-                      <div id="accordion-project-initiation">
-                        <h5>How is renovation project initiated?</h5>
-                      </div>
-                      <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
-                      </p>
                     </li>
                   </ul>
                 </div>
@@ -250,7 +249,7 @@ export default function ServiceDesign() {
                 <p>
                   E-mail:
                   <br />
-                  <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSambata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -371,6 +370,7 @@ export default function ServiceDesign() {
             <ul className="blog small margin-top-30">
               <li>
                 <a
+                  href="post.html"
                   title="What a Difference a Few Months Make"
                   className="post-image"
                 >
