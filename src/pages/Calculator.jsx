@@ -16,6 +16,7 @@ export default function Calculator() {
 
   const [messageReceive, setmessageReceive] = useState(false);
   const [messageReceiveFe, setmessageReceiveFe] = useState(false);
+  const [messageReceiveWalkway, setmessageReceivWalkway] = useState(false);
   const [interiorRenovationValues, setInteriorRenovationValues] = useState({
     squareFeet: 300,
     walls: 0,
@@ -72,11 +73,26 @@ export default function Calculator() {
     panel: fenceValues.panel,
     phone: "",
   });
+  const [priceQuoteWalkway, setPriceQuoteWalkway] = useState({
+    areaLength: paverWalkwayValues.areaLength,
+    areaWidth: paverWalkwayValues.areaWidth,
+    blockPaving: paverWalkwayValues.blockPaving,
+    email: "",
+    message: "",
+    name: "",
+    phone: "",
+    stoneWalling: paverWalkwayValues.stoneWalling,
+    surface: paverWalkwayValues.surface,
+  });
 
   const handlePaverWalkwayChange = (e) => {
     const { name, value } = e.target;
 
     setPaverWalkwayValues({ ...paverWalkwayValues, [name]: value });
+    setPriceQuoteWalkway({
+      ...priceQuoteWalkway,
+      [name]: value,
+    });
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -143,6 +159,38 @@ export default function Calculator() {
       phone: "",
     });
     setmessageReceiveFe(true);
+  };
+  const handleChangeWalkway = (e) => {
+    const { name, value } = e.target;
+    const total = pwTotalCostRef.current.value?.replace("$", "");
+
+    setPriceQuoteWalkway({
+      ...priceQuoteWalkway,
+      [name]: value,
+      totalPrice: total,
+    });
+  };
+  const handleSubmitWalkWay = async (e) => {
+    e.preventDefault();
+
+    const priceQuote = await axios.post(
+      `${apiUrl}/priceQuote`,
+      priceQuoteWalkway
+    );
+    console.log(priceQuote);
+    setPriceQuoteDatafe({
+      areaLength: "",
+      areaWidth: "",
+      blockPaving: "",
+      stoneWalling: "",
+      surface: "",
+      message: "",
+      name: "",
+      panel: "",
+      phone: "",
+    });
+
+    setmessageReceivWalkway(true);
   };
 
   return (
@@ -599,9 +647,8 @@ export default function Calculator() {
             <div id="paver-walkway" className="margin-top-30">
               <h1>paver walkway Calculator</h1>
               <form
+                onSubmit={handleSubmitWalkWay}
                 className="contact-form cost-calculator-container"
-                method="post"
-                action="contact_form/contact_form.php"
               >
                 <div className="cost-calculator-box clearfix">
                   <label>Approximate Area Width in Meters:</label>
@@ -739,21 +786,21 @@ export default function Calculator() {
                         className="text-input"
                         name="name"
                         type="text"
-                        defaultValue="Your Name *"
+                        onChange={handleChangeWalkway}
                         placeholder="Your Name *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
-                        defaultValue="Your Email *"
+                        onChange={handleChangeWalkway}
                         placeholder="Your Email *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
-                        defaultValue="Your Phone"
+                        onChange={handleChangeWalkway}
                         placeholder="Your Phone"
                       />
                     </fieldset>
@@ -761,15 +808,19 @@ export default function Calculator() {
                       <textarea
                         name="message"
                         placeholder="Message *"
-                        defaultValue={"Message *"}
+                        onChange={handleChangeWalkway}
                       />
                     </fieldset>
                   </div>
                   <div className="row margin-top-30">
                     <div className="column column-1-2">
-                      <p className="description t1">
-                        We will contact you within one business day.
-                      </p>
+                      {messageReceiveWalkway ? (
+                        <p className="description t1">
+                          We will contact you within one business day.
+                        </p>
+                      ) : (
+                        ""
+                      )}
                     </div>
                     <div className="column column-1-2 align-right">
                       <input
