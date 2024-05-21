@@ -73,7 +73,14 @@ export default function MyProjects() {
             </ul>
             <ul className="projects-list isotope">
               {projects?.map((project) => {
-                return <ProjectCard key={project._id} project={project} />;
+                return (
+                  <ProjectCard
+                    key={project._id}
+                    project={project}
+                    setProjects={setProjects}
+                    projects={projects}
+                  />
+                );
               })}
             </ul>
           </div>
