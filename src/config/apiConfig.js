@@ -1,3 +1,3 @@
-const apiUrl = "http://localhost:5000/api/v1";
+const apiUrl = "https://serverrenovate.onrender.com/api/v1";
 
 export { apiUrl };
