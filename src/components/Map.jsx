@@ -33,10 +33,10 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={location}>
-        <Popup>You are here.</Popup>
+        <Popup>אתה נמצא כאן</Popup>
       </Marker>
     </MapContainer>
   ) : (
-    <p>Loading map...</p>
+    <p>המפה נטענת...</p>
   );
 }

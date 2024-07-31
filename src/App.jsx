@@ -19,7 +19,7 @@ import NewProject from "./components/NewProject";
 import MyProjects from "./pages/MyProjects";
 
 function App() {
-  const { logedUser, token } = useContext(UserContext);
+  const { logedUser } = useContext(UserContext);
   const [userLogIn, setUserLogin] = useState(null);
 
   useEffect(() => {

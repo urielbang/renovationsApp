@@ -42,7 +42,7 @@ export default function NewProject() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>Make a new Project</h1>
+                <h1>צור פרויקט חדש</h1>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function NewProject() {
               <a
                 href="images/samples/750x500/image_10.jpg"
                 className="prettyPhoto re-preload"
-                title="Design and Build"
+                title="תכנון ובנייה"
               >
                 <img src={img} alt="img" />
               </a>
@@ -62,7 +62,7 @@ export default function NewProject() {
                   <a
                     href="images/samples/750x500/image_02.jpg"
                     className="prettyPhoto re-preload"
-                    title="Design and Build"
+                    title="תכנון ובנייה"
                   >
                     <img src={img1} alt="img" />
                   </a>
@@ -71,7 +71,7 @@ export default function NewProject() {
                   <a
                     href="images/samples/750x500/image_08.jpg"
                     className="prettyPhoto re-preload"
-                    title="Design and Build"
+                    title="תכנון ובנייה"
                   >
                     <img src={img2} alt="img" />
                   </a>
@@ -81,26 +81,25 @@ export default function NewProject() {
                 <a
                   href="images/samples/750x500/image_01.jpg"
                   className="prettyPhoto re-preload"
-                  title="Design and Build"
+                  title="תכנון ובנייה"
                 >
                   <img src={img3} alt="img" />
                 </a>
               </div>
             </div>
             <div className="column column-1-2">
-              <h3 className="box-header">BRIEF DESCRIPTION</h3>
+              <h3 className="box-header">תיאור קצר</h3>
               <p className="description t1">
-                The house includes four spacious bedrooms, each with built-in
-                closets and large windows. The master suite is a private oasis,
-                complete with a walk-in closet and an en-suite bathroom
-                featuring a luxurious soaking tub and a walk-in shower.
+                הבית כולל ארבעה חדרי שינה מרווחים, כל אחד עם ארונות מובנים
+                וחלונות גדולים. הסוויטה הראשית היא מקום מפלט פרטי, עם ארון הליכה
+                וחדר אמבטיה צמוד הכולל אמבטיה מפנקת ומקלחת הליכה.
               </p>
-              <h4 className="box-header page-margin-top">AT A GLANCE</h4>
+              <h4 className="box-header page-margin-top">במבט מהיר</h4>
               <form onSubmit={handleSubmit}>
                 <table className="margin-top-40">
                   <tbody>
                     <tr>
-                      <td>Project Type</td>
+                      <td>סוג הפרויקט</td>
                       <td>
                         <input
                           type="text"
@@ -110,7 +109,7 @@ export default function NewProject() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Client</td>
+                      <td>לקוח מספר </td>
                       <td>
                         {" "}
                         <input
@@ -121,7 +120,7 @@ export default function NewProject() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Completion Date</td>
+                      <td>תאריך סיום</td>
                       <td>
                         <input
                           type="Date"
@@ -131,7 +130,7 @@ export default function NewProject() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Project Size</td>
+                      <td>גודל הפרויקט</td>
                       <td>
                         <input
                           type="number"
@@ -141,7 +140,7 @@ export default function NewProject() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Contract Value</td>
+                      <td>ערך החוזה</td>
                       <td>
                         {" "}
                         <input
@@ -154,63 +153,59 @@ export default function NewProject() {
                   </tbody>
                 </table>
                 <div className="parentButtonNewProject">
-                  <button className="more active">Submit</button>
+                  <button className="more active">שלח</button>
                   {toggle == true ? (
                     <p className="description t1">
-                      We will contact you within one business day.
+                      ניצור איתך קשר תוך יום עסקים אחד.
                     </p>
                   ) : (
                     ""
                   )}
                 </div>
               </form>
-              <h4 className="box-header page-margin-top">SCOPE OF WORK</h4>
+              <h4 className="box-header page-margin-top">היקף העבודה</h4>
               <div className="tabs small no-scroll align-left clearfix margin-top-40">
                 <ul className="tabs-navigation small gray clearfix">
                   <li>
-                    <Link title="Client Info"> Client Info </Link>
+                    <Link title="מידע על הלקוח">מידע על הלקוח</Link>
                   </li>
                   <li>
-                    <Link title="Scope Of Work">Scope Of Work</Link>
+                    <Link title="היקף העבודה">היקף העבודה</Link>
                   </li>
                 </ul>
                 <div id="client-info">
                   <p>
-                    Morbi nulla tortor, dignissim est node cursus euismod est
-                    arcu. Nomad at vehicula novum justo magna.
+                    מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט ארקו.
+                    נומד אט ויהיקולה נובום יוסטו מגנה.
                   </p>
                   <ul className="list margin-top-20">
                     <li className="template-bullet">
-                      Financial Responsibility to Our Clients
+                      אחריות פיננסית ללקוחות שלנו
+                    </li>
+                    <li className="template-bullet">איכות ומקצועיות מעולים</li>
+                    <li className="template-bullet">
+                      איכות וערך ל
+                      <a href="projects.html">פרויקטים שאנחנו מספקים</a>
                     </li>
                     <li className="template-bullet">
-                      Superior Quality and Craftsmanship
-                    </li>
-                    <li className="template-bullet">
-                      Quality and Value to the
-                      <a href="projects.html">Projects We Deliver</a>
-                    </li>
-                    <li className="template-bullet">
-                      Highest Standards in
-                      <a href="cost_calculator.html">Cost Control</a>
+                      הסטנדרטים הגבוהים ביותר ב
+                      <a href="cost_calculator.html">בקרת עלויות</a>
                     </li>
                   </ul>
                 </div>
                 <div id="scope-of-work">
                   <p>
-                    Morbi nulla tortor, dignissim est node cursus euismod est
-                    arcu. Nomad at vehicula novum justo magna.
+                    מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט ארקו.
+                    נומד אט ויהיקולה נובום יוסטו מגנה.
                   </p>
                   <ul className="list margin-top-20">
                     <li className="template-bullet">
-                      Financial Responsibility to Our Clients
+                      אחריות פיננסית ללקוחות שלנו
                     </li>
+                    <li className="template-bullet">איכות ומקצועיות מעולים</li>
+                    <li className="template-bullet">בזמן ובתקציב</li>
                     <li className="template-bullet">
-                      Superior Quality and Craftsmanship
-                    </li>
-                    <li className="template-bullet">On Time and on Budget</li>
-                    <li className="template-bullet">
-                      Real Focus on Customer Satisfaction
+                      מיקוד אמיתי בשביעות רצון הלקוחות
                     </li>
                   </ul>
                 </div>
@@ -225,9 +220,9 @@ export default function NewProject() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
-                  +149 75 23 222 35
+                  +972 75 23 222 35
                 </p>
               </li>
             </ul>
@@ -236,9 +231,9 @@ export default function NewProject() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב הרצל 272
                   <br />
-                  Winter Park, FL 32789
+                  ראשון לציון, IL 32789
                 </p>
               </li>
             </ul>
@@ -247,7 +242,7 @@ export default function NewProject() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
                   <a href="mailto:adiSambata@gmail.com">adiSambata@gmail.com</a>
                 </p>
@@ -259,11 +254,11 @@ export default function NewProject() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסד על ידי קווין סמית בשנת 2000. Renovate יצרה את עצמה כאחת
+              מהספקים הגדולים והיוקרתיים ביותר של שירותי שיפוץ פנים ממוקדי
+              בנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -271,7 +266,7 @@ export default function NewProject() {
                   target="_blank"
                   href="https://facebook.com/QuanticaLabs"
                   className="social-facebook"
-                  title="facebook"
+                  title="פייסבוק"
                 />
               </li>
               <li>
@@ -279,7 +274,7 @@ export default function NewProject() {
                   target="_blank"
                   href="https://twitter.com/QuanticaLabs"
                   className="social-twitter"
-                  title="twitter"
+                  title="טוויטר"
                 />
               </li>
               <li>
@@ -287,91 +282,91 @@ export default function NewProject() {
                   target="_blank"
                   href="https://1.envato.market/quanticalabs-portfolio"
                   className="social-linkedin"
-                  title="linkedin"
+                  title="לינקדאין"
                 />
               </li>
               <li>
                 <a
                   href="https://pinterest.com/quanticalabs/"
                   className="social-pinterest"
-                  title="pinterest"
+                  title="פינטרסט"
                 />
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">תכנון ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי ריצוף</li>
+              <li className="template-bullet">תיקונים ביתיים</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
-                  BUILD
+                <a href="category.html" title="בנייה">
+                  בנייה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
-                  DESIGN
+                <a href="category.html" title="עיצוב">
+                  עיצוב
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
-                  FLOORING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
-                  PAINTING
+                <a href="category.html" title="צביעה">
+                  צביעה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
-                  PAVERS
+                <a href="category.html" title="שבילי ריצוף">
+                  שבילי ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
-                  PLUMBING
+                <a href="category.html" title="אינסטלציה">
+                  אינסטלציה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
-                  RENOVATION
+                <a href="category.html" title="שיפוץ">
+                  שיפוץ
                 </a>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
-                  REPAIRS
+                <a href="category.html" title="תיקונים">
+                  תיקונים
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                <a href="category.html" title="מערכות סולאריות">
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
-                  TILING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <a
                   href="post.html"
-                  title="What a Difference a Few Months Make"
+                  title="איזה שינוי יכולים לעשות כמה חודשים"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_10.jpg" alt="" />
@@ -379,32 +374,29 @@ export default function NewProject() {
                 <div className="post-content">
                   <a
                     href="post.html"
-                    title="What a Difference a Few Months Make"
+                    title="איזה שינוי יכולים לעשות כמה חודשים"
                   >
-                    What a Difference a Few Months Make
+                    איזה שינוי יכולים לעשות כמה חודשים
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
                 <a
                   href="post.html"
-                  title="Kitchen and Living Room Renovation"
+                  title="שיפוץ מטבח וסלון"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_07.jpg" alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
-                    Kitchen and Living Room Renovation
+                  <a href="post.html" title="שיפוץ מטבח וסלון">
+                    שיפוץ מטבח וסלון
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>

@@ -10,6 +10,7 @@ import img5 from "../assets/images/samples/270x180/image_09.jpg";
 import img6 from "../assets/images/samples/270x180/image_06.jpg";
 import img7 from "../assets/images/samples/90x90/image_10.jpg";
 import img8 from "../assets/images/samples/90x90/image_07.jpg";
+
 export default function Projects() {
   return (
     <div>
@@ -18,17 +19,17 @@ export default function Projects() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>ALL PROJECTS</h1>
+                <h1>כל הפרויקטים</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
+                  <label>אתה נמצא כאן:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <Link title="Home">MY PROJECTS</Link>
+                      <Link title="Home">הפרויקטים שלי</Link>
                     </li>
                     <li className="separator">/</li>
-                    <li>MY PROJECTS</li>
+                    <li>הפרויקטים שלי</li>
                   </ul>
                 </div>
               </div>
@@ -40,148 +41,163 @@ export default function Projects() {
             <ul className="tabs-navigation small gray isotope-filters margin-top-70">
               <li>
                 <Link className="selected" to="/projects" title="All Projects">
-                  All Projects
+                  כל הפרויקטים
                 </Link>
               </li>
               <li>
-                <Link title="All Projects" to="/myProjects">
-                  My Projects
+                <Link title="My Projects" to="/myProjects">
+                  הפרויקטים שלי
                 </Link>
               </li>
             </ul>
             <ul className="projects-list isotope">
               <li className="renovation">
-                <a
-                  href="project_interior_renovation.html"
-                  title="Interior Renovation"
-                >
+                <Link to="/projectDesign" title="שיפוץ פנים">
                   <img src={img11} alt="" />
-                </a>
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Interior Renovation</p>
+                      <p className="description">שיפוץ פנים</p>
                       <Link
                         className="more simple"
                         to="/projectDesign"
-                        title="VIEW PROJECT"
+                        title="צפה בפרויקט"
                       >
-                        VIEW PROJECT
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="pavers">
-                <a
-                  href="project_garden_renovation.html"
-                  title="Garden Renovation"
-                >
+                <Link to="/projectGarden" title="שיפוץ גינה">
                   <img src={img} alt="" />
-                </a>
+                </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Garden Renovation</p>
-                      <a
+                      <p className="description">שיפוץ גינה</p>
+                      <Link
                         className="more simple"
-                        href="project_garden_renovation.html"
-                        title="VIEW PROJECT"
+                        to="/projectGarden"
+                        title="צפה בפרויקט"
                       >
-                        VIEW PROJECT
-                      </a>
+                        צפה בפרויקט
+                      </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="design-and-build painting">
-                <Link title="Painting">
+                <Link to="/projectPainting" title="צביעה">
                   <img src={img1} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Painting</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">צביעה</p>
+                      <Link
+                        className="more simple"
+                        to="/projectPainting"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation design-and-build">
-                <Link href="project_design_build.html" title="Design and Build">
+                <Link to="/projectDesignBuild" title="עיצוב ובנייה">
                   <img src={img2} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Design and Build</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">עיצוב ובנייה</p>
+                      <Link
+                        className="more simple"
+                        to="/projectDesignBuild"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="design-and-build solar-systems">
-                <Link href="project_design_build.html" title="Design and Build">
+                <Link to="/projectSolarSystems" title="מערכות סולאריות">
                   <img src={img3} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Design and Build</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">מערכות סולאריות</p>
+                      <Link
+                        className="more simple"
+                        to="/projectSolarSystems"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation">
-                <Link
-                  href="project_interior_renovation.html"
-                  title="Interior Renovation"
-                >
+                <Link to="/projectInteriorRenovation" title="שיפוץ פנים">
                   <img src={img4} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Interior Renovation</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">שיפוץ פנים</p>
+                      <Link
+                        className="more simple"
+                        to="/projectInteriorRenovation"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="renovation painting">
-                <Link title="Painting">
+                <Link to="/projectPainting2" title="צביעה">
                   <img src={img5} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Painting</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">צביעה</p>
+                      <Link
+                        className="more simple"
+                        to="/projectPainting2"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
                 </div>
               </li>
               <li className="solar-systems">
-                <Link href="project_solar_systems.html" title="Solar Systems">
+                <Link to="/projectSolarSystems2" title="מערכות סולאריות">
                   <img src={img6} alt="" />
                 </Link>
                 <div className="view align-center">
                   <div className="vertical-align-table">
                     <div className="vertical-align-cell">
-                      <p className="description">Solar Systems</p>
-                      <Link className="more simple" title="VIEW PROJECT">
-                        VIEW PROJECT
+                      <p className="description">מערכות סולאריות</p>
+                      <Link
+                        className="more simple"
+                        to="/projectSolarSystems2"
+                        title="צפה בפרויקט"
+                      >
+                        צפה בפרויקט
                       </Link>
                     </div>
                   </div>
@@ -197,7 +213,7 @@ export default function Projects() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -208,9 +224,9 @@ export default function Projects() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  ווינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -219,9 +235,9 @@ export default function Projects() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
-                  <a href="mailto:adiSmbata@gmail.com">adiSmabta@gmail.com</a>
+                  <a href="mailto:adiSmbata@gmail.com">adiSmbata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -231,11 +247,10 @@ export default function Projects() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסדה על ידי קווין סמית בשנת 2000. רנובייט הוקמה כאחת מהספקיות
+              הגדולות והמכובדות של שירותי שיפוץ פנים המתמקדים בבנייה ובבנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -253,73 +268,73 @@ export default function Projects() {
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">עיצוב ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">מעברי ריצוף</li>
+              <li className="template-bullet">תיקונים לבית</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
                 <a href="#" title="BUILD">
-                  BUILD
+                  בנייה
                 </a>
               </li>
               <li>
                 <a href="#" title="DESIGN">
-                  DESIGN
+                  עיצוב
                 </a>
               </li>
               <li>
                 <a href="#" title="FLOORING">
-                  FLOORING
+                  ריצוף
                 </a>
               </li>
               <li>
                 <a href="#" title="PAINTING">
-                  PAINTING
+                  צביעה
                 </a>
               </li>
               <li>
                 <a href="#" title="PAVERS">
-                  PAVERS
+                  מרצפות
                 </a>
               </li>
               <li>
                 <a href="#" title="PLUMBING">
-                  PLUMBING
+                  אינסטלציה
                 </a>
               </li>
               <li>
                 <a href="#" title="RENOVATION">
-                  RENOVATION
+                  שיפוץ
                 </a>
               </li>
               <li>
                 <a href="#" title="REPAIRS">
-                  REPAIRS
+                  תיקונים
                 </a>
               </li>
               <li>
                 <a href="#" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
                 <a href="#" title="TILING">
-                  TILING
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <Link className="post-image">
@@ -327,10 +342,10 @@ export default function Projects() {
                 </Link>
                 <div className="post-content">
                   <Link title="What a Difference a Few Months Make">
-                    What a Difference a Few Months Make
+                    כמה הבדל כמה חודשים עושים
                   </Link>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 באפריל 2015</li>
                   </ul>
                 </div>
               </li>
@@ -343,10 +358,10 @@ export default function Projects() {
                 </Link>
                 <div className="post-content">
                   <Link title="Kitchen and Living Room Renovation">
-                    Kitchen and Living Room Renovation
+                    שיפוץ מטבח וחדר מגורים
                   </Link>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 באפריל 2015</li>
                   </ul>
                 </div>
               </li>

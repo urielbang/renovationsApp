@@ -11,19 +11,19 @@ export default function ServiceDesign() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>DESIGN AND BUILD</h1>
+                <h1>תכנון ובנייה</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
+                  <label>אתה נמצא כאן:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <a title="Our Services" href="#">
-                        OUR SERVICES
+                      <a title="השירותים שלנו" href="#">
+                        השירותים שלנו
                       </a>
                     </li>
                     <li className="separator">/</li>
-                    <li>DESIGN AND BUILD</li>
+                    <li>תכנון ובנייה</li>
                   </ul>
                 </div>
               </div>
@@ -35,38 +35,38 @@ export default function ServiceDesign() {
             <div className="column column-1-4">
               <ul className="vertical-menu">
                 <li>
-                  <Link to="/serviceInterior" title="Interior Renovation">
-                    Interior Renovation
+                  <Link to="/serviceInterior" title="שיפוץ פנים">
+                    שיפוץ פנים
                     <span className="template-arrow-menu" />
                   </Link>
                 </li>
                 <li className="selected">
-                  <Link to="/serviceDesign" title="Design and Build">
-                    Design and Build
+                  <Link to="/serviceDesign" title="תכנון ובנייה">
+                    תכנון ובנייה
                     <span className="template-arrow-menu" />
                   </Link>
                 </li>
               </ul>
               <div className="call-to-action sl-small-wallet page-margin-top">
-                <h4>COST CALCULATOR</h4>
+                <h4>מחשבון עלויות</h4>
                 <p className="description t1">
-                  Use our form to estimate the initial cost of renovation or
-                  installation.
+                  השתמש בטופס שלנו כדי להעריך את העלות הראשונית של שיפוץ או
+                  התקנה.
                 </p>
                 <Link className="more" to="/calculator">
-                  REQUEST A QUOTE
+                  בקש הצעת מחיר
                 </Link>
               </div>
-              <h6 className="box-header page-margin-top">Download Brochures</h6>
+              <h6 className="box-header page-margin-top">הורדת חוברות</h6>
               <ul className="buttons margin-top-30">
                 <li className="template-arrow-circle-down">
-                  <a href="#" title="Download Brochure">
-                    Download Brochure
+                  <a href="#" title="הורדת חוברת">
+                    הורדת חוברת
                   </a>
                 </li>
                 <li className="template-arrow-circle-down">
-                  <a href="#" title="Download Summary">
-                    Download Summary
+                  <a href="#" title="הורדת סיכום">
+                    הורדת סיכום
                   </a>
                 </li>
               </ul>
@@ -77,7 +77,7 @@ export default function ServiceDesign() {
                   <a
                     href="#"
                     className="prettyPhoto re-preload"
-                    title="Interior Renovation"
+                    title="שיפוץ פנים"
                   >
                     <img src={img} alt="img" />
                   </a>
@@ -86,7 +86,7 @@ export default function ServiceDesign() {
                   <a
                     href="#"
                     className="prettyPhoto re-preload"
-                    title="Interior Renovation"
+                    title="שיפוץ פנים"
                   >
                     <img src={img1} alt="img" />
                   </a>
@@ -94,47 +94,42 @@ export default function ServiceDesign() {
               </div>
               <div className="row page-margin-top">
                 <div className="column-1-1">
-                  <h3 className="box-header">SERVICE OVERVIEW</h3>
+                  <h3 className="box-header">סקירת שירות</h3>
                   <p className="description t1">
-                    When it comes to choosing a renovator to transfor the
-                    interior of your home, quality and trust should never be
-                    compromised. Working with a professional is an absolute
-                    must. With over 15 years experience and a real focus on
-                    customer satisfaction, you can rely on us for your next
-                    renovation, driveway sett on home repair. Our installations
-                    are carried out by fully trained staff to the highest
-                    professional standards. Always on time and on budget.
+                    כאשר מדובר בבחירת משפץ לשיפור פנים הבית שלך, האיכות והאמון
+                    לעולם לא צריכים להתפשר. עבודה עם מקצוען היא חובה מוחלטת. עם
+                    למעלה מ-15 שנות ניסיון ומיקוד אמיתי על שביעות רצון הלקוחות,
+                    תוכל לסמוך עלינו בפרויקט השיפוץ הבא שלך, התקנת מדרכה או
+                    תיקון ביתי. ההתקנות שלנו מבוצעות על ידי צוותים מאומנים
+                    במקצועיות הגבוהה ביותר. תמיד בזמן ובתקציב.
                   </p>
                   <p className="description t1">
-                    Renovate has proven results for setting exceptional
-                    standards in cost control, planning, scheduling and project
-                    safety. We have experience that gives us a competitive
-                    advantage over others in our field.
+                    Renovate השיגה תוצאות מוכחות בהצבת סטנדרטים יוצאי דופן בבקרת
+                    עלויות, תכנון, תזמון ובטיחות פרויקט. יש לנו ניסיון שנותן לנו
+                    יתרון תחרותי על פני אחרים בתחום שלנו.
                   </p>
-                  <h3 className="box-header page-margin-top">
-                    PLAN AND DETAILS
-                  </h3>
+                  <h3 className="box-header page-margin-top">תוכנית ופרטים</h3>
                   <table className="margin-top-40">
                     <tbody>
                       <tr>
-                        <td>Prepare Home Remodeling Ideas</td>
-                        <td>$600 - $1150</td>
+                        <td>הכנת רעיונות לשיפוץ הבית</td>
+                        <td>600$ - 1150$</td>
                       </tr>
                       <tr>
-                        <td>Specify Materials</td>
-                        <td>$250 - $350</td>
+                        <td>ציון חומרים</td>
+                        <td>250$ - 350$</td>
                       </tr>
                       <tr>
-                        <td>Paint Rooms</td>
-                        <td>$2.50 - $3.50 Per Square Feet</td>
+                        <td>צביעת חדרים</td>
+                        <td>2.50$ - 3.50$ למ"ר</td>
                       </tr>
                       <tr>
-                        <td>Install Interior Door</td>
-                        <td>$150 - $350 Per Door</td>
+                        <td>התקנת דלת פנים</td>
+                        <td>150$ - 350$ לדלת</td>
                       </tr>
                       <tr>
-                        <td>Install Light Switch</td>
-                        <td>$100</td>
+                        <td>התקנת מפסק תאורה</td>
+                        <td>100$</td>
                       </tr>
                     </tbody>
                   </table>
@@ -142,75 +137,72 @@ export default function ServiceDesign() {
               </div>
               <div className="row page-margin-top padding-bottom-70">
                 <div className="column column-1-2">
-                  <h4 className="box-header">WHY CHOOSE US</h4>
+                  <h4 className="box-header">למה לבחור בנו</h4>
                   <p className="description t1 margin-top-34">
-                    With over 15 years experience and a real focus on customer
-                    satisfaction, you can rely on us for your next project. We
-                    provide a professional renovation and installation services
-                    with a real focus on customer satisfaction.
+                    עם למעלה מ-15 שנות ניסיון ומיקוד אמיתי על שביעות רצון
+                    הלקוחות, תוכל לסמוך עלינו בפרויקט הבא שלך. אנו מספקים שירותי
+                    שיפוץ והתקנה מקצועיים עם מיקוד אמיתי על שביעות רצון הלקוחות.
                   </p>
                   <ul className="list margin-top-20">
                     <li className="template-bullet">
-                      Financial Responsibility to Our Clients
+                      אחריות פיננסית ללקוחות שלנו
+                    </li>
+                    <li className="template-bullet">איכות ומקצועיות מעולים</li>
+                    <li className="template-bullet">
+                      איכות וערך ל
+                      <a href="projects.html">פרויקטים שאנחנו מספקים</a>
                     </li>
                     <li className="template-bullet">
-                      Superior Quality and Craftsmanship
+                      הסטנדרטים הגבוהים ביותר ב
+                      <a href="cost_calculator.html">בקרת עלויות</a>
                     </li>
+                    <li className="template-bullet">בזמן ובתקציב</li>
                     <li className="template-bullet">
-                      Quality and Value to the{" "}
-                      <a href="projects.html">Projects We Deliver</a>
-                    </li>
-                    <li className="template-bullet">
-                      Highest Standards in{" "}
-                      <a href="cost_calculator.html">Cost Control</a>
-                    </li>
-                    <li className="template-bullet">On Time and on Budget</li>
-                    <li className="template-bullet">
-                      Real Focus on Customer Satisfaction
+                      מיקוד אמיתי בשביעות רצון הלקוחות
                     </li>
                   </ul>
                 </div>
                 <div className="column column-1-2">
-                  <h4 className="box-header">POPULAR QUESTIONS</h4>
+                  <h4 className="box-header">שאלות נפוצות</h4>
                   <ul className="accordion margin-top-40 clearfix">
                     <li>
                       <div id="accordion-renovation-cost">
-                        <h5>Why does a renovation project cost so much?</h5>
+                        <h5>למה פרויקט שיפוץ עולה כל כך הרבה?</h5>
                       </div>
                       <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
+                        מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט
+                        ארקו. נומד טרבינה אוטר ויהיקולה יוסטו מגנה פאטוס באקומסן
+                        טמפס, טרמינל אולמקורפר א קואם סוסיפיט.
                       </p>
                     </li>
                     <li>
                       <div id="accordion-project-timeline">
-                        <h5>What is the timeline for the project?</h5>
+                        <h5>מהו ציר הזמן של הפרויקט?</h5>
                       </div>
                       <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
+                        מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט
+                        ארקו. נומד טרבינה אוטר ויהיקולה יוסטו מגנה פאטוס באקומסן
+                        טמפס, טרמינל אולמקורפר א קואם סוסיפיט.
                       </p>
                     </li>
                     <li>
                       <div id="accordion-construction-budget">
-                        <h5>What is the total budget for construction?</h5>
+                        <h5>מהו התקציב הכולל לבנייה?</h5>
                       </div>
                       <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
+                        מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט
+                        ארקו. נומד טרבינה אוטר ויהיקולה יוסטו מגנה פאטוס באקומסן
+                        טמפס, טרמינל אולמקורפר א קואם סוסיפיט.
                       </p>
                     </li>
                     <li>
                       <div id="accordion-project-initiation">
-                        <h5>How is renovation project initiated?</h5>
+                        <h5>איך מתחילים פרויקט שיפוץ?</h5>
                       </div>
                       <p className="description t1">
-                        Morbi nulla tortor, degnissim at node cursus euismod est
-                        arcu. Nomad turbina uter vehicula justo magna paetos in
-                        accumsan tempus, terminal ullamcorper a quam suscipit.
+                        מורבי נולה טורטור, דיגניסים אסט נודה קורסוס איזמוד אסט
+                        ארקו. נומד טרבינה אוטר ויהיקולה יוסטו מגנה פאטוס באקומסן
+                        טמפס, טרמינל אולמקורפר א קואם סוסיפיט.
                       </p>
                     </li>
                   </ul>
@@ -226,7 +218,7 @@ export default function ServiceDesign() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -237,9 +229,9 @@ export default function ServiceDesign() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  ווינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -248,7 +240,7 @@ export default function ServiceDesign() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
                   <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a>
                 </p>
@@ -260,11 +252,11 @@ export default function ServiceDesign() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסד על ידי קווין סמית בשנת 2000. Renovate יצרה את עצמה כאחת
+              מהספקים הגדולים והיוקרתיים ביותר של שירותי שיפוץ פנים ממוקדי
+              בנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -272,7 +264,7 @@ export default function ServiceDesign() {
                   target="_blank"
                   href="https://facebook.com/QuanticaLabs"
                   className="social-facebook"
-                  title="facebook"
+                  title="פייסבוק"
                 />
               </li>
               <li>
@@ -280,7 +272,7 @@ export default function ServiceDesign() {
                   target="_blank"
                   href="https://twitter.com/QuanticaLabs"
                   className="social-twitter"
-                  title="twitter"
+                  title="טוויטר"
                 />
               </li>
               <li>
@@ -288,90 +280,90 @@ export default function ServiceDesign() {
                   target="_blank"
                   href="https://1.envato.market/quanticalabs-portfolio"
                   className="social-linkedin"
-                  title="linkedin"
+                  title="לינקדאין"
                 />
               </li>
               <li>
                 <a
                   href="https://pinterest.com/quanticalabs/"
                   className="social-pinterest"
-                  title="pinterest"
+                  title="פינטרסט"
                 />
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">תכנון ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי ריצוף</li>
+              <li className="template-bullet">תיקונים ביתיים</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
-                  BUILD
+                <a href="category.html" title="בנייה">
+                  בנייה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
-                  DESIGN
+                <a href="category.html" title="עיצוב">
+                  עיצוב
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
-                  FLOORING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
-                  PAINTING
+                <a href="category.html" title="צביעה">
+                  צביעה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
-                  PAVERS
+                <a href="category.html" title="שבילי ריצוף">
+                  שבילי ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
-                  PLUMBING
+                <a href="category.html" title="אינסטלציה">
+                  אינסטלציה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
-                  RENOVATION
+                <a href="category.html" title="שיפוץ">
+                  שיפוץ
                 </a>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
-                  REPAIRS
+                <a href="category.html" title="תיקונים">
+                  תיקונים
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                <a href="category.html" title="מערכות סולאריות">
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
-                  TILING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <a
-                  title="What a Difference a Few Months Make"
+                  title="איזה שינוי יכולים לעשות כמה חודשים"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_10.jpg" alt="" />
@@ -379,32 +371,29 @@ export default function ServiceDesign() {
                 <div className="post-content">
                   <a
                     href="post.html"
-                    title="What a Difference a Few Months Make"
+                    title="איזה שינוי יכולים לעשות כמה חודשים"
                   >
-                    What a Difference a Few Months Make
+                    איזה שינוי יכולים לעשות כמה חודשים
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
                 <a
                   href="post.html"
-                  title="Kitchen and Living Room Renovation"
+                  title="שיפוץ מטבח וסלון"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_07.jpg" alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
-                    Kitchen and Living Room Renovation
+                  <a href="post.html" title="שיפוץ מטבח וסלון">
+                    שיפוץ מטבח וסלון
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>

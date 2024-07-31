@@ -21,21 +21,21 @@ export default function NavBar() {
         <div className="header-top-bar">
           <ul className="contact-details clearfix">
             <li className="template-phone">
-              <a href="tel:+149752322235">+149 75 23 222 35</a>
+              <a href="tel:+149752322235">+972 52 696 9694</a>
             </li>
             <li className="template-mail">
               <a href="mailto:adiSambata@gmail.com">adiSambata@gmail.com</a>
             </li>
-            <li className="template-clock">Mon - Fri: 08.00 - 17.00</li>
+            <li className="template-clock">ב' - ו': 08.00 - 17.00</li>
           </ul>
           <div className="search-container">
-            <a className="template-search" href="#" title="Search" />
+            <a className="template-search" href="#" title="חיפוש" />
             <form className="search" action="search.html">
               <input
                 type="text"
                 name="s"
-                placeholder="Search..."
-                defaultValue="Search..."
+                placeholder="חיפוש..."
+                defaultValue="חיפוש..."
                 className="search-input hint"
               />
               <fieldset className="search-submit-container">
@@ -46,14 +46,14 @@ export default function NavBar() {
           </div>
           <ul className="social-icons">
             <li>
-              <a href="#" className="social-facebook" title="facebook" />
+              <a href="#" className="social-facebook" title="פייסבוק" />
             </li>
             <li>
-              <a href="#" className="social-twitter" title="twitter" />
+              <a href="#" className="social-twitter" title="טוויטר" />
             </li>
 
             <li>
-              <a href="#" className="social-pinterest" title="pinterest" />
+              <a href="#" className="social-pinterest" title="פינטרסט" />
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@ export default function NavBar() {
           <div className="header clearfix">
             <div className="logo vertical-align-cell">
               <h1>
-                <Link to="/">RENOVATE</Link>
+                <Link to="/">שיפוצים</Link>
               </h1>
             </div>
             <a href="#" className="mobile-menu-switch vertical-align-cell">
@@ -76,48 +76,48 @@ export default function NavBar() {
               <nav>
                 <ul className="sf-menu">
                   <li className="selected">
-                    <Link to="/">HOME</Link>
+                    <Link to="/">דף הבית</Link>
                   </li>
                   <li>
-                    <Link to="/services">SERVICES</Link>
+                    <Link to="/services">שירותים</Link>
                     <ul>
                       <li>
-                        <Link to="/serviceInterior">Interior Renovation</Link>
+                        <Link to="/serviceInterior">שיפוץ פנים</Link>
                       </li>
                       <li>
                         <Link
                           to="/serviceDesign"
                           href="service_design_build.html"
-                          title="Design and Build"
+                          title="תכנון ובנייה"
                         >
-                          Design and Build
+                          תכנון ובנייה
                         </Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <Link to="/projects">PROJECTS</Link>
+                    <Link to="/projects">פרויקטים</Link>
 
                     <ul>
                       <li>
-                        <Link to="/newProject">new project</Link>
+                        <Link to="/newProject">פרויקט חדש</Link>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <Link to="about">ABOUT</Link>
+                    <Link to="about">אודות</Link>
                   </li>
 
                   <li>
-                    <Link to="/calculator"> COST CALCULATOR</Link>
+                    <Link to="/calculator"> מחשבון עלויות</Link>
                   </li>
                   <li className="left-flyout">
-                    <Link to="/contact"> CONTACT</Link>
+                    <Link to="/contact"> יצירת קשר</Link>
                   </li>
                   {logedUser?.data?.role == "admin" ? (
                     <li className="left-flyout">
-                      <Link to="/adminPage"> ADMIN</Link>
+                      <Link to="/adminPage"> מנהל</Link>
                     </li>
                   ) : (
                     ""
@@ -130,7 +130,7 @@ export default function NavBar() {
 
                     <ul>
                       <li>
-                        <a onClick={handlClick}> log Out {<IoLogInSharp />}</a>
+                        <a onClick={handlClick}> התנתק {<IoLogInSharp />}</a>
                       </li>
                     </ul>
                   </li>
@@ -141,244 +141,247 @@ export default function NavBar() {
                 <nav>
                   <ul className="mobile-menu collapsible-mobile-submenus">
                     <li className="selected">
-                      <a href="index.html" title="Home">
-                        HOME
+                      <a href="index.html" title="דף הבית">
+                        דף הבית
                       </a>
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li className="selected">
-                          <a href="index.html" title="Home Style 1">
-                            Home Style 1
+                          <a href="index.html" title="סגנון בית 1">
+                            סגנון בית 1
                           </a>
                         </li>
                         <li>
-                          <a href="home2.html" title="Home Style 2">
-                            Home Style 2
+                          <a href="home2.html" title="סגנון בית 2">
+                            סגנון בית 2
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="services.html" title="Services">
-                        SERVICES
+                      <a href="services.html" title="שירותים">
+                        שירותים
                       </a>
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
                           <a
                             href="service_interior_renovation.html"
-                            title="Interior Renovation"
+                            title="שיפוץ פנים"
                           >
-                            Interior Renovation
+                            שיפוץ פנים
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_design_build.html"
-                            title="Design and Build"
+                            title="תכנון ובנייה"
                           >
-                            Design and Build
+                            תכנון ובנייה
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_tiling_painting.html"
-                            title="Design and Build"
+                            title="ריצוף וצביעה"
                           >
-                            Tiling and Painting
+                            ריצוף וצביעה
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_paver_walkways.html"
-                            title="Paver Walkways"
+                            title="שבילי ריצוף"
                           >
-                            Paver Walkways
+                            שבילי ריצוף
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_household_repairs.html"
-                            title="Household Repairs"
+                            title="תיקונים ביתיים"
                           >
-                            Household Repairs
+                            תיקונים ביתיים
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_solar_systems.html"
-                            title="Solar Systems"
+                            title="מערכות סולאריות"
                           >
-                            Solar Systems
+                            מערכות סולאריות
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <Link to="/projects">Projects</Link>
+                      <Link to="/projects">פרויקטים</Link>
 
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
                           <a
                             href="project_interior_renovation.html"
-                            title="Interior Renovation"
+                            title="שיפוץ פנים"
                           >
-                            Interior Renovation
+                            שיפוץ פנים
                           </a>
                         </li>
                         <li>
                           <a
                             href="project_garden_renovation.html"
-                            title="Garden Renovation"
+                            title="שיפוץ גינה"
                           >
-                            Garden Renovation
+                            שיפוץ גינה
                           </a>
                         </li>
                         <li>
-                          <a href="project_painting.html" title="Painting">
-                            Painting
+                          <a href="project_painting.html" title="צביעה">
+                            צביעה
                           </a>
                         </li>
                         <li>
                           <a
                             href="project_design_build.html"
-                            title="Design and Build"
+                            title="תכנון ובנייה"
                           >
-                            Design and Build
+                            תכנון ובנייה
                           </a>
                         </li>
                         <li>
                           <a
                             href="project_solar_systems.html"
-                            title="Solar Systems"
+                            title="מערכות סולאריות"
                           >
-                            Solar Systems
+                            מערכות סולאריות
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="team.html" title="Our Team">
-                        OUR TEAM
+                      <a href="team.html" title="הצוות שלנו">
+                        הצוות שלנו
                       </a>
                     </li>
                     <li>
-                      <a href="about.html" title="Pages">
-                        PAGES
+                      <a href="about.html" title="עמודים">
+                        עמודים
                       </a>
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
-                          <a href="about.html" title="About">
-                            About
+                          <a href="about.html" title="אודות">
+                            אודות
                           </a>
                         </li>
                         <li>
-                          <a href="404.html" title="404 Not Found">
-                            404 Not Found
+                          <a href="404.html" title="404 לא נמצא">
+                            404 לא נמצא
                           </a>
                         </li>
                         <li>
-                          <a href="services.html" title="Services Style 1">
-                            Services Style 1
+                          <a href="services.html" title="שירותים סגנון 1">
+                            שירותים סגנון 1
                           </a>
                         </li>
                         <li>
-                          <a href="services2.html" title="Services Style 2">
-                            Services Style 2
+                          <a href="services2.html" title="שירותים סגנון 2">
+                            שירותים סגנון 2
                           </a>
                         </li>
                         <li>
                           <a
                             href="service_interior_renovation.html"
-                            title="Single Service"
+                            title="שירות יחיד"
                           >
-                            Single Service
+                            שירות יחיד
                           </a>
                         </li>
                         <li>
-                          <a href="projects.html" title="Projects">
-                            Projects
+                          <a href="projects.html" title="פרויקטים">
+                            פרויקטים
                           </a>
                         </li>
                         <li>
                           <a
                             href="project_interior_renovation.html"
-                            title="Single Project"
+                            title="פרויקט יחיד"
                           >
-                            Single Project
+                            פרויקט יחיד
                           </a>
                         </li>
                         <li>
-                          <a href="team.html" title="Team">
-                            Team
+                          <a href="team.html" title="צוות">
+                            צוות
                           </a>
                         </li>
                         <li>
-                          <a href="team_mark_whilberg.html" title="Single Team">
-                            Single Team
+                          <a
+                            href="team_mark_whilberg.html"
+                            title="חבר צוות יחיד"
+                          >
+                            חבר צוות יחיד
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="blog.html" title="Blog">
-                        BLOG
+                      <a href="blog.html" title="בלוג">
+                        בלוג
                       </a>
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
-                          <a href="blog.html" title="Blog">
-                            Blog
+                          <a href="blog.html" title="בלוג">
+                            בלוג
                           </a>
                         </li>
                         <li>
-                          <a href="blog_left_sidebar.html" title="Blog">
-                            Blog Left Sidebar
+                          <a href="blog_left_sidebar.html" title="בלוג">
+                            בלוג צד שמאל
                           </a>
                         </li>
                         <li>
-                          <a href="blog_2_columns.html" title="Blog 2 Columns">
-                            Blog 2 Columns
+                          <a href="blog_2_columns.html" title="בלוג 2 עמודות">
+                            בלוג 2 עמודות
                           </a>
                         </li>
                         <li>
-                          <a href="blog_3_columns.html" title="Blog 3 Columns">
-                            Blog 3 Columns
+                          <a href="blog_3_columns.html" title="בלוג 3 עמודות">
+                            בלוג 3 עמודות
                           </a>
                         </li>
                         <li>
-                          <a href="post.html" title="Single Post">
-                            Single Post
+                          <a href="post.html" title="פוסט יחיד">
+                            פוסט יחיד
                           </a>
                         </li>
                         <li>
-                          <a href="search.html?s=ipsum" title="Search Template">
-                            Search Template
+                          <a href="search.html?s=ipsum" title="תבנית חיפוש">
+                            תבנית חיפוש
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="cost_calculator.html" title="Authors">
-                        COST CALCULATOR
+                      <a href="cost_calculator.html" title="מחשבון עלויות">
+                        מחשבון עלויות
                       </a>
                     </li>
                     <li className="left-flyout">
-                      <a href="contact.html" title="Contact">
-                        CONTACT
+                      <a href="contact.html" title="יצירת קשר">
+                        יצירת קשר
                       </a>
                       <a href="#" className="template-arrow-menu" />
                       <ul>
                         <li>
-                          <a href="contact.html" title="Contact Style 1">
-                            Contact Style 1
+                          <a href="contact.html" title="סגנון קשר 1">
+                            סגנון קשר 1
                           </a>
                         </li>
                         <li>
-                          <a href="contact_2.html" title="Contact Style 2">
-                            Contact Style 2
+                          <a href="contact_2.html" title="סגנון קשר 2">
+                            סגנון קשר 2
                           </a>
                         </li>
                       </ul>

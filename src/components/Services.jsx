@@ -8,15 +8,6 @@ import img5 from "../assets/images/samples/390x260/image_06.jpg";
 import img6 from "../assets/images/samples/90x90/image_10.jpg";
 import img7 from "../assets/images/samples/90x90/image_07.jpg";
 
-`   
-
-
-
-
-
-
-`;
-
 export default function Services() {
   return (
     <div className="site-container">
@@ -25,19 +16,19 @@ export default function Services() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>OUR SERVICES</h1>
+                <h1>השירותים שלנו</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
+                  <label>אתה נמצא כאן:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <a title="Home" href="#">
-                        HOME
+                      <a title="בית" href="#">
+                        בית
                       </a>
                     </li>
                     <li className="separator">/</li>
-                    <li>OUR SERVICES</li>
+                    <li>השירותים שלנו</li>
                   </ul>
                 </div>
               </div>
@@ -48,88 +39,76 @@ export default function Services() {
           <div className="row">
             <ul className="services-list clearfix padding-top-70">
               <li>
-                <a href="#" title="Interior Renovation">
+                <a href="#" title="שיפוץ פנים">
                   <img src={img} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="#" title="Interior Renovation">
-                    INTERIOR RENOVATION
+                  <a href="#" title="שיפוץ פנים">
+                    שיפוץ פנים
                   </a>
                 </h4>
                 <p>
-                  We can help you bring new life to existing rooms and develop
-                  unused spaces.
+                  אנו יכולים לעזור לך להחיות מחדש חדרים קיימים ולפתח חללים שאינם
+                  בשימוש.
                 </p>
               </li>
               <li>
-                <a href="#" title="Design and Build">
+                <a href="#" title="תכנון ובנייה">
                   <img src={img1} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="#" title="Design and Build">
-                    DESIGN AND BUILD
+                  <a href="#" title="תכנון ובנייה">
+                    תכנון ובנייה
                   </a>
                 </h4>
-                <p>
-                  From initial design and project specification to archieving a
-                  high end finish.
-                </p>
+                <p>מהתכנון הראשוני ומפרטי הפרויקט ועד להשגת גימור גבוה.</p>
               </li>
               <li>
-                <a href="#" title="Tiling and Painting">
+                <a href="#" title="ריצוף וצביעה">
+                  <img src={img2} alt="" />
+                </a>
+                <h4 className="box-header">
+                  <a href="#" title="ריצוף וצביעה">
+                    ריצוף וצביעה
+                  </a>
+                </h4>
+                <p>אנו מציעים פתרונות איכותיים לריצוף וצביעה לפנים ולחוץ.</p>
+              </li>
+              <li>
+                <a href="#" title="שבילי ריצוף">
                   <img src={img3} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="#" title="Tiling and Painting">
-                    TILING AND PAINTING
+                  <a href="#" title="שבילי ריצוף">
+                    שבילי ריצוף
                   </a>
                 </h4>
                 <p>
-                  We offer quality tiling and painting solutions for interior
-                  and exterior.
+                  שבילי ריצוף מגדירים יופי, אלגנטיות ועמידות לדרכים, פטיו ושבילי
+                  הליכה.
                 </p>
               </li>
               <li>
-                <a href="#" title="Paver Walkways">
+                <a href="#" title="תיקונים ביתיים">
                   <img src={img4} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="#" title="PAVER WALKWAYS">
-                    PAVER WALKWAYS
+                  <a href="#" title="תיקונים ביתיים">
+                    תיקונים ביתיים
                   </a>
                 </h4>
-                <p>
-                  Brick pavers define beauty, elegance and durability for
-                  driveways, patios and walkways.
-                </p>
+                <p>אנו מציעים תיקונים ושיפורים אמינים ובמחירים נוחים לבית.</p>
               </li>
               <li>
-                <a href="#" title="Household Repairs">
+                <a href="#" title="מערכות סולאריות">
                   <img src={img5} alt="" />
                 </a>
                 <h4 className="box-header">
-                  <a href="#" title="Household Repairs">
-                    HOUSEHOLD REPAIRS
+                  <a href="#" title="מערכות סולאריות">
+                    מערכות סולאריות
                   </a>
                 </h4>
-                <p>
-                  We offer affordable and reliable repairs and improvements to
-                  the home.
-                </p>
-              </li>
-              <li>
-                <a href="#" title="Solar Systems">
-                  <img src={img} alt="" />
-                </a>
-                <h4 className="box-header">
-                  <a href="#" title="Solar Systems">
-                    SOLAR SYSTEMS
-                  </a>
-                </h4>
-                <p>
-                  Generate cheap, green electricity from sunlight using
-                  photovoltaic cells.
-                </p>
+                <p>ייצר חשמל ירוק וזול מאור השמש באמצעות תאים פוטו-וולטאיים.</p>
               </li>
             </ul>
           </div>
@@ -141,7 +120,7 @@ export default function Services() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -152,9 +131,9 @@ export default function Services() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  ווינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -163,7 +142,7 @@ export default function Services() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
                   <a href="mailto:adiSambta@gmail.com">adiSambata@gmail.com</a>
                 </p>
@@ -175,128 +154,124 @@ export default function Services() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסד על ידי קווין סמית בשנת 2000. Renovate יצרה את עצמה כאחת
+              מהספקים הגדולים והיוקרתיים ביותר של שירותי שיפוץ פנים ממוקדי
+              בנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a href="#" className="social-facebook" title="facebook" />
+                <a href="#" className="social-facebook" title="פייסבוק" />
               </li>
               <li>
-                <a href="#" className="social-twitter" title="twitter" />
+                <a href="#" className="social-twitter" title="טוויטר" />
               </li>
               <li>
-                <a href="#" className="social-linkedin" title="linkedin" />
+                <a href="#" className="social-linkedin" title="לינקדאין" />
               </li>
               <li>
-                <a href="#" className="social-pinterest" title="pinterest" />
+                <a href="#" className="social-pinterest" title="פינטרסט" />
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">תכנון ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי ריצוף</li>
+              <li className="template-bullet">תיקונים ביתיים</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="#" title="BUILD">
-                  BUILD
+                <a href="#" title="בנייה">
+                  בנייה
                 </a>
               </li>
               <li>
-                <a href="#" title="DESIGN">
-                  DESIGN
+                <a href="#" title="עיצוב">
+                  עיצוב
                 </a>
               </li>
               <li>
-                <a href="#" title="FLOORING">
-                  FLOORING
+                <a href="#" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
               <li>
-                <a href="#" title="PAINTING">
-                  PAINTING
+                <a href="#" title="צביעה">
+                  צביעה
                 </a>
               </li>
               <li>
-                <a href="#" title="PAVERS">
-                  PAVERS
+                <a href="#" title="שבילי ריצוף">
+                  שבילי ריצוף
                 </a>
               </li>
               <li>
-                <a href="#" title="PLUMBING">
-                  PLUMBING
+                <a href="#" title="אינסטלציה">
+                  אינסטלציה
                 </a>
               </li>
               <li>
-                <a href="#" title="RENOVATION">
-                  RENOVATION
+                <a href="#" title="שיפוץ">
+                  שיפוץ
                 </a>
               </li>
 
               <li>
-                <a href="#" title="REPAIRS">
-                  REPAIRS
+                <a href="#" title="תיקונים">
+                  תיקונים
                 </a>
               </li>
               <li>
-                <a href="#" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                <a href="#" title="מערכות סולאריות">
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
-                <a href="#" title="TILING">
-                  TILING
+                <a href="#" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <a
                   href="#"
-                  title="What a Difference a Few Months Make"
+                  title="איזה שינוי יכולים לעשות כמה חודשים"
                   className="post-image"
                 >
                   <img src={img6} alt="" />
                 </a>
                 <div className="post-content">
-                  <a href="#" title="What a Difference a Few Months Make">
-                    What a Difference a Few Months Make
+                  <a href="#" title="איזה שינוי יכולים לעשות כמה חודשים">
+                    איזה שינוי יכולים לעשות כמה חודשים
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  href="#"
-                  title="Kitchen and Living Room Renovation"
-                  className="post-image"
-                >
+                <a href="#" title="שיפוץ מטבח וסלון" className="post-image">
                   <img src={img7} alt="" />
                 </a>
                 <div className="post-content">
-                  <a href="#" title="Kitchen and Living Room Renovation">
-                    Kitchen and Living Room Renovation
+                  <a href="#" title="שיפוץ מטבח וסלון">
+                    שיפוץ מטבח וסלון
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>

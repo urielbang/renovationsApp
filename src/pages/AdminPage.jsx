@@ -59,10 +59,10 @@ export default function AdminPage() {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Actions</th>
+            <th>שם</th>
+            <th>אימייל</th>
+            <th>תפקיד</th>
+            <th>פעולות</th>
           </tr>
         </thead>
         <tbody>
@@ -117,20 +117,20 @@ export default function AdminPage() {
                   className="edit-button"
                   onClick={() => handleClickEdit(user)}
                 >
-                  Edit
+                  ערוך
                 </button>
                 <button
                   className="delete-button"
                   onClick={async () => handleClickDelete(user)}
                 >
-                  Delete
+                  מחק
                 </button>
                 {user.id == userId ? (
                   <button
                     className="update-button"
                     onClick={() => handleClickUpdate(user.id)}
                   >
-                    Update
+                    עדכן
                   </button>
                 ) : (
                   ""
@@ -143,11 +143,11 @@ export default function AdminPage() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסדה על ידי קווין סמית בשנת 2000. Renovate יצרה את עצמה כאחת
+              מהספקים הגדולים והיוקרתיים ביותר של שירותי שיפוץ פנים ממוקדי
+              בנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -155,7 +155,7 @@ export default function AdminPage() {
                   target="_blank"
                   href="https://facebook.com/QuanticaLabs"
                   className="social-facebook"
-                  title="facebook"
+                  title="פייסבוק"
                 />
               </li>
               <li>
@@ -163,7 +163,7 @@ export default function AdminPage() {
                   target="_blank"
                   href="https://twitter.com/QuanticaLabs"
                   className="social-twitter"
-                  title="twitter"
+                  title="טוויטר"
                 />
               </li>
               <li>
@@ -171,91 +171,91 @@ export default function AdminPage() {
                   target="_blank"
                   href="https://1.envato.market/quanticalabs-portfolio"
                   className="social-linkedin"
-                  title="linkedin"
+                  title="לינקדאין"
                 />
               </li>
               <li>
                 <a
                   href="https://pinterest.com/quanticalabs/"
                   className="social-pinterest"
-                  title="pinterest"
+                  title="פינטרסט"
                 />
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">תכנון ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי ריצוף</li>
+              <li className="template-bullet">תיקונים ביתיים</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="category.html" title="BUILD">
-                  BUILD
+                <a href="category.html" title="בנייה">
+                  בנייה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="DESIGN">
-                  DESIGN
+                <a href="category.html" title="עיצוב">
+                  עיצוב
                 </a>
               </li>
               <li>
-                <a href="category.html" title="FLOORING">
-                  FLOORING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAINTING">
-                  PAINTING
+                <a href="category.html" title="צביעה">
+                  צביעה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
-                  PAVERS
+                <a href="category.html" title="שבילי ריצוף">
+                  שבילי ריצוף
                 </a>
               </li>
               <li>
-                <a href="category.html" title="PLUMBING">
-                  PLUMBING
+                <a href="category.html" title="אינסטלציה">
+                  אינסטלציה
                 </a>
               </li>
               <li>
-                <a href="category.html" title="RENOVATION">
-                  RENOVATION
+                <a href="category.html" title="שיפוץ">
+                  שיפוץ
                 </a>
               </li>
               <li>
-                <a href="category.html" title="REPAIRS">
-                  REPAIRS
+                <a href="category.html" title="תיקונים">
+                  תיקונים
                 </a>
               </li>
               <li>
-                <a href="category.html" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                <a href="category.html" title="מערכות סולאריות">
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
-                <a href="category.html" title="TILING">
-                  TILING
+                <a href="category.html" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <a
                   href="post.html"
-                  title="What a Difference a Few Months Make"
+                  title="איזה שינוי יכולים לעשות כמה חודשים"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_10.jpg" alt="" />
@@ -263,32 +263,29 @@ export default function AdminPage() {
                 <div className="post-content">
                   <a
                     href="post.html"
-                    title="What a Difference a Few Months Make"
+                    title="איזה שינוי יכולים לעשות כמה חודשים"
                   >
-                    What a Difference a Few Months Make
+                    איזה שינוי יכולים לעשות כמה חודשים
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
                 <a
                   href="post.html"
-                  title="Kitchen and Living Room Renovation"
+                  title="שיפוץ מטבח וסלון"
                   className="post-image"
                 >
                   <img src="images/samples/90x90/image_07.jpg" alt="" />
                 </a>
                 <div className="post-content">
-                  <a
-                    href="post.html"
-                    title="Kitchen and Living Room Renovation"
-                  >
-                    Kitchen and Living Room Renovation
+                  <a href="post.html" title="שיפוץ מטבח וסלון">
+                    שיפוץ מטבח וסלון
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>

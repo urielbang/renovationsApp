@@ -12,17 +12,17 @@ export default function PagesPage() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>ABOUT US</h1>
+                <h1>אודותינו</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
+                  <label>אתה נמצא כאן:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <Link title="HOME">HOME</Link>
+                      <Link title="בית">בית</Link>
                     </li>
                     <li className="separator">/</li>
-                    <li>ABOUT US</li>
+                    <li>אודותינו</li>
                   </ul>
                 </div>
               </div>
@@ -37,39 +37,35 @@ export default function PagesPage() {
               </div>
             </div>
             <div className="column column-1-2">
-              <h2 className="box-header align-left">WE ARE RENOVATE</h2>
+              <h2 className="box-header align-left">אנחנו Renovate</h2>
               <p className="description t1">
-                Founded by Kevin Smith back in 2000, Renovate has established
-                itself as one of the greatest and prestigious providers of
-                construction focused interior renovation services and building.
-                We provide a professional renovation and installation services
-                with a real focus on customer satisfaction. Our construction
-                Services is a multi-task company specializing in the following
-                core areas:
+                נוסדה על ידי קווין סמית בשנת 2000, Renovate יצרה את עצמה כאחת
+                מהספקיות הגדולות והיוקרתיות ביותר של שירותי שיפוץ פנים ממוקדי
+                בנייה. אנו מספקים שירותי שיפוץ והתקנה מקצועיים עם דגש אמיתי על
+                שביעות רצון הלקוחות. שירותי הבנייה שלנו הם חברה רב תחומית המתמחה
+                בתחומים הבאים:
               </p>
               <ul className="list margin-top-20">
                 <li className="template-bullet">
-                  We combine Quality Workmanship, Superior Knowledge and Low
-                  Prices
+                  אנו משלבים עבודה באיכות גבוהה, ידע מעולה ומחירים נמוכים
                 </li>
                 <li className="template-bullet">
-                  We Can Ensure a Job is Done on Time and on Budget
+                  אנו יכולים להבטיח עבודה שנעשית בזמן ובתקציב
                 </li>
                 <li className="template-bullet">
-                  Proven Results for Setting Exceptional Standards in{" "}
-                  <a href="cost_calculator.html">Cost Control</a>
+                  תוצאות מוכחות בהצבת סטנדרטים יוצאי דופן ב
+                  <a href="cost_calculator.html">בקרת עלויות</a>
                 </li>
                 <li className="template-bullet">
-                  Proffesional Service for Private and{" "}
-                  <a href="#">Commercial Customers</a>
+                  שירות מקצועי ללקוחות פרטיים ו<a href="#">עסקיים</a>
                 </li>
                 <li className="template-bullet">
-                  15 Years Experience and a Real Focus on Customer Satisfaction
+                  15 שנות ניסיון ודגש אמיתי על שביעות רצון הלקוחות
                 </li>
               </ul>
               <div className="page-margin-top">
-                <Link to="/services" className="more" title="OUR SERVICES">
-                  OUR SERVICES
+                <Link to="/services" className="more" title="השירותים שלנו">
+                  השירותים שלנו
                 </Link>
               </div>
             </div>
@@ -79,11 +75,10 @@ export default function PagesPage() {
               <div className="column column-1-3">
                 <ul className="features-list">
                   <li className="sl-small-wrench">
-                    <h4>BEST VALUE</h4>
+                    <h4>הערך הטוב ביותר</h4>
                     <p>
-                      We combine quality workmanship, superior knowledge and low
-                      prices to provide you with service unmatched by our
-                      competitors.
+                      אנו משלבים עבודה באיכות גבוהה, ידע מעולה ומחירים נמוכים
+                      כדי לספק לך שירות שלא ניתן להשוות למתחרים שלנו.
                     </p>
                   </li>
                 </ul>
@@ -91,10 +86,10 @@ export default function PagesPage() {
               <div className="column column-1-3">
                 <ul className="features-list">
                   <li className="sl-small-measure">
-                    <h4>SAVING TIME</h4>
+                    <h4>חיסכון בזמן</h4>
                     <p>
-                      We have the experience, personel and resources to make the
-                      project run smoothly. We can ensure a job is done on time.
+                      יש לנו את הניסיון, האנשים והמשאבים כדי לגרום לפרויקט
+                      להתנהל בצורה חלקה. אנו יכולים להבטיח עבודה שנעשית בזמן.
                     </p>
                   </li>
                 </ul>
@@ -102,11 +97,10 @@ export default function PagesPage() {
               <div className="column column-1-3">
                 <ul className="features-list">
                   <li className="sl-small-bucket">
-                    <h4>WITHIN BUDGET</h4>
+                    <h4>בתוך התקציב</h4>
                     <p>
-                      Work with us involve a carefully planned series of steps,
-                      centered around a schedule we stick to and daily
-                      communication.
+                      עבודה איתנו כוללת סדרת שלבים מתוכננת בקפידה, שמתמקדת סביב
+                      לוח זמנים שאנו מקפידים עליו ותקשורת יומית.
                     </p>
                   </li>
                 </ul>
@@ -116,81 +110,66 @@ export default function PagesPage() {
 
           <div className="row page-margin-top-section">
             <div className="column column-1-2">
-              <h3 className="box-header">OUR MISSION</h3>
+              <h3 className="box-header">המשימה שלנו</h3>
               <p className="description t1">
-                Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                accumsan est in tempus etos ullamcorper, sem quam suscipit lacus
-                maecenas tortor. Erates vitae node metus. Suspendisse gravida
-                ornare non mattis velit rutrum modest. Morbi suspendisse a
-                tortor velim pellentesque uter justo magna gravida. Pellentesque
-                accumsan, ex in tempus ullamcorper terminal. Setis lacus
-                suscipit tortor erat vitae metus.
+                המשימה שלנו היא לספק שירותי בנייה ושיפוץ באיכות הגבוהה ביותר, עם
+                דגש על שביעות רצון הלקוחות. אנו שואפים לחדש ולשפר את איכות
+                הבנייה והשיפוץ שלנו תוך שמירה על תקני הבטיחות והאיכות הגבוהים
+                ביותר.
               </p>
               <p className="description t1">
-                Morbi nulla tortor, dignissim at node cursus euismod est arcu.
-                Nomad turbina uter vehicula justo magna paetos in terminal.
-                Pellentesque in accumsan tempus, terminal ullamcorper a quam
-                suscipit lacus <a href="#">modest elementum</a>.
+                אנו מבינים את החשיבות של זמן וכסף עבור לקוחותינו, ולכן אנו
+                מתחייבים לעבוד בצורה מקצועית ואמינה, עם תכנון מוקפד ותקשורת
+                שוטפת לאורך כל הפרויקט.
               </p>
               <div className="page-margin-top">
                 <Link className="more" to="/projects">
-                  OUR PROJECTS
+                  הפרויקטים שלנו
                 </Link>
               </div>
             </div>
             <div className="column column-1-2">
-              <h3 className="box-header">POPULAR QUESTIONS</h3>
+              <h3 className="box-header">שאלות נפוצות</h3>
               <ul className="accordion margin-top-40 clearfix">
                 <li>
                   <div id="accordion-renovation-cost">
-                    <h5>Why does a renovation project cost so much?</h5>
+                    <h5>למה פרויקט שיפוץ עולה כל כך הרבה?</h5>
                   </div>
                   <p className="description t1">
-                    Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                    accumsan est in tempus etos ullamcorper, sem quam suscipit
-                    lacus maecenas tortor. Erates vitae node metus. Suspendisse
-                    gravida ornare non mattis velit rutrum modest. Morbi
-                    suspendisse a tortor velim pellentesque uter justo magna
-                    gravida et maecenas.
+                    עלות פרויקט שיפוץ יכולה להיות גבוהה בשל מורכבות העבודה,
+                    איכות החומרים והזמן הנדרש לביצוע הפרויקט. אנו תמיד ממליצים
+                    להשתמש בחומרים איכותיים ולהשקיע בתכנון נכון כדי למנוע עלויות
+                    נוספות בהמשך.
                   </p>
                 </li>
                 <li>
                   <div id="accordion-project-timeline">
-                    <h5>What is the timeline for the project?</h5>
+                    <h5>מהו ציר הזמן של הפרויקט?</h5>
                   </div>
                   <p className="description t1">
-                    Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                    accumsan est in tempus etos ullamcorper, sem quam suscipit
-                    lacus maecenas tortor. Erates vitae node metus. Suspendisse
-                    gravida ornare non mattis velit rutrum modest. Morbi
-                    suspendisse a tortor velim pellentesque uter justo magna
-                    gravida et maecenas.
+                    ציר הזמן של פרויקט שיפוץ תלוי במורכבות העבודה ובזמינות
+                    החומרים. אנו מתחייבים לעבוד לפי לוח זמנים קפדני ולהשלים את
+                    העבודה בזמן המוסכם עם הלקוח.
                   </p>
                 </li>
                 <li>
                   <div id="accordion-construction-budget">
-                    <h5>What is the total budget for construction?</h5>
+                    <h5>מהו התקציב הכולל לבנייה?</h5>
                   </div>
                   <p className="description t1">
-                    Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                    accumsan est in tempus etos ullamcorper, sem quam suscipit
-                    lacus maecenas tortor. Erates vitae node metus. Suspendisse
-                    gravida ornare non mattis velit rutrum modest. Morbi
-                    suspendisse a tortor velim pellentesque uter justo magna
-                    gravida et maecenas.
+                    התקציב הכולל לבנייה כולל את עלויות החומרים, העבודה, והתכנון.
+                    אנו תמיד שואפים לספק ללקוחותינו את העלות המיטבית עם שמירה על
+                    איכות גבוהה.
                   </p>
                 </li>
                 <li>
                   <div id="accordion-project-initiation">
-                    <h5>How is renovation project initiated?</h5>
+                    <h5>איך מתחילים פרויקט שיפוץ?</h5>
                   </div>
                   <p className="description t1">
-                    Paetos dignissim at cursus elefeind norma arcu. Pellentesque
-                    accumsan est in tempus etos ullamcorper, sem quam suscipit
-                    lacus maecenas tortor. Erates vitae node metus. Suspendisse
-                    gravida ornare non mattis velit rutrum modest. Morbi
-                    suspendisse a tortor velim pellentesque uter justo magna
-                    gravida et maecenas.
+                    תחילת פרויקט שיפוץ מתחילה בפגישה עם הלקוח להבנת צרכיו
+                    ודרישותיו, ולאחר מכן אנו מבצעים תכנון מפורט ומציאת חומרים
+                    מתאימים לפני התחלת העבודה בפועל.
                   </p>
                 </li>
               </ul>
@@ -204,7 +183,7 @@ export default function PagesPage() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -212,12 +191,12 @@ export default function PagesPage() {
             </ul>
           </div>
           <div className="column column-1-3">
-            <ul className="contact-details-list">
+            <ul classה="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  ווינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -226,9 +205,9 @@ export default function PagesPage() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
-                  <a href="mailto:adiSambata@gmail.com">adiSmabata@gmail.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSambata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -238,127 +217,124 @@ export default function PagesPage() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסדה על ידי קווין סמית בשנת 2000. Renovate יצרה את עצמה כאחת
+              מהספקים הגדולים והיוקרתיים ביותר של שירותי שיפוץ פנים ממוקדי
+              בנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
-                <a href="#" className="social-facebook" title="facebook" />
+                <a href="#" className="social-facebook" title="פייסבוק" />
               </li>
               <li>
-                <a href="#" className="social-twitter" title="twitter" />
+                <a href="#" className="social-twitter" title="טוויטר" />
               </li>
               <li>
-                <a href="#" className="social-linkedin" title="linkedin" />
+                <a href="#" className="social-linkedin" title="לינקדאין" />
               </li>
               <li>
-                <a href="#" className="social-pinterest" title="pinterest" />
+                <a href="#" className="social-pinterest" title="פינטרסט" />
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">תכנון ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי ריצוף</li>
+              <li className="template-bullet">תיקונים ביתיים</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <a href="#" title="BUILD">
-                  BUILD
+                <a href="#" title="בנייה">
+                  בנייה
                 </a>
               </li>
               <li>
-                <a href="#" title="DESIGN">
-                  DESIGN
+                <a href="#" title="עיצוב">
+                  עיצוב
                 </a>
               </li>
               <li>
-                <a href="#" title="FLOORING">
-                  FLOORING
+                <a href="#" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
               <li>
-                <a href="#" title="PAINTING">
-                  PAINTING
+                <a href="#" title="צביעה">
+                  צביעה
                 </a>
               </li>
               <li>
-                <a href="#" title="PAVERS">
-                  PAVERS
+                <a href="#" title="שבילי ריצוף">
+                  שבילי ריצוף
                 </a>
               </li>
               <li>
-                <a href="#" title="PLUMBING">
-                  PLUMBING
+                <a href="#" title="אינסטלציה">
+                  אינסטלציה
                 </a>
               </li>
               <li>
-                <a href="#" title="RENOVATION">
-                  RENOVATION
+                <a href="#" title="שיפוץ">
+                  שיפוץ
+                </a>
+              </li>
+
+              <li>
+                <a href="#" title="תיקונים">
+                  תיקונים
                 </a>
               </li>
               <li>
-                <a href="#" title="REPAIRS">
-                  REPAIRS
+                <a href="#" title="מערכות סולאריות">
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
-                <a href="#" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
-                </a>
-              </li>
-              <li>
-                <a href="#" title="TILING">
-                  TILING
+                <a href="#" title="ריצוף">
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <a
                   href="#"
-                  title="What a Difference a Few Months Make"
+                  title="איזה שינוי יכולים לעשות כמה חודשים"
                   className="post-image"
                 >
                   <img src={img1} alt="" />
                 </a>
                 <div className="post-content">
-                  <a href="#" title="What a Difference a Few Months Make">
-                    What a Difference a Few Months Make
+                  <a href="#" title="איזה שינוי יכולים לעשות כמה חודשים">
+                    איזה שינוי יכולים לעשות כמה חודשים
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  href="#"
-                  title="Kitchen and Living Room Renovation"
-                  className="post-image"
-                >
+                <a href="#" title="שיפוץ מטבח וסלון" className="post-image">
                   <img src={img2} alt="" />
                 </a>
                 <div className="post-content">
-                  <a href="#" title="Kitchen and Living Room Renovation">
-                    Kitchen and Living Room Renovation
+                  <a href="#" title="שיפוץ מטבח וסלון">
+                    שיפוץ מטבח וסלון
                   </a>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 אפריל, 2015</li>
                   </ul>
                 </div>
               </li>

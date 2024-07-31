@@ -30,8 +30,8 @@ export default function SignIn() {
         <div className="sign-column-face s2">
           <div className="s3">
             <div className="sign-header-section">
-              <div className="sign-in-title">Login Page</div>
-              <div className="sign-in-title-alt">Welcome to renovations</div>
+              <div className="sign-in-title">דף כניסה</div>
+              <div className="sign-in-title-alt">ברוכים הבאים לשיפוצים</div>
             </div>
             <div className="sign-buttons">
               <a href="#" className="login-w-button">
@@ -41,7 +41,7 @@ export default function SignIn() {
                   src="https://img.icons8.com/color/48/google-logo.png"
                   alt="google-logo"
                 />
-                <span>Login with Google</span>
+                <span>התחבר עם Google</span>
               </a>
               <a href="#" className="login-w-button">
                 <img
@@ -50,20 +50,20 @@ export default function SignIn() {
                   src="https://img.icons8.com/ios-filled/50/mac-os.png"
                   alt="mac-os"
                 />
-                <span>Login with Apple</span>
+                <span>התחבר עם Apple</span>
               </a>
             </div>
             <div className="slice-container">
               <div className="slice-text-c">
                 <div className="slicer" />
-                <div className="slice-text">Or with email</div>
+                <div className="slice-text">או עם אימייל</div>
               </div>
             </div>
             <form className="input-container" onSubmit={handleSubmitLogin}>
               <input
                 type="email"
                 required
-                placeholder="Email"
+                placeholder="אימייל"
                 name="email"
                 value={inputValue.email}
                 onChange={handleChangeLogin}
@@ -71,17 +71,17 @@ export default function SignIn() {
               <input
                 type="password"
                 required
-                placeholder="Passowrd"
+                placeholder="סיסמה"
                 name="password"
                 value={inputValue.password}
                 onChange={handleChangeLogin}
               />
 
-              <button type="submit">Log in</button>
+              <button type="submit">התחבר</button>
               <div href="#" className="alt-f-full">
-                Not a Member yet ?
+                עדיין לא חבר?
                 <Link className="alt-f" to="/signUp">
-                  Sign up
+                  הירשם
                 </Link>
               </div>
             </form>

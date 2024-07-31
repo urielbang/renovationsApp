@@ -33,13 +33,13 @@ import logo10 from "../assets/images/logos/logo_01.png";
 import Sliderr from "../components/Slider";
 
 import { Link } from "react-router-dom";
+
 function LandPage() {
   return (
     <div>
       <div className="site-container">
         {/* Slider Revolution */}
         <Sliderr />
-        {/*/*/}
         <div className="theme-page">
           <div className="clearfix">
             <div className="row full-width">
@@ -48,10 +48,10 @@ function LandPage() {
                   <li className="column column-3-4">
                     <div className="vertical-align">
                       <div className="vertical-align-cell sl-small-wallet">
-                        <h3>COST OF RENOVATION</h3>
+                        <h3>עלות השיפוץ</h3>
                         <p className="description">
-                          Use our form to estimate the initial cost of
-                          renovation or installation.
+                          השתמשו בטופס שלנו להערכת העלות ההתחלתית של השיפוץ או
+                          ההתקנה.
                         </p>
                       </div>
                     </div>
@@ -60,7 +60,7 @@ function LandPage() {
                     <div className="vertical-align">
                       <div className="vertical-align-cell">
                         <Link to="/calculator" className="more">
-                          REQUEST A QUOTE
+                          בקשת הצעת מחיר
                         </Link>
                       </div>
                     </div>
@@ -70,27 +70,27 @@ function LandPage() {
             </div>
             <div className="row full-width gray page-padding-top-section">
               <div className="row">
-                <h2 className="box-header">OUR SERVICES</h2>
+                <h2 className="box-header">השירותים שלנו</h2>
                 <p className="description align-center">
-                  With over 15 years experience and real focus on customer
-                  satisfaction, you can rely on us for your next renovation,
+                  עם יותר מ-15 שנות ניסיון ומיקוד אמיתי בשביעות רצון הלקוחות,
+                  אתם יכולים לסמוך עלינו בשיפוץ הבא שלכם,
                   <br />
-                  driveway sett or home repair. We provide a professional
-                  service for private and commercial customers.
+                  התקנת שבילים או תיקונים בבית. אנו מספקים שירות מקצועי ללקוחות
+                  פרטיים ומסחריים.
                 </p>
                 <ul className="services-list clearfix page-margin-top">
                   <li>
-                    <Link to="/serviceInterior" title="Interior Renovation">
+                    <Link to="/serviceInterior" title="שיפוץ פנים">
                       <img src={img} alt="" />
                     </Link>
                     <h4 className="box-header">
-                      <Link to="/serviceInterior" title="Interior Renovation">
-                        INTERIOR RENOVATION
+                      <Link to="/serviceInterior" title="שיפוץ פנים">
+                        שיפוץ פנים
                       </Link>
                     </h4>
                     <p>
-                      We can help you bring new life to existing rooms and
-                      develop unused spaces.
+                      אנו יכולים לעזור לכם להכניס חיים חדשים לחדרים קיימים ולפתח
+                      חללים בלתי מנוצלים.
                     </p>
                   </li>
                   <li>
@@ -98,52 +98,41 @@ function LandPage() {
                       <img src={img3} alt="" />
                     </Link>
                     <h4 className="box-header">
-                      <a
-                        href="service_design_build.html"
-                        title="Design and Build"
-                      >
-                        DESIGN AND BUILD
-                      </a>
+                      <Link to="/serviceDesign" title="עיצוב ובנייה">
+                        עיצוב ובנייה
+                      </Link>
                     </h4>
-                    <p>
-                      From initial design and project specification to
-                      archieving a high end finish.
-                    </p>
+                    <p>מהעיצוב הראשוני והמפרט הפרויקט ועד לסיום איכותי גבוה.</p>
                   </li>
                   <li>
                     <Link to="/serviceDesign">
                       <img src={img2} alt="" />
                     </Link>
                     <h4 className="box-header">
-                      <a
-                        href="service_tiling_painting.html"
-                        title="Tiling and Painting"
-                      >
-                        TILING AND PAINTING
-                      </a>
+                      <Link to="/serviceDesign" title="אריחים וצביעה">
+                        אריחים וצביעה
+                      </Link>
                     </h4>
                     <p>
-                      We offer quality tiling and painting solutions for
-                      interior and exterior.
+                      אנו מציעים פתרונות איכותיים של אריחים וצביעה לפנים וחוץ.
                     </p>
                   </li>
                 </ul>
                 <div className="align-center margin-top-67 padding-bottom-87">
                   <Link to="/services" className="more">
-                    VIEW ALL SERVICES
+                    הצג את כל השירותים
                   </Link>
                 </div>
               </div>
             </div>
             <div className="row full-width page-margin-top-section">
               <div className="row">
-                <h2 className="box-header">RECENT PROJECTS</h2>
+                <h2 className="box-header">פרויקטים אחרונים</h2>
                 <p className="description align-center">
-                  Here are a few of many projects we have completed for our
-                  customers. We provide a professional service
+                  הנה כמה פרויקטים רבים שהשלמנו ללקוחות שלנו. אנו מספקים שירות
+                  מקצועי
                   <br />
-                  which includes consultation, free estimate, design, supply of
-                  materials and installation.
+                  הכולל ייעוץ, הערכה חינמית, עיצוב, אספקת חומרים והתקנה.
                 </p>
               </div>
               <ul className="projects-list clearfix page-margin-top">
@@ -154,9 +143,9 @@ function LandPage() {
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
-                        <p className="description">Design and Build</p>
+                        <p className="description">עיצוב ובנייה</p>
                         <Link to="/projectDesign" className="more simple">
-                          VIEW PROJECT
+                          הצג פרויקט
                         </Link>
                       </div>
                     </div>
@@ -169,8 +158,8 @@ function LandPage() {
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
-                        <p className="description">Garden Renovation</p>
-                        <Link className="more simple">VIEW PROJECT</Link>
+                        <p className="description">שיפוץ גינה</p>
+                        <Link className="more simple">הצג פרויקט</Link>
                       </div>
                     </div>
                   </div>
@@ -182,8 +171,8 @@ function LandPage() {
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
-                        <p className="description">Interior Renovation</p>
-                        <Link className="more simple">VIEW PROJECT</Link>
+                        <p className="description">שיפוץ פנים</p>
+                        <Link className="more simple">הצג פרויקט</Link>
                       </div>
                     </div>
                   </div>
@@ -195,8 +184,8 @@ function LandPage() {
                   <div className="view align-center">
                     <div className="vertical-align-table">
                       <div className="vertical-align-cell">
-                        <p className="description">Solar Systems</p>
-                        <Link className="more simple">VIEW PROJECT</Link>
+                        <p className="description">מערכות סולאריות</p>
+                        <Link className="more simple">הצג פרויקט</Link>
                       </div>
                     </div>
                   </div>
@@ -205,22 +194,21 @@ function LandPage() {
             </div>
             <div className="row gray full-width padding-top-54 padding-bottom-61 align-center">
               <h3>
-                <span className="button-label">EXPLORE OUR PROJECTS</span>{" "}
+                <span className="button-label">חקרו את הפרויקטים שלנו</span>{" "}
                 <Link to="/projects" className="more">
-                  VIEW ALL PROJECTS
+                  הצג את כל הפרויקטים
                 </Link>
               </h3>
             </div>
-
             <div className="row page-margin-top-section">
               <div className="row">
-                <h2 className="box-header">ABOUT US</h2>
+                <h2 className="box-header">אודותינו</h2>
                 <p className="description align-center">
-                  We provide a professional renovation and installation services
-                  with a real focus on customer satisfaction.
+                  אנו מספקים שירותי שיפוץ והתקנה מקצועיים עם מיקוד אמיתי בשביעות
+                  רצון הלקוחות.
                   <br />
-                  Our installations are carried out by fully trained staff to
-                  the highest professional standards.
+                  ההתקנות שלנו מבוצעות על ידי צוותים מאומנים לחלוטין ברמה
+                  המקצועית הגבוהה ביותר.
                 </p>
               </div>
               <div className="row page-margin-top">
@@ -232,27 +220,24 @@ function LandPage() {
                 <div className="column column-1-2">
                   <ul className="features-list">
                     <li className="sl-small-helmet margin-top-40">
-                      <h4>OVER 15 YEARS EXPERIENCE</h4>
+                      <h4>מעל 15 שנות ניסיון</h4>
                       <p>
-                        We combine quality workmanship, superior knowledge and
-                        low prices to provide you with service unmatched by our
-                        competitors.
+                        אנו משלבים עבודת איכות, ידע עליון ומחירים נמוכים כדי
+                        לספק לכם שירות שאין כמותו למתחרים שלנו.
                       </p>
                     </li>
                     <li className="sl-small-roller">
-                      <h4>BEST MATERIALS</h4>
+                      <h4>החומרים הטובים ביותר</h4>
                       <p>
-                        We have the experience, personel and resources to make
-                        the project run smoothly. We can ensure a job is done on
-                        time.
+                        יש לנו את הניסיון, הצוות והמשאבים כדי לגרום לפרויקט
+                        להתנהל בצורה חלקה. אנו יכולים להבטיח שעבודה תבוצע בזמן.
                       </p>
                     </li>
                     <li className="sl-small-driller">
-                      <h4>PROFESSIONAL STANDARDS</h4>
+                      <h4>סטנדרטים מקצועיים</h4>
                       <p>
-                        Work with us involve a carefully planned series of
-                        steps, centered around a schedule we stick to and daily
-                        communication.
+                        עבודה איתנו כוללת סדרה שלבים מתוכננת בקפידה, מרוכזת סביב
+                        לוח זמנים שאנו דבקים בו ותקשורת יומית.
                       </p>
                     </li>
                   </ul>
@@ -264,62 +249,59 @@ function LandPage() {
                 <div className="tabs no-scroll clearfix">
                   <ul className="tabs-navigation clearfix">
                     <li>
-                      <Link className="sl-small-bubble-check">We Offer</Link>
+                      <Link className="sl-small-bubble-check">אנו מציעים</Link>
                       <span />
                     </li>
                     <li>
-                      <Link className="sl-small-shield">We Guarantee</Link>
+                      <Link className="sl-small-shield">אנו מבטיחים</Link>
                       <span />
                     </li>
                     <li>
-                      <Link className="sl-small-truck">We Provide</Link>
+                      <Link className="sl-small-truck">אנו מספקים</Link>
                       <span />
                     </li>
                   </ul>
                   <div id="we-offer">
-                    <h4 className="box-header">OUR OFFER</h4>
+                    <h4 className="box-header">ההצעה שלנו</h4>
                     <p>
-                      Paetos dignissim at cursus elefeind norma arcu.
-                      Pellentesque accumsan est in tempus etos ullamcorper, sem
-                      quam suscipit lacus maecenas tortor. Erates vitae node
-                      metus. Suspendisse gravida ornare non mattis velit rutrum
-                      modest. Morbi suspendisse a tortor velim pellentesque uter
-                      justo magna gravida.
+                      אנו מציעים מגוון רחב של שירותי שיפוץ ובנייה באיכות הגבוהה
+                      ביותר. צוות המומחים שלנו משתמש בחומרים הטובים ביותר
+                      ובטכנולוגיות המתקדמות ביותר כדי להבטיח תוצאות מרשימות
+                      ושביעות רצון מלאה של לקוחותינו. אנו מתחייבים להעניק לכם
+                      שירות מקצועי ואמין בכל שלב של הפרויקט.
                     </p>
                   </div>
                   <div id="we-guarantee">
-                    <h4 className="box-header">OUR WARRANTY COVERS</h4>
+                    <h4 className="box-header">הערבות שלנו</h4>
                     <p>
-                      Paetos dignissim at cursus elefeind norma arcu.
-                      Pellentesque accumsan est in tempus etos ullamcorper, sem
-                      quam suscipit lacus maecenas tortor. Erates vitae node
-                      metus. Suspendisse gravida ornare non mattis velit rutrum
-                      modest. Morbi suspendisse a tortor velim pellentesque uter
-                      justo magna gravida.
+                      אנו מעניקים אחריות מלאה על כל עבודות השיפוץ והבנייה שלנו.
+                      כל פרויקט מתבצע על ידי צוות מיומן ומנוסה, תוך שימוש
+                      בחומרים האיכותיים ביותר ובשיטות עבודה מתקדמות. אנחנו
+                      דואגים להקפיד על עמידה בלוחות זמנים ובתקציב שנקבע מראש,
+                      ומבטיחים לשמור על תקשורת פתוחה ושוטפת עם הלקוחות שלנו
+                      לאורך כל התהליך.
                     </p>
                   </div>
                   <div id="we-provide">
-                    <h4 className="box-header">OUR SERVICES</h4>
+                    <h4 className="box-header">השירותים שלנו</h4>
                     <p>
-                      Paetos dignissim at cursus elefeind norma arcu.
-                      Pellentesque accumsan est in tempus etos ullamcorper, sem
-                      quam suscipit lacus maecenas tortor. Erates vitae node
-                      metus. Suspendisse gravida ornare non mattis velit rutrum
-                      modest. Morbi suspendisse a tortor velim pellentesque uter
-                      justo magna gravida.
+                      השירותים שלנו כוללים שיפוץ פנים וחוץ, בניית מבנים חדשים,
+                      עבודות גמר, עיצוב פנים, התקנת מערכות סולאריות, ועוד. אנו
+                      מספקים פתרונות מותאמים אישית לכל לקוח, תוך דגש על איכות,
+                      מקצועיות וחדשנות. כל פרויקט מלווה בייעוץ מקצועי והכוונה
+                      לאורך כל הדרך, מהתכנון ועד לסיום העבודה.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="row page-margin-top-section padding-bottom-66">
-              <h2 className="box-header">WHY CHOOSE RENOVATE</h2>
+              <h2 className="box-header">למה לבחור ברנובייט</h2>
               <p className="description align-center">
-                Founded by Kevin Smith back in 2000, Renovate has established
-                itself as one of the greatest and prestigious
+                נוסדה על ידי קווין סמית בשנת 2000, רנובייט הוקמה כאחת מהספקיות
+                הגדולות והמכובדות
                 <br />
-                providers of construction focused interior renovation services
-                and building.
+                של שירותי שיפוץ פנים המתמקדים בבנייה ובבנייה.
               </p>
               <div className="row page-margin-top">
                 <div className="column column-1-3">
@@ -327,11 +309,13 @@ function LandPage() {
                     <li className="sl-large-house-1">
                       <div className="ornament" />
                       <h4 className="box-header page-margin-top">
-                        OVER 15 YEARS EXPERIENCE
+                        מעל 15 שנות ניסיון
                       </h4>
                       <p>
-                        Morbi nulla tortor, dignissim est node cursus euismod
-                        est arcu. Nomad at vehicula novum justo magna.
+                        עם ניסיון עשיר של מעל 15 שנים בתחום השיפוץ והבנייה, אנו
+                        מספקים שירותים מקצועיים ברמה הגבוהה ביותר. הצוות שלנו
+                        כולל אנשי מקצוע מיומנים ובעלי ניסיון רב, המבטיחים תוצאות
+                        מרשימות בכל פרויקט.
                       </p>
                     </li>
                   </ul>
@@ -341,11 +325,13 @@ function LandPage() {
                     <li className="sl-large-eco">
                       <div className="ornament" />
                       <h4 className="box-header page-margin-top">
-                        BEST MATERIALS
+                        החומרים הטובים ביותר
                       </h4>
                       <p>
-                        Morbi nulla tortor, dignissim est node cursus euismod
-                        est arcu. Nomad at vehicula novum justo magna.
+                        אנו משתמשים רק בחומרים האיכותיים ביותר ובטכנולוגיות
+                        המתקדמות ביותר בשוק. כל פרויקט מתבצע עם דגש על איכות
+                        וגימור מושלם, תוך שמירה על התקנים המחמירים ביותר בתחום
+                        הבנייה והשיפוץ.
                       </p>
                     </li>
                   </ul>
@@ -355,21 +341,22 @@ function LandPage() {
                     <li className="sl-large-garage">
                       <div className="ornament" />
                       <h4 className="box-header page-margin-top">
-                        PROFESSIONAL STANDARDS
+                        סטנדרטים מקצועיים
                       </h4>
                       <p>
-                        Morbi nulla tortor, dignissim est node cursus euismod
-                        est arcu. Nomad at vehicula novum justo magna.
+                        העבודה שלנו מבוצעת לפי הסטנדרטים הגבוהים ביותר, תוך
+                        שמירה על דיוק, יעילות ואיכות. אנו מקפידים על עמידה
+                        בלוחות זמנים ובתקציב שנקבע מראש, ומתחייבים לשירות אישי
+                        ומקצועי לכל לקוח.
                       </p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-
             <div className="row gray full-width page-padding-top-section padding-bottom-66">
               <div className="row">
-                <h2 className="box-header">WE WORK WITH</h2>
+                <h2 className="box-header">אנו עובדים עם</h2>
                 <div className="our-clients-list-container page-margin-top">
                   <ul className="our-clients-list">
                     <li>
@@ -421,9 +408,9 @@ function LandPage() {
               <ul className="contact-details-list">
                 <li className="sl-small-phone">
                   <p>
-                    Phone:
+                    טלפון:
                     <br />
-                    +149 75 23 222 35
+                    +972 75 23 2222
                   </p>
                 </li>
               </ul>
@@ -432,9 +419,9 @@ function LandPage() {
               <ul className="contact-details-list">
                 <li className="sl-small-location">
                   <p>
-                    272 Linden Avenue
+                    רחוב הרצל 272
                     <br />
-                    Winter Park, FL 32789
+                    ראשון לציון, IL 32789
                   </p>
                 </li>
               </ul>
@@ -443,7 +430,7 @@ function LandPage() {
               <ul className="contact-details-list">
                 <li className="sl-small-mail">
                   <p>
-                    E-mail:
+                    דוא"ל:
                     <br />
                     <a href="mailto:adiSambata@gmail.com">
                       adiSambata@gmail.com
@@ -457,11 +444,10 @@ function LandPage() {
         <div className="row gray full-width page-padding-top padding-bottom-50">
           <div className="row row-4-4">
             <div className="column column-1-4">
-              <h6 className="box-header">About Us</h6>
+              <h6 className="box-header">אודותינו</h6>
               <p className="description t1">
-                Founded by Kevin Smith back in 2000. Renovate has estabilished
-                itself as one of the greatest and prestigious providers of
-                construction focused interior renovation services and building.
+                נוסדה על ידי קווין סמית בשנת 2000. רנובייט הוקמה כאחת מהספקיות
+                הגדולות והמכובדות של שירותי שיפוץ פנים המתמקדים בבנייה ובבנייה.
               </p>
               <ul className="social-icons yellow margin-top-26">
                 <li>
@@ -479,111 +465,105 @@ function LandPage() {
               </ul>
             </div>
             <div className="column column-1-4">
-              <h6 className="box-header">Our Services</h6>
+              <h6 className="box-header">השירותים שלנו</h6>
               <ul className="list margin-top-20">
-                <li className="template-bullet">Interior Renovation</li>
-                <li className="template-bullet">Design and Build</li>
-                <li className="template-bullet">Tiling and Painting</li>
-                <li className="template-bullet">Paver Walkways</li>
-                <li className="template-bullet">Household Repairs</li>
-                <li className="template-bullet">Solar Systems</li>
+                <li className="template-bullet">שיפוץ פנים</li>
+                <li className="template-bullet">עיצוב ובנייה</li>
+                <li className="template-bullet">אריחים וצביעה</li>
+                <li className="template-bullet">שבילים מרוצפים</li>
+                <li className="template-bullet">תיקונים בבית</li>
+                <li className="template-bullet">מערכות סולאריות</li>
               </ul>
             </div>
             <div className="column column-1-4">
-              <h6 className="box-header">Categories</h6>
+              <h6 className="box-header">קטגוריות</h6>
               <ul className="taxonomies margin-top-30">
                 <li>
-                  <a href="category.html" title="BUILD">
-                    BUILD
+                  <a href="category.html" title="בנייה">
+                    בנייה
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="DESIGN">
-                    DESIGN
+                  <a href="category.html" title="עיצוב">
+                    עיצוב
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="FLOORING">
-                    FLOORING
+                  <a href="category.html" title="ריצוף">
+                    ריצוף
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="PAINTING">
-                    PAINTING
+                  <a href="category.html" title="צביעה">
+                    צביעה
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="PAVERS">
-                    PAVERS
+                  <a href="category.html" title="שבילים מרוצפים">
+                    שבילים מרוצפים
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="PLUMBING">
-                    PLUMBING
+                  <a href="category.html" title="אינסטלציה">
+                    אינסטלציה
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="RENOVATION">
-                    RENOVATION
+                  <a href="category.html" title="שיפוץ">
+                    שיפוץ
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="REPAIRS">
-                    REPAIRS
+                  <a href="category.html" title="תיקונים">
+                    תיקונים
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="SOLAR SYSTEMS">
-                    SOLAR SYSTEMS
+                  <a href="category.html" title="מערכות סולאריות">
+                    מערכות סולאריות
                   </a>
                 </li>
                 <li>
-                  <a href="category.html" title="TILING">
-                    TILING
+                  <a href="category.html" title="אריחים">
+                    אריחים
                   </a>
                 </li>
               </ul>
             </div>
             <div className="column column-1-4">
-              <h6 className="box-header">Latest Posts</h6>
+              <h6 className="box-header">פוסטים אחרונים</h6>
               <ul className="blog small margin-top-30">
                 <li>
                   <a
                     href="post.html"
-                    title="What a Difference a Few Months Make"
+                    title="מה ההבדל שעושים כמה חודשים"
                     className="post-image"
                   >
                     <img src="images/samples/90x90/image_10.jpg" alt="" />
                   </a>
                   <div className="post-content">
-                    <a
-                      href="post.html"
-                      title="What a Difference a Few Months Make"
-                    >
-                      What a Difference a Few Months Make
+                    <a href="post.html" title="מה ההבדל שעושים כמה חודשים">
+                      מה ההבדל שעושים כמה חודשים
                     </a>
                     <ul className="post-details">
-                      <li className="date">April 25, 2015</li>
+                      <li className="date">25 אפריל, 2015</li>
                     </ul>
                   </div>
                 </li>
                 <li>
                   <a
                     href="post.html"
-                    title="Kitchen and Living Room Renovation"
+                    title="שיפוץ מטבח וסלון"
                     className="post-image"
                   >
                     <img src="images/samples/90x90/image_07.jpg" alt="" />
                   </a>
                   <div className="post-content">
-                    <a
-                      href="post.html"
-                      title="Kitchen and Living Room Renovation"
-                    >
-                      Kitchen and Living Room Renovation
+                    <a href="post.html" title="שיפוץ מטבח וסלון">
+                      שיפוץ מטבח וסלון
                     </a>
                     <ul className="post-details">
-                      <li className="date">April 17, 2015</li>
+                      <li className="date">17 אפריל, 2015</li>
                     </ul>
                   </div>
                 </li>
@@ -595,7 +575,7 @@ function LandPage() {
       <a
         href="#top"
         className="scroll-top animated-element template-arrow-up"
-        title="Scroll to top"
+        title="גלול לראש"
       />
     </div>
   );

@@ -36,17 +36,17 @@ export default function MyProjects() {
           <div className="row full-width padding-top-bottom-50 vertical-align-cell">
             <div className="row">
               <div className="page-header-left">
-                <h1>MY PROJECTS</h1>
+                <h1>הפרויקטים שלי</h1>
               </div>
               <div className="page-header-right">
                 <div className="bread-crumb-container">
-                  <label>You Are Here:</label>
+                  <label>אתה נמצא כאן:</label>
                   <ul className="bread-crumb">
                     <li>
-                      <Link title="Home">MY PROJECTS</Link>
+                      <Link title="Home">הפרויקטים שלי</Link>
                     </li>
                     <li className="separator">/</li>
-                    <li>MY PROJECTS</li>
+                    <li>הפרויקטים שלי</li>
                   </ul>
                 </div>
               </div>
@@ -57,17 +57,17 @@ export default function MyProjects() {
           <div className="row">
             <ul className="tabs-navigation small gray isotope-filters margin-top-70">
               <li>
-                <Link to="/projects" title="All Projects">
-                  All Projects
+                <Link to="/projects" title="כל הפרויקטים">
+                  כל הפרויקטים
                 </Link>
               </li>
               <li>
                 <Link
                   className="selected"
-                  title="All Projects"
+                  title="כל הפרויקטים"
                   to="/myProjects"
                 >
-                  My Projects
+                  הפרויקטים שלי
                 </Link>
               </li>
             </ul>
@@ -92,7 +92,7 @@ export default function MyProjects() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -103,9 +103,9 @@ export default function MyProjects() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  רחוב לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  ווינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -114,9 +114,9 @@ export default function MyProjects() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  דוא"ל:
                   <br />
-                  <a href="mailto:adiSmbata@gmail.com">adiSmabta@gmail.com</a>
+                  <a href="mailto:adiSmbata@gmail.com">adiSmbata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -126,11 +126,10 @@ export default function MyProjects() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסדה על ידי קווין סמית בשנת 2000. רנובייט הוקמה כאחת מהספקיות
+              הגדולות והמכובדות של שירותי שיפוץ פנים המתמקדים בבנייה ובבנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -148,100 +147,95 @@ export default function MyProjects() {
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">עיצוב ובנייה</li>
+              <li className="template-bullet">ריצוף וצביעה</li>
+              <li className="template-bullet">שבילי אבנים</li>
+              <li className="template-bullet">תיקוני בית</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
                 <a href="#" title="BUILD">
-                  BUILD
+                  בנייה
                 </a>
               </li>
               <li>
                 <a href="#" title="DESIGN">
-                  DESIGN
+                  עיצוב
                 </a>
               </li>
               <li>
                 <a href="#" title="FLOORING">
-                  FLOORING
+                  ריצוף
                 </a>
               </li>
               <li>
                 <a href="#" title="PAINTING">
-                  PAINTING
+                  צביעה
                 </a>
               </li>
               <li>
                 <a href="#" title="PAVERS">
-                  PAVERS
+                  אבנים
                 </a>
               </li>
               <li>
                 <a href="#" title="PLUMBING">
-                  PLUMBING
+                  אינסטלציה
                 </a>
               </li>
               <li>
                 <a href="#" title="RENOVATION">
-                  RENOVATION
+                  שיפוץ
                 </a>
               </li>
               <li>
                 <a href="#" title="REPAIRS">
-                  REPAIRS
+                  תיקונים
                 </a>
               </li>
               <li>
                 <a href="#" title="SOLAR SYSTEMS">
-                  SOLAR SYSTEMS
+                  מערכות סולאריות
                 </a>
               </li>
               <li>
                 <a href="#" title="TILING">
-                  TILING
+                  ריצוף
                 </a>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
                 <Link className="post-image">
                   <img src={img7} alt="" />
                 </Link>
                 <div className="post-content">
-                  <Link title="What a Difference a Few Months Make">
-                    What a Difference a Few Months Make
+                  <Link title="מה ששינוי כמה חודשים עושה">
+                    מה ששינוי כמה חודשים עושה
                   </Link>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 באפריל, 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <Link
-                  title="Kitchen and Living Room Renovation"
-                  className="post-image"
-                >
+                <Link title="שיפוץ מטבח וסלון" className="post-image">
                   <img src={img8} alt="" />
                 </Link>
                 <div className="post-content">
-                  <Link title="Kitchen and Living Room Renovation">
-                    Kitchen and Living Room Renovation
-                  </Link>
+                  <Link title="שיפוץ מטבח וסלון">שיפוץ מטבח וסלון</Link>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 באפריל, 2015</li>
                   </ul>
                 </div>
               </li>

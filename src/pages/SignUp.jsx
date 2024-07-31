@@ -1,22 +1,19 @@
-import React, { useEffect, useState, useContext, createContext } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { apiUrl } from "../config/apiConfig";
 import { UserContext } from "../context/User";
 
 export default function SignUp() {
   const { handleChangeSignUp, handleSignUp, inputValue } =
     useContext(UserContext);
 
-  useEffect(() => {}, []);
   return (
     <div className="sign-in-container">
       <div className="sign-column s1">
         <div className="sign-column-face s2">
           <div className="s3">
             <div className="sign-header-section">
-              <div className="sign-in-title">Sign up</div>
-              <div className="sign-in-title-alt">Welcome to renovations</div>
+              <div className="sign-in-title">הרשמה</div>
+              <div className="sign-in-title-alt">ברוכים הבאים לשיפוצים</div>
             </div>
             <div className="sign-buttons">
               <a href="#" className="login-w-button">
@@ -24,31 +21,31 @@ export default function SignUp() {
                   width={18}
                   height={18}
                   src="https://img.icons8.com/color/48/google-logo.png"
-                  alt="google-logo"
+                  alt="לוגו גוגל"
                 />
-                <span>Sign in with Google</span>
+                <span>התחבר עם גוגל</span>
               </a>
               <a href="#" className="login-w-button">
                 <img
                   width={18}
                   height={18}
                   src="https://img.icons8.com/ios-filled/50/mac-os.png"
-                  alt="mac-os"
+                  alt="לוגו אפל"
                 />
-                <span>Sign in with Apple</span>
+                <span>התחבר עם אפל</span>
               </a>
             </div>
             <div className="slice-container">
               <div className="slice-text-c">
                 <div className="slicer" />
-                <div className="slice-text">Or with email</div>
+                <div className="slice-text">או עם דוא"ל</div>
               </div>
             </div>
             <form className="input-container" onSubmit={handleSignUp}>
               <input
                 type="text"
                 required
-                placeholder="name"
+                placeholder="שם"
                 name="name"
                 value={inputValue.name}
                 onChange={handleChangeSignUp}
@@ -56,7 +53,7 @@ export default function SignUp() {
               <input
                 type="email"
                 required
-                placeholder="Email"
+                placeholder={`דואל`}
                 name="email"
                 value={inputValue.email}
                 onChange={handleChangeSignUp}
@@ -64,16 +61,16 @@ export default function SignUp() {
               <input
                 type="password"
                 required
-                placeholder="Passowrd"
+                placeholder="סיסמא"
                 name="password"
                 value={inputValue.password}
                 onChange={handleChangeSignUp}
               />
-              <button>Sign up</button>
-              <div href="#" className="alt-f-full">
-                Not a Member yet ?
+              <button type="submit">הרשמה</button>
+              <div className="alt-f-full">
+                לא חבר עדיין?
                 <Link to="/signIn" className="alt-f">
-                  Log in
+                  התחבר
                 </Link>
               </div>
             </form>

@@ -14,9 +14,9 @@ export default function Calculator() {
   const feTotalCostRef = useRef(null);
   const pwTotalCostRef = useRef(null);
 
-  const [messageReceive, setmessageReceive] = useState(false);
-  const [messageReceiveFe, setmessageReceiveFe] = useState(false);
-  const [messageReceiveWalkway, setmessageReceivWalkway] = useState(false);
+  const [messageReceive, setMessageReceive] = useState(false);
+  const [messageReceiveFe, setMessageReceiveFe] = useState(false);
+  const [messageReceiveWalkway, setMessageReceiveWalkway] = useState(false);
   const [interiorRenovationValues, setInteriorRenovationValues] = useState({
     squareFeet: 300,
     walls: 0,
@@ -40,9 +40,9 @@ export default function Calculator() {
     surface: 0,
     stoneWalling: 0,
   });
+
   const handleInteriorRenovationChange = (e) => {
     const { name, value } = e.target;
-
     setInteriorRenovationValues({ ...interiorRenovationValues, [name]: value });
     setPriceQuoteData({ ...priceQuoteData, [name]: value });
   };
@@ -52,6 +52,7 @@ export default function Calculator() {
     setFenceValues({ ...fenceValues, [name]: value });
     setPriceQuoteDatafe({ ...priceQuoteDataFe, [name]: value });
   };
+
   const [priceQuoteData, setPriceQuoteData] = useState({
     doors: interiorRenovationValues.doors,
     email: "",
@@ -62,6 +63,7 @@ export default function Calculator() {
     squareFeet: interiorRenovationValues.squareFeet,
     windows: interiorRenovationValues.windows,
   });
+
   const [priceQuoteDataFe, setPriceQuoteDatafe] = useState({
     email: "",
     extras: fenceValues.extras,
@@ -73,6 +75,7 @@ export default function Calculator() {
     panel: fenceValues.panel,
     phone: "",
   });
+
   const [priceQuoteWalkway, setPriceQuoteWalkway] = useState({
     areaLength: paverWalkwayValues.areaLength,
     areaWidth: paverWalkwayValues.areaWidth,
@@ -87,17 +90,16 @@ export default function Calculator() {
 
   const handlePaverWalkwayChange = (e) => {
     const { name, value } = e.target;
-
     setPaverWalkwayValues({ ...paverWalkwayValues, [name]: value });
     setPriceQuoteWalkway({
       ...priceQuoteWalkway,
       [name]: value,
     });
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     const total = irTotalCostRef.current.value?.replace("$", "");
-
     setPriceQuoteData({
       ...priceQuoteData,
       [name]: value,
@@ -107,16 +109,9 @@ export default function Calculator() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const priceQuote = await axios.post(`${apiUrl}/priceQuote`, priceQuoteData);
     console.log(priceQuote);
-    e.target[0].value = 0;
-    e.target[5].value = 0;
-    e.target[7].value = 0;
-    e.target[10].value = "";
-    e.target[11].value = "";
-    e.target[12].value = "";
-    e.target[13].value = "";
+    e.target.reset();
     setPriceQuoteData({
       doors: "",
       email: "",
@@ -128,18 +123,19 @@ export default function Calculator() {
       windows: "",
       totalPrice: "",
     });
-    setmessageReceive(true);
+    setMessageReceive(true);
   };
+
   const handleChangeFence = (e) => {
     const { name, value } = e.target;
     const total = feTotalCostRef.current.value?.replace("$", "");
-
     setPriceQuoteDatafe({
       ...priceQuoteDataFe,
       [name]: value,
       totalPrice: total,
     });
   };
+
   const handleSubmitFence = async (e) => {
     e.preventDefault();
     const priceQuote = await axios.post(
@@ -158,27 +154,27 @@ export default function Calculator() {
       panel: "",
       phone: "",
     });
-    setmessageReceiveFe(true);
+    setMessageReceiveFe(true);
   };
+
   const handleChangeWalkway = (e) => {
     const { name, value } = e.target;
     const total = pwTotalCostRef.current.value?.replace("$", "");
-
     setPriceQuoteWalkway({
       ...priceQuoteWalkway,
       [name]: value,
       totalPrice: total,
     });
   };
+
   const handleSubmitWalkWay = async (e) => {
     e.preventDefault();
-
     const priceQuote = await axios.post(
       `${apiUrl}/priceQuote`,
       priceQuoteWalkway
     );
     console.log(priceQuote);
-    setPriceQuoteDatafe({
+    setPriceQuoteWalkway({
       areaLength: "",
       areaWidth: "",
       blockPaving: "",
@@ -189,8 +185,7 @@ export default function Calculator() {
       panel: "",
       phone: "",
     });
-
-    setmessageReceivWalkway(true);
+    setMessageReceiveWalkway(true);
   };
 
   return (
@@ -199,17 +194,17 @@ export default function Calculator() {
         <div className="row full-width padding-top-bottom-50 vertical-align-cell">
           <div className="row">
             <div className="page-header-left">
-              <h1>COST CALCULATOR</h1>
+              <h1>מחשבון עלויות</h1>
             </div>
             <div className="page-header-right">
               <div className="bread-crumb-container">
-                <label>You Are Here:</label>
+                <label>אתה נמצא כאן:</label>
                 <ul className="bread-crumb">
                   <li>
-                    <Link title="HOME">HOME</Link>
+                    <Link title="דף הבית">דף הבית</Link>
                   </li>
                   <li className="separator">/</li>
-                  <li>COST CALCULATOR</li>
+                  <li>מחשבון עלויות</li>
                 </ul>
               </div>
             </div>
@@ -219,21 +214,20 @@ export default function Calculator() {
       <div className="row margin-top-70">
         <div className="column column-2-3">
           <p className="description t1 margin-top-0">
-            Need to know how much your remodel will cost? Our easy to use
-            renovation cost tool will help you to get project cost estimates
-            online. Simply enter your data and the calculator will produce an
-            approximate quote. Please provide your details and submit the form
-            to make an appointment with us and obtain a more accurate quote.
+            צריך לדעת כמה תעלה השיפוץ שלך? הכלי הקל לשימוש שלנו לחישוב עלויות
+            שיפוץ יעזור לך לקבל הערכת עלויות לפרויקט שלך באינטרנט. פשוט הזן את
+            הנתונים שלך והחשבונית תפיק ציטוט מקורב. אנא ספק את הפרטים שלך והגש
+            את הטופס לקביעת פגישה איתנו וקבלת הצעת מחיר מדויקת יותר.
           </p>
           <div className="tabs small no-scroll align-left clearfix margin-top-40">
             <div id="interior-renovation" className="margin-top-30">
-              <h2>interior Calculator</h2>
+              <h2>מחשבון שיפוץ פנים</h2>
               <form
                 onSubmit={handleSubmit}
                 className="contact-form cost-calculator-container"
               >
                 <div className="cost-calculator-box clearfix">
-                  <label>Area to be Renovated in Square Feet:</label>
+                  <label>שטח לשיפוץ ברגל מרובע:</label>
                   <div className="cost-slider-container">
                     <input
                       id="ir-square-feet"
@@ -249,12 +243,11 @@ export default function Calculator() {
                       data-step={10}
                       data-min={10}
                       data-max={3000}
-                      data-input="ir-square-feet"
                     />
                   </div>
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Walls &amp; Ceilings:</label>
+                  <label>קירות ותקרות:</label>
                   <select
                     name="walls"
                     id="ir-walls"
@@ -263,14 +256,14 @@ export default function Calculator() {
                     onChange={handleInteriorRenovationChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value={2}>Painting</option>
-                    <option value="2.3">Painting + Minor Repairs</option>
-                    <option value="2.5">Painting + Decorative Stone</option>
-                    <option value={3}>Tiling</option>
-                    <option value={5}>Painting + Tiling</option>
-                    <option value={2}>Hanging Lining Paper</option>
+                    <option value={2}>צביעה</option>
+                    <option value="2.3">צביעה + תיקונים קלים</option>
+                    <option value="2.5">צביעה + אבן דקורטיבית</option>
+                    <option value={3}>ריצוף</option>
+                    <option value={5}>צביעה + ריצוף</option>
+                    <option value={2}>תליית נייר קיר</option>
                   </select>
                   <input
                     type="hidden"
@@ -280,7 +273,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Floors:</label>
+                  <label>רצפות:</label>
                   <select
                     name="floors"
                     id="ir-floors"
@@ -289,14 +282,14 @@ export default function Calculator() {
                     onChange={handleInteriorRenovationChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value="1.5">Hardwood Flooring</option>
-                    <option value="2.5">Bamboo Flooring</option>
-                    <option value="2.6">Vinyl Tile Flooring</option>
-                    <option value="3.25">Parquet Flooring</option>
-                    <option value="3.5">Wall-to-wall Carpet</option>
-                    <option value={12}>Ceramic Tile Flooring</option>
+                    <option value="1.5">ריצוף עץ</option>
+                    <option value="2.5">ריצוף במבוק</option>
+                    <option value="2.6">ריצוף ויניל</option>
+                    <option value="3.25">ריצוף פרקט</option>
+                    <option value="3.5">שטיח מקיר לקיר</option>
+                    <option value={12}>ריצוף קרמיקה</option>
                   </select>
                   <input
                     type="hidden"
@@ -306,7 +299,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Interior Doors to Replace:</label>
+                  <label>דלתות פנים להחלפה:</label>
                   <div className="cost-slider-container">
                     <input
                       id="ir-doors"
@@ -328,14 +321,12 @@ export default function Calculator() {
                       data-step={1}
                       data-min={0}
                       data-max={10}
-                      data-input="ir-doors"
-                      data-value-input="ir-doors-value"
                       data-price={250}
                     />
                   </div>
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Windows to Replace:</label>
+                  <label>חלונות להחלפה:</label>
                   <div className="cost-slider-container">
                     <input
                       id="ir-windows"
@@ -357,8 +348,6 @@ export default function Calculator() {
                       data-step={1}
                       data-min={0}
                       data-max={10}
-                      data-input="ir-windows"
-                      data-value-input="ir-windows-value"
                       data-price={200}
                     />
                   </div>
@@ -368,11 +357,11 @@ export default function Calculator() {
                     formula={`ir-square-feet*${interiorRenovationValues.squareFeet}+ir-walls*${interiorRenovationValues.walls}+ir-floors*${interiorRenovationValues.floors}+ir-doors*${interiorRenovationValues.doors}*250+ir-windows*${interiorRenovationValues.windows}*200`}
                     updateHidden={irTotalCostRef.current}
                   />
-                  <p className="description t1">Approximate Project Cost</p>
+                  <p className="description t1">עלות פרויקט משוערת</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
                   <div className="row">
-                    <label>Contact Details</label>
+                    <label>פרטי התקשרות</label>
                   </div>
                   <div className="row margin-top-20">
                     <fieldset className="column column-1-2">
@@ -381,28 +370,28 @@ export default function Calculator() {
                         name="name"
                         onChange={handleChange}
                         type="text"
-                        placeholder="Your Name *"
+                        placeholder="שמך *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
                         onChange={handleChange}
-                        placeholder="Your Email *"
+                        placeholder="האימייל שלך *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
                         onChange={handleChange}
-                        placeholder="Your Phone"
+                        placeholder="טלפון"
                       />
                     </fieldset>
                     <fieldset className="column column-1-2">
                       <textarea
                         name="message"
                         onChange={handleChange}
-                        placeholder="Message *"
+                        placeholder="הודעה *"
                       />
                     </fieldset>
                   </div>
@@ -410,7 +399,7 @@ export default function Calculator() {
                     <div className="column column-1-2">
                       {messageReceive == true ? (
                         <p className="description t1">
-                          We will contact you within one business day.
+                          ניצור איתך קשר תוך יום עסקים אחד.
                         </p>
                       ) : (
                         ""
@@ -436,7 +425,7 @@ export default function Calculator() {
                       <input
                         type="submit"
                         name="submit"
-                        defaultValue="SUBMIT NOW"
+                        defaultValue="שלח עכשיו"
                         className="more active"
                       />
                     </div>
@@ -445,13 +434,13 @@ export default function Calculator() {
               </form>
             </div>
             <div id="fence" className="margin-top-30">
-              <h2>fence calculator</h2>
+              <h2>מחשבון גדר</h2>
               <form
                 onSubmit={handleSubmitFence}
                 className="contact-form cost-calculator-container"
               >
                 <div className="cost-calculator-box clearfix">
-                  <label>Length of your Fence in feet:</label>
+                  <label>אורך הגדר שלך ברגליים:</label>
                   <input
                     id="fe-length"
                     className="cost-slider-input big"
@@ -459,11 +448,11 @@ export default function Calculator() {
                     type="number"
                     value={fenceValues.length}
                     onChange={handleFenceChange}
-                    placeholder="Fence Length"
+                    placeholder="אורך הגדר"
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Height of Your Fence in Feet:</label>
+                  <label>גובה הגדר שלך ברגליים:</label>
                   <div className="cost-slider-container">
                     <input
                       id="fe-height"
@@ -479,12 +468,11 @@ export default function Calculator() {
                       data-step={1}
                       data-min={4}
                       data-max={8}
-                      data-input="fe-height"
                     />
                   </div>
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Choose Panel Style:</label>
+                  <label>בחר סגנון פאנל:</label>
                   <select
                     name="panel"
                     id="fe-panel"
@@ -493,15 +481,15 @@ export default function Calculator() {
                     onChange={handleFenceChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value="1.4">Rounded Pale</option>
-                    <option value="1.8">Dip Treated</option>
-                    <option value={2}>Pressure Treated</option>
-                    <option value="2.2">Closeboard</option>
-                    <option value={3}>Closeboard Wave</option>
-                    <option value="5.9">Monte Carlo</option>
-                    <option value="6.4">Paloma Wave</option>
+                    <option value="1.4">פאל מעוגל</option>
+                    <option value="1.8">מטופל טבילה</option>
+                    <option value={2}>מטופל לחץ</option>
+                    <option value="2.2">לוח סגור</option>
+                    <option value={3}>לוח סגור גל</option>
+                    <option value="5.9">מונטה קרלו</option>
+                    <option value="6.4">פאלומה גל</option>
                   </select>
                   <input
                     type="hidden"
@@ -511,7 +499,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Choose Gate Type:</label>
+                  <label>בחר סוג שער:</label>
                   <select
                     name="gate"
                     id="fe-gate"
@@ -520,21 +508,13 @@ export default function Calculator() {
                     onChange={handleFenceChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value={210}>Single Gate</option>
-                    <option value={1450}>
-                      Single Gate + Single Driveway Gate
-                    </option>
-                    <option value={2539}>
-                      Single Gate + Double Driveway Gate
-                    </option>
-                    <option value={3500}>
-                      Single Gate + Sliding Driveway Gate
-                    </option>
-                    <option value={5900}>
-                      Single Gate + Double Sliding Gate
-                    </option>
+                    <option value={210}>שער יחיד</option>
+                    <option value={1450}>שער יחיד + שער כניסה יחיד</option>
+                    <option value={2539}>שער יחיד + שער כניסה כפול</option>
+                    <option value={3500}>שער יחיד + שער כניסה נגרר</option>
+                    <option value={5900}>שער יחיד + שער כניסה נגרר כפול</option>
                   </select>
                   <input
                     type="hidden"
@@ -544,7 +524,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Additional Extras:</label>
+                  <label>תוספות נוספות:</label>
                   <select
                     name="extras"
                     id="fe-extras"
@@ -553,12 +533,10 @@ export default function Calculator() {
                     onChange={handleFenceChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value={4}>Fence on Stone Wall</option>
-                    <option value={12}>
-                      Fence on Stone Wall + Stone Posts
-                    </option>
+                    <option value={4}>גדר על קיר אבן</option>
+                    <option value={12}>גדר על קיר אבן + עמודי אבן</option>
                   </select>
                   <input
                     type="hidden"
@@ -572,11 +550,11 @@ export default function Calculator() {
                     formula={`fe-length*${fenceValues.length}*${fenceValues.height}+fe-panel*${fenceValues.panel}+fe-gate*${fenceValues.gate}+fe-extras*${fenceValues.extras}`}
                     updateHidden={feTotalCostRef.current}
                   />
-                  <p className="description t1">Approximate Project Cost</p>
+                  <p className="description t1">עלות פרויקט משוערת</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
                   <div className="row">
-                    <label>Contact Details</label>
+                    <label>פרטי התקשרות</label>
                   </div>
                   <div className="row margin-top-20">
                     <fieldset className="column column-1-2">
@@ -585,27 +563,27 @@ export default function Calculator() {
                         name="name"
                         type="text"
                         onChange={handleChangeFence}
-                        placeholder="Your Name *"
+                        placeholder="שמך *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
                         onChange={handleChangeFence}
-                        placeholder="Your Email *"
+                        placeholder="האימייל שלך *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
                         onChange={handleChangeFence}
-                        placeholder="Your Phone"
+                        placeholder="טלפון"
                       />
                     </fieldset>
                     <fieldset className="column column-1-2">
                       <textarea
                         name="message"
-                        placeholder="Message *"
+                        placeholder="הודעה *"
                         onChange={handleChangeFence}
                       />
                     </fieldset>
@@ -614,7 +592,7 @@ export default function Calculator() {
                     <div className="column column-1-2">
                       {messageReceiveFe == true ? (
                         <p className="description t1">
-                          We will contact you within one business day.
+                          ניצור איתך קשר תוך יום עסקים אחד.
                         </p>
                       ) : (
                         ""
@@ -636,7 +614,7 @@ export default function Calculator() {
                       <input
                         type="submit"
                         name="submit"
-                        defaultValue="SUBMIT NOW"
+                        defaultValue="שלח עכשיו"
                         className="more active"
                       />
                     </div>
@@ -645,13 +623,13 @@ export default function Calculator() {
               </form>
             </div>
             <div id="paver-walkway" className="margin-top-30">
-              <h1>paver walkway Calculator</h1>
+              <h1>מחשבון שביל מרוצף</h1>
               <form
                 onSubmit={handleSubmitWalkWay}
                 className="contact-form cost-calculator-container"
               >
                 <div className="cost-calculator-box clearfix">
-                  <label>Approximate Area Width in Meters:</label>
+                  <label>רוחב משוער של השביל במטרים:</label>
                   <div className="cost-slider-container">
                     <input
                       id="pw-area-width"
@@ -667,12 +645,11 @@ export default function Calculator() {
                       data-step={1}
                       data-min={1}
                       data-max={100}
-                      data-input="pw-area-width"
                     />
                   </div>
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Approximate Area Length in Meters:</label>
+                  <label>אורך משוער של השביל במטרים:</label>
                   <div className="cost-slider-container">
                     <input
                       id="pw-area-length"
@@ -688,12 +665,11 @@ export default function Calculator() {
                       data-step={1}
                       data-min={1}
                       data-max={100}
-                      data-input="pw-area-length"
                     />
                   </div>
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Choose Block Paving:</label>
+                  <label>בחר ריצוף בלוקים:</label>
                   <select
                     name="blockPaving"
                     id="pw-block-paving"
@@ -702,14 +678,14 @@ export default function Calculator() {
                     onChange={handlePaverWalkwayChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value={45}>Lugano</option>
-                    <option value={48}>Antique</option>
-                    <option value={55}>Classico</option>
-                    <option value={59}>Regatta</option>
-                    <option value={65}>Omega</option>
-                    <option value={80}>Natural Stone</option>
+                    <option value={45}>לוגאנו</option>
+                    <option value={48}>עתיק</option>
+                    <option value={55}>קלאסיקו</option>
+                    <option value={59}>רגטה</option>
+                    <option value={65}>אומגה</option>
+                    <option value={80}>אבן טבעית</option>
                   </select>
                   <input
                     type="hidden"
@@ -719,7 +695,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Surface Preparation:</label>
+                  <label>הכנת שטח:</label>
                   <select
                     name="surface"
                     id="pw-surface"
@@ -728,10 +704,10 @@ export default function Calculator() {
                     onChange={handlePaverWalkwayChange}
                   >
                     <option value selected="selected">
-                      Choose...
+                      בחר...
                     </option>
-                    <option value={10}>Granular Sub-Base</option>
-                    <option value={20}>Prepared Sub-Grade + Sub-Base</option>
+                    <option value={10}>תת-בסיס גרנולרי</option>
+                    <option value={20}>תת-קרקע מוכן + תת-בסיס</option>
                   </select>
                   <input
                     type="hidden"
@@ -741,7 +717,7 @@ export default function Calculator() {
                   />
                 </div>
                 <div className="cost-calculator-box clearfix">
-                  <label>Stone Walling in Meters:</label>
+                  <label>אבן לחומת במטרים:</label>
                   <div className="cost-slider-container">
                     <input
                       id="pw-stone-walling"
@@ -755,7 +731,6 @@ export default function Calculator() {
                       id="pw-stone-walling-value"
                       type="hidden"
                       defaultValue={0}
-                      data-default={0}
                     />
                     <div
                       className="cost-slider"
@@ -763,8 +738,6 @@ export default function Calculator() {
                       data-step={1}
                       data-min={0}
                       data-max={100}
-                      data-input="pw-stone-walling"
-                      data-value-input="pw-stone-walling-value"
                       data-price={30}
                     />
                   </div>
@@ -774,11 +747,11 @@ export default function Calculator() {
                     formula={`pw-area-width*${paverWalkwayValues.areaWidth}*${paverWalkwayValues.areaLength}*${paverWalkwayValues.blockPaving}+pw-surface*${paverWalkwayValues.surface}+pw-stone-walling*${paverWalkwayValues.stoneWalling}*30`}
                     updateHidden={pwTotalCostRef.current}
                   />
-                  <p className="description t1">Approximate Project Cost</p>
+                  <p className="description t1">עלות פרויקט משוערת</p>
                 </div>
                 <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
                   <div className="row">
-                    <label>Contact Details</label>
+                    <label>פרטי התקשרות</label>
                   </div>
                   <div className="row margin-top-20">
                     <fieldset className="column column-1-2">
@@ -787,27 +760,27 @@ export default function Calculator() {
                         name="name"
                         type="text"
                         onChange={handleChangeWalkway}
-                        placeholder="Your Name *"
+                        placeholder="שמך *"
                       />
                       <input
                         className="text-input"
                         name="email"
                         type="text"
                         onChange={handleChangeWalkway}
-                        placeholder="Your Email *"
+                        placeholder="האימייל שלך *"
                       />
                       <input
                         className="text-input"
                         name="phone"
                         type="text"
                         onChange={handleChangeWalkway}
-                        placeholder="Your Phone"
+                        placeholder="טלפון"
                       />
                     </fieldset>
                     <fieldset className="column column-1-2">
                       <textarea
                         name="message"
-                        placeholder="Message *"
+                        placeholder="הודעה *"
                         onChange={handleChangeWalkway}
                       />
                     </fieldset>
@@ -816,7 +789,7 @@ export default function Calculator() {
                     <div className="column column-1-2">
                       {messageReceiveWalkway ? (
                         <p className="description t1">
-                          We will contact you within one business day.
+                          ניצור איתך קשר תוך יום עסקים אחד.
                         </p>
                       ) : (
                         ""
@@ -842,7 +815,7 @@ export default function Calculator() {
                       <input
                         type="submit"
                         name="submit"
-                        defaultValue="SUBMIT NOW"
+                        defaultValue="שלח עכשיו"
                         className="more active"
                       />
                     </div>
@@ -854,53 +827,39 @@ export default function Calculator() {
         </div>
         <div className="column column-1-3">
           <div className="row">
-            <Link
-              className="prettyPhoto re-preload"
-              title="Interior Renovation"
-            >
+            <Link className="prettyPhoto re-preload" title="שיפוץ פנים">
               <img src={img} alt="img" />
             </Link>
           </div>
           <div className="row margin-top-30">
-            <Link
-              className="prettyPhoto re-preload"
-              title="Interior Renovation"
-            >
+            <Link className="prettyPhoto re-preload" title="שיפוץ פנים">
               <img src={img1} alt="img" />
             </Link>
           </div>
           <div className="row margin-top-30">
-            <Link
-              className="prettyPhoto re-preload"
-              title="Interior Renovation"
-            >
+            <Link className="prettyPhoto re-preload" title="שיפוץ פנים">
               <img src={img3} alt="img" />
             </Link>
           </div>
           <div className="row page-margin-top">
-            <h4 className="box-header">WHAT YOU GET</h4>
+            <h4 className="box-header">מה תקבל</h4>
             <p className="description t1 margin-top-34">
-              Renovate has proven results for setting exceptional standards in
-              cost control, planning and scheduling and project safety. Our
-              experience gives us a competitive advantage over others in our
-              field.
+              רנובייט הוכיחה תוצאות בהגדרת סטנדרטים יוצאי דופן בבקרת עלויות,
+              תכנון ולוח זמנים ובטיחות הפרויקט. הניסיון שלנו נותן לנו יתרון
+              תחרותי על פני אחרים בתחום שלנו.
             </p>
             <ul className="list margin-top-20">
+              <li className="template-bullet">אחריות כלכלית ללקוחות שלנו</li>
+              <li className="template-bullet">איכות גבוהה ומלאכה מעולה</li>
               <li className="template-bullet">
-                Financial Responsibility to Our Clients
+                איכות וערך לפרויקטים שאנו מספקים
               </li>
               <li className="template-bullet">
-                Superior Quality and Craftsmanship
+                סטנדרטים הגבוהים ביותר בבקרת עלויות
               </li>
+              <li className="template-bullet">בזמן ובתקציב</li>
               <li className="template-bullet">
-                Quality and Value to the <Link>Projects We Deliver</Link>
-              </li>
-              <li className="template-bullet">
-                Highest Standards in <Link>Cost Control</Link>
-              </li>
-              <li className="template-bullet">On Time and on Budget</li>
-              <li className="template-bullet">
-                Real Focus on Customer Satisfaction
+                דגש אמיתי על שביעות רצון הלקוחות
               </li>
             </ul>
           </div>
@@ -912,7 +871,7 @@ export default function Calculator() {
             <ul className="contact-details-list">
               <li className="sl-small-phone">
                 <p>
-                  Phone:
+                  טלפון:
                   <br />
                   +149 75 23 222 35
                 </p>
@@ -923,9 +882,9 @@ export default function Calculator() {
             <ul className="contact-details-list">
               <li className="sl-small-location">
                 <p>
-                  272 Linden Avenue
+                  שדרות לינדן 272
                   <br />
-                  Winter Park, FL 32789
+                  וינטר פארק, FL 32789
                 </p>
               </li>
             </ul>
@@ -934,9 +893,9 @@ export default function Calculator() {
             <ul className="contact-details-list">
               <li className="sl-small-mail">
                 <p>
-                  E-mail:
+                  אימייל:
                   <br />
-                  <a href="mailto:adiSambata@gmail.com">adiSmbata@gmil.com</a>
+                  <a href="mailto:adiSambata@gmail.com">adiSmbata@gmail.com</a>
                 </p>
               </li>
             </ul>
@@ -946,11 +905,10 @@ export default function Calculator() {
       <div className="row gray full-width page-padding-top padding-bottom-50">
         <div className="row row-4-4">
           <div className="column column-1-4">
-            <h6 className="box-header">About Us</h6>
+            <h6 className="box-header">אודותינו</h6>
             <p className="description t1">
-              Founded by Kevin Smith back in 2000. Renovate has estabilished
-              itself as one of the greatest and prestigious providers of
-              construction focused interior renovation services and building.
+              נוסדה על ידי קווין סמית בשנת 2000. רנובייט הוקמה כספקית הגדולה
+              והמכובדת של שירותי שיפוץ פנים המתמקדים בבניין ובבנייה.
             </p>
             <ul className="social-icons yellow margin-top-26">
               <li>
@@ -968,85 +926,77 @@ export default function Calculator() {
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Our Services</h6>
+            <h6 className="box-header">השירותים שלנו</h6>
             <ul className="list margin-top-20">
-              <li className="template-bullet">Interior Renovation</li>
-              <li className="template-bullet">Design and Build</li>
-              <li className="template-bullet">Tiling and Painting</li>
-              <li className="template-bullet">Paver Walkways</li>
-              <li className="template-bullet">Household Repairs</li>
-              <li className="template-bullet">Solar Systems</li>
+              <li className="template-bullet">שיפוץ פנים</li>
+              <li className="template-bullet">עיצוב ובנייה</li>
+              <li className="template-bullet">אריחים וצביעה</li>
+              <li className="template-bullet">שבילי אבנים</li>
+              <li className="template-bullet">תיקונים בבית</li>
+              <li className="template-bullet">מערכות סולאריות</li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Categories</h6>
+            <h6 className="box-header">קטגוריות</h6>
             <ul className="taxonomies margin-top-30">
               <li>
-                <Link title="BUILD">BUILD</Link>
+                <Link title="בניין">בניין</Link>
               </li>
               <li>
-                <Link title="DESIGN">DESIGN</Link>
+                <Link title="עיצוב">עיצוב</Link>
               </li>
               <li>
-                <Link title="FLOORING">FLOORING</Link>
+                <Link title="ריצוף">ריצוף</Link>
               </li>
               <li>
-                <Link title="PAINTING">PAINTING</Link>
+                <Link title="צביעה">צביעה</Link>
               </li>
               <li>
-                <a href="category.html" title="PAVERS">
-                  PAVERS
+                <a href="category.html" title="אבנים">
+                  אבנים
                 </a>
               </li>
               <li>
-                <Link title="PLUMBING">PLUMBING</Link>
+                <Link title="אינסטלציה">אינסטלציה</Link>
               </li>
               <li>
-                <Link title="RENOVATION">RENOVATION</Link>
+                <Link title="שיפוץ">שיפוץ</Link>
               </li>
               <li>
-                <Link title="REPAIRS">REPAIRS</Link>
+                <Link title="תיקונים">תיקונים</Link>
               </li>
               <li>
-                <Link title="SOLAR SYSTEMS">SOLAR SYSTEMS</Link>
+                <Link title="מערכות סולאריות">מערכות סולאריות</Link>
               </li>
               <li>
-                <Link title="TILING">TILING</Link>
+                <Link title="אריחים">אריחים</Link>
               </li>
             </ul>
           </div>
           <div className="column column-1-4">
-            <h6 className="box-header">Latest Posts</h6>
+            <h6 className="box-header">פוסטים אחרונים</h6>
             <ul className="blog small margin-top-30">
               <li>
-                <Link
-                  title="What a Difference a Few Months Make"
-                  className="post-image"
-                >
+                <Link title="מה ההבדל שמעט חודשים עושים" className="post-image">
                   <img src={img4} alt="" />
                 </Link>
                 <div className="post-content">
-                  <Link title="What a Difference a Few Months Make">
-                    What a Difference a Few Months Make
+                  <Link title="מה ההבדל שמעט חודשים עושים">
+                    מה ההבדל שמעט חודשים עושים
                   </Link>
                   <ul className="post-details">
-                    <li className="date">April 25, 2015</li>
+                    <li className="date">25 באפריל 2015</li>
                   </ul>
                 </div>
               </li>
               <li>
-                <Link
-                  title="Kitchen and Living Room Renovation"
-                  className="post-image"
-                >
+                <Link title="שיפוץ מטבח וסלון" className="post-image">
                   <img src="" alt="" />
                 </Link>
                 <div className="post-content">
-                  <Link title="Kitchen and Living Room Renovation">
-                    Kitchen and Living Room Renovation
-                  </Link>
+                  <Link title="שיפוץ מטבח וסלון">שיפוץ מטבח וסלון</Link>
                   <ul className="post-details">
-                    <li className="date">April 17, 2015</li>
+                    <li className="date">17 באפריל 2015</li>
                   </ul>
                 </div>
               </li>

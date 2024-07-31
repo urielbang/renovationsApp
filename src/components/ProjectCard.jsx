@@ -16,16 +16,16 @@ export default function ProjectCard({ project, projects, setProjects }) {
   };
   return (
     <li className="renovation">
-      <Link to={`/oneProject/${project._id}`} title="Interior Renovation">
+      <Link to={`/oneProject/${project._id}`} title="שיפוץ פנים">
         <img src={img11} alt="" />
       </Link>
       <div className="view align-center">
         <div className="vertical-align-table">
           <div className="vertical-align-cell">
-            <p className="description">Interior Renovation</p>
+            <p className="description">שיפוץ פנים</p>
 
             <Link className="more simple" to={`/oneProject/${project._id}`}>
-              VIEW PROJECT
+              צפה בפרויקט
             </Link>
             <div className="containerDelete">
               <MdDeleteForever onClick={handleClick} />
