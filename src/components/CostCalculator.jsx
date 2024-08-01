@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const CostCalculator = ({
   formula,
-  currency = "$",
+  currency = "₪",
   currencyPosition = "before",
   thousandthSeparator = ",",
   decimalSeparator = ".",
