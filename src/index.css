@@ -112,3 +112,20 @@ button {
 .containerDelete svg:hover {
   color: #ff1a1a;
 }
+.calculatorButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  width: 40%;
+  height: 4rem;
+}
+.calculatorButtons span {
+  background-color: rgba(0, 0, 0, 0.352);
+  padding: 1rem;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.5rem;
+}
+.calculatorButtons span:hover {
+  color: white;
+}

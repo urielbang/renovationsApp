@@ -62,11 +62,6 @@ export default function NavBar() {
       <div className="header-container">
         <div className="vertical-align-table column-1-1">
           <div className="header clearfix">
-            <div className="logo vertical-align-cell">
-              <h1>
-                <Link to="/">שיפוצים</Link>
-              </h1>
-            </div>
             <a href="#" className="mobile-menu-switch vertical-align-cell">
               <span className="line" />
               <span className="line" />
@@ -389,6 +384,11 @@ export default function NavBar() {
                   </ul>
                 </nav>
               </div>
+            </div>
+            <div className="logo vertical-align-cell">
+              <h1>
+                <Link to="/">שיפוצים</Link>
+              </h1>
             </div>
           </div>
         </div>

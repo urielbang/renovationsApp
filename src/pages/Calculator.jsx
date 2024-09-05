@@ -14,8 +14,17 @@ export default function Calculator() {
   const feTotalCostRef = useRef(null);
   const pwTotalCostRef = useRef(null);
 
+  const calculatorsNames = [
+    "מחשבון שיפוץ פנים",
+    "מחשבון גדר",
+    "מחשבון שביל מרוצף",
+  ];
+
   const [messageReceive, setMessageReceive] = useState(false);
   const [messageReceiveFe, setMessageReceiveFe] = useState(false);
+  const [isPnimClick, setISPnimClick] = useState(false);
+  const [isGaderClick, setIsGaderClick] = useState(false);
+  const [isMeruzafClicked, setISMeruzafClicked] = useState(false);
   const [messageReceiveWalkway, setMessageReceiveWalkway] = useState(false);
   const [interiorRenovationValues, setInteriorRenovationValues] = useState({
     squareFeet: 300,
@@ -188,6 +197,30 @@ export default function Calculator() {
     setMessageReceiveWalkway(true);
   };
 
+  const handleClickButton = (calculatorName) => {
+    switch (calculatorName) {
+      case "מחשבון שיפוץ פנים":
+        setISPnimClick(true);
+        setIsGaderClick(false);
+        setISMeruzafClicked(false);
+
+        break;
+
+      case "מחשבון גדר":
+        setIsGaderClick(true);
+        setISMeruzafClicked(false);
+        setISPnimClick(false);
+        break;
+
+      case "מחשבון שביל מרוצף":
+        setISMeruzafClicked(true);
+        setIsGaderClick(false);
+        setISPnimClick(false);
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <div>
       <div className="row gray full-width page-header vertical-align-table">
@@ -195,6 +228,18 @@ export default function Calculator() {
           <div className="row">
             <div className="page-header-left">
               <h1>מחשבון עלויות</h1>
+            </div>
+            <div className="calculatorButtons">
+              {calculatorsNames.map((calculator, index) => {
+                return (
+                  <span
+                    onClick={() => handleClickButton(calculator)}
+                    key={index}
+                  >
+                    {calculator}
+                  </span>
+                );
+              })}
             </div>
             <div className="page-header-right">
               <div className="bread-crumb-container">
@@ -220,609 +265,617 @@ export default function Calculator() {
             את הטופס לקביעת פגישה איתנו וקבלת הצעת מחיר מדויקת יותר.
           </p>
           <div className="tabs small no-scroll align-left clearfix margin-top-40">
-            <div id="interior-renovation" className="margin-top-30">
-              <h2>מחשבון שיפוץ פנים</h2>
-              <form
-                onSubmit={handleSubmit}
-                className="contact-form cost-calculator-container"
-              >
-                <div className="cost-calculator-box clearfix">
-                  <label>שטח לשיפוץ ברגל מרובע:</label>
-                  <div className="cost-slider-container">
-                    <input
-                      id="ir-square-feet"
-                      className="cost-slider-input"
-                      name="squareFeet"
-                      type="number"
-                      value={interiorRenovationValues.squareFeet}
-                      onChange={handleInteriorRenovationChange}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={300}
-                      data-step={10}
-                      data-min={10}
-                      data-max={3000}
-                    />
-                  </div>
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>קירות ותקרות:</label>
-                  <select
-                    name="walls"
-                    id="ir-walls"
-                    className="cost-dropdown"
-                    value={interiorRenovationValues.walls}
-                    onChange={handleInteriorRenovationChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value={2}>צביעה</option>
-                    <option value="2.3">צביעה + תיקונים קלים</option>
-                    <option value="2.5">צביעה + אבן דקורטיבית</option>
-                    <option value={3}>ריצוף</option>
-                    <option value={5}>צביעה + ריצוף</option>
-                    <option value={2}>תליית נייר קיר</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="ir-walls"
-                    name="walls-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>רצפות:</label>
-                  <select
-                    name="floors"
-                    id="ir-floors"
-                    className="cost-dropdown"
-                    value={interiorRenovationValues.floors}
-                    onChange={handleInteriorRenovationChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value="1.5">ריצוף עץ</option>
-                    <option value="2.5">ריצוף במבוק</option>
-                    <option value="2.6">ריצוף ויניל</option>
-                    <option value="3.25">ריצוף פרקט</option>
-                    <option value="3.5">שטיח מקיר לקיר</option>
-                    <option value={12}>ריצוף קרמיקה</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="ir-floors"
-                    name="floors-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>דלתות פנים להחלפה:</label>
-                  <div className="cost-slider-container">
-                    <input
-                      id="ir-doors"
-                      className="cost-slider-input"
-                      name="doors"
-                      type="number"
-                      value={interiorRenovationValues.doors}
-                      onChange={handleInteriorRenovationChange}
-                    />
-                    <input
-                      id="ir-doors-value"
-                      type="hidden"
-                      defaultValue={1500}
-                      data-default={1500}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={6}
-                      data-step={1}
-                      data-min={0}
-                      data-max={10}
-                      data-price={250}
-                    />
-                  </div>
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>חלונות להחלפה:</label>
-                  <div className="cost-slider-container">
-                    <input
-                      id="ir-windows"
-                      className="cost-slider-input"
-                      name="windows"
-                      type="number"
-                      value={interiorRenovationValues.windows}
-                      onChange={handleInteriorRenovationChange}
-                    />
-                    <input
-                      id="ir-windows-value"
-                      type="hidden"
-                      defaultValue={800}
-                      data-default={800}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={4}
-                      data-step={1}
-                      data-min={0}
-                      data-max={10}
-                      data-price={200}
-                    />
-                  </div>
-                </div>
-                <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <CostCalculator
-                    formula={`ir-square-feet*${interiorRenovationValues.squareFeet}+ir-walls*${interiorRenovationValues.walls}+ir-floors*${interiorRenovationValues.floors}+ir-doors*${interiorRenovationValues.doors}*250+ir-windows*${interiorRenovationValues.windows}*200`}
-                    updateHidden={irTotalCostRef.current}
-                  />
-                  <p className="description t1">עלות פרויקט משוערת</p>
-                </div>
-                <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
-                  <div className="row">
-                    <label>פרטי התקשרות</label>
-                  </div>
-                  <div className="row margin-top-20">
-                    <fieldset className="column column-1-2">
+            {isPnimClick && (
+              <div id="interior-renovation" className="margin-top-30">
+                <h2>מחשבון שיפוץ פנים</h2>
+                <form
+                  onSubmit={handleSubmit}
+                  className="contact-form cost-calculator-container"
+                >
+                  <div className="cost-calculator-box clearfix">
+                    <label>שטח לשיפוץ ברגל מרובע:</label>
+                    <div className="cost-slider-container">
                       <input
-                        className="text-input"
-                        name="name"
-                        onChange={handleChange}
-                        type="text"
-                        placeholder="שמך *"
+                        id="ir-square-feet"
+                        className="cost-slider-input"
+                        name="squareFeet"
+                        type="number"
+                        value={interiorRenovationValues.squareFeet}
+                        onChange={handleInteriorRenovationChange}
                       />
-                      <input
-                        className="text-input"
-                        name="email"
-                        type="text"
-                        onChange={handleChange}
-                        placeholder="האימייל שלך *"
-                      />
-                      <input
-                        className="text-input"
-                        name="phone"
-                        type="text"
-                        onChange={handleChange}
-                        placeholder="טלפון"
-                      />
-                    </fieldset>
-                    <fieldset className="column column-1-2">
-                      <textarea
-                        name="message"
-                        onChange={handleChange}
-                        placeholder="הודעה *"
-                      />
-                    </fieldset>
-                  </div>
-                  <div className="row margin-top-30">
-                    <div className="column column-1-2">
-                      {messageReceive == true ? (
-                        <p className="description t1">
-                          ניצור איתך קשר תוך יום עסקים אחד.
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                    <div className="column column-1-2 align-right">
-                      <input
-                        type="hidden"
-                        name="action"
-                        defaultValue="contact_form"
-                      />
-                      <input
-                        type="hidden"
-                        name="type"
-                        defaultValue="Interior Renovation"
-                      />
-                      <input
-                        type="hidden"
-                        name="total-cost"
-                        id="ir-total-cost"
-                        ref={irTotalCostRef}
-                      />
-                      <input
-                        type="submit"
-                        name="submit"
-                        defaultValue="שלח עכשיו"
-                        className="more active"
+                      <div
+                        className="cost-slider"
+                        data-value={300}
+                        data-step={10}
+                        data-min={10}
+                        data-max={3000}
                       />
                     </div>
                   </div>
-                </div>
-              </form>
-            </div>
-            <div id="fence" className="margin-top-30">
-              <h2>מחשבון גדר</h2>
-              <form
-                onSubmit={handleSubmitFence}
-                className="contact-form cost-calculator-container"
-              >
-                <div className="cost-calculator-box clearfix">
-                  <label>אורך הגדר שלך ברגליים:</label>
-                  <input
-                    id="fe-length"
-                    className="cost-slider-input big"
-                    name="length"
-                    type="number"
-                    value={fenceValues.length}
-                    onChange={handleFenceChange}
-                    placeholder="אורך הגדר"
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>גובה הגדר שלך ברגליים:</label>
-                  <div className="cost-slider-container">
+                  <div className="cost-calculator-box clearfix">
+                    <label>קירות ותקרות:</label>
+                    <select
+                      name="walls"
+                      id="ir-walls"
+                      className="cost-dropdown"
+                      value={interiorRenovationValues.walls}
+                      onChange={handleInteriorRenovationChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value={2}>צביעה</option>
+                      <option value="2.3">צביעה + תיקונים קלים</option>
+                      <option value="2.5">צביעה + אבן דקורטיבית</option>
+                      <option value={3}>ריצוף</option>
+                      <option value={5}>צביעה + ריצוף</option>
+                      <option value={2}>תליית נייר קיר</option>
+                    </select>
                     <input
-                      id="fe-height"
-                      className="cost-slider-input"
-                      name="height"
+                      type="hidden"
+                      className="ir-walls"
+                      name="walls-name"
+                      defaultValue
+                    />
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>רצפות:</label>
+                    <select
+                      name="floors"
+                      id="ir-floors"
+                      className="cost-dropdown"
+                      value={interiorRenovationValues.floors}
+                      onChange={handleInteriorRenovationChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value="1.5">ריצוף עץ</option>
+                      <option value="2.5">ריצוף במבוק</option>
+                      <option value="2.6">ריצוף ויניל</option>
+                      <option value="3.25">ריצוף פרקט</option>
+                      <option value="3.5">שטיח מקיר לקיר</option>
+                      <option value={12}>ריצוף קרמיקה</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      className="ir-floors"
+                      name="floors-name"
+                      defaultValue
+                    />
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>דלתות פנים להחלפה:</label>
+                    <div className="cost-slider-container">
+                      <input
+                        id="ir-doors"
+                        className="cost-slider-input"
+                        name="doors"
+                        type="number"
+                        value={interiorRenovationValues.doors}
+                        onChange={handleInteriorRenovationChange}
+                      />
+                      <input
+                        id="ir-doors-value"
+                        type="hidden"
+                        defaultValue={1500}
+                        data-default={1500}
+                      />
+                      <div
+                        className="cost-slider"
+                        data-value={6}
+                        data-step={1}
+                        data-min={0}
+                        data-max={10}
+                        data-price={250}
+                      />
+                    </div>
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>חלונות להחלפה:</label>
+                    <div className="cost-slider-container">
+                      <input
+                        id="ir-windows"
+                        className="cost-slider-input"
+                        name="windows"
+                        type="number"
+                        value={interiorRenovationValues.windows}
+                        onChange={handleInteriorRenovationChange}
+                      />
+                      <input
+                        id="ir-windows-value"
+                        type="hidden"
+                        defaultValue={800}
+                        data-default={800}
+                      />
+                      <div
+                        className="cost-slider"
+                        data-value={4}
+                        data-step={1}
+                        data-min={0}
+                        data-max={10}
+                        data-price={200}
+                      />
+                    </div>
+                  </div>
+                  <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
+                    <CostCalculator
+                      formula={`ir-square-feet*${interiorRenovationValues.squareFeet}+ir-walls*${interiorRenovationValues.walls}+ir-floors*${interiorRenovationValues.floors}+ir-doors*${interiorRenovationValues.doors}*250+ir-windows*${interiorRenovationValues.windows}*200`}
+                      updateHidden={irTotalCostRef.current}
+                    />
+                    <p className="description t1">עלות פרויקט משוערת</p>
+                  </div>
+                  <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
+                    <div className="row">
+                      <label>פרטי התקשרות</label>
+                    </div>
+                    <div className="row margin-top-20">
+                      <fieldset className="column column-1-2">
+                        <input
+                          className="text-input"
+                          name="name"
+                          onChange={handleChange}
+                          type="text"
+                          placeholder="שמך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="email"
+                          type="text"
+                          onChange={handleChange}
+                          placeholder="האימייל שלך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="phone"
+                          type="text"
+                          onChange={handleChange}
+                          placeholder="טלפון"
+                        />
+                      </fieldset>
+                      <fieldset className="column column-1-2">
+                        <textarea
+                          name="message"
+                          onChange={handleChange}
+                          placeholder="הודעה *"
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="row margin-top-30">
+                      <div className="column column-1-2">
+                        {messageReceive == true ? (
+                          <p className="description t1">
+                            ניצור איתך קשר תוך יום עסקים אחד.
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="column column-1-2 align-right">
+                        <input
+                          type="hidden"
+                          name="action"
+                          defaultValue="contact_form"
+                        />
+                        <input
+                          type="hidden"
+                          name="type"
+                          defaultValue="Interior Renovation"
+                        />
+                        <input
+                          type="hidden"
+                          name="total-cost"
+                          id="ir-total-cost"
+                          ref={irTotalCostRef}
+                        />
+                        <input
+                          type="submit"
+                          name="submit"
+                          defaultValue="שלח עכשיו"
+                          className="more active"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            )}
+            {isGaderClick && (
+              <div id="fence" className="margin-top-30">
+                <h2>מחשבון גדר</h2>
+                <form
+                  onSubmit={handleSubmitFence}
+                  className="contact-form cost-calculator-container"
+                >
+                  <div className="cost-calculator-box clearfix">
+                    <label>אורך הגדר שלך ברגליים:</label>
+                    <input
+                      id="fe-length"
+                      className="cost-slider-input big"
+                      name="length"
                       type="number"
-                      value={fenceValues.height}
+                      value={fenceValues.length}
                       onChange={handleFenceChange}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={5}
-                      data-step={1}
-                      data-min={4}
-                      data-max={8}
+                      placeholder="אורך הגדר"
                     />
                   </div>
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>בחר סגנון פאנל:</label>
-                  <select
-                    name="panel"
-                    id="fe-panel"
-                    className="cost-dropdown"
-                    value={fenceValues.panel}
-                    onChange={handleFenceChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value="1.4">פאל מעוגל</option>
-                    <option value="1.8">מטופל טבילה</option>
-                    <option value={2}>מטופל לחץ</option>
-                    <option value="2.2">לוח סגור</option>
-                    <option value={3}>לוח סגור גל</option>
-                    <option value="5.9">מונטה קרלו</option>
-                    <option value="6.4">פאלומה גל</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="fe-panel"
-                    name="panel-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>בחר סוג שער:</label>
-                  <select
-                    name="gate"
-                    id="fe-gate"
-                    className="cost-dropdown"
-                    value={fenceValues.gate}
-                    onChange={handleFenceChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value={210}>שער יחיד</option>
-                    <option value={1450}>שער יחיד + שער כניסה יחיד</option>
-                    <option value={2539}>שער יחיד + שער כניסה כפול</option>
-                    <option value={3500}>שער יחיד + שער כניסה נגרר</option>
-                    <option value={5900}>שער יחיד + שער כניסה נגרר כפול</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="fe-gate"
-                    name="gate-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>תוספות נוספות:</label>
-                  <select
-                    name="extras"
-                    id="fe-extras"
-                    className="cost-dropdown"
-                    value={fenceValues.extras}
-                    onChange={handleFenceChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value={4}>גדר על קיר אבן</option>
-                    <option value={12}>גדר על קיר אבן + עמודי אבן</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="fe-extras"
-                    name="extras-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <CostCalculator
-                    formula={`fe-length*${fenceValues.length}*${fenceValues.height}+fe-panel*${fenceValues.panel}+fe-gate*${fenceValues.gate}+fe-extras*${fenceValues.extras}`}
-                    updateHidden={feTotalCostRef.current}
-                  />
-                  <p className="description t1">עלות פרויקט משוערת</p>
-                </div>
-                <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
-                  <div className="row">
-                    <label>פרטי התקשרות</label>
-                  </div>
-                  <div className="row margin-top-20">
-                    <fieldset className="column column-1-2">
+                  <div className="cost-calculator-box clearfix">
+                    <label>גובה הגדר שלך ברגליים:</label>
+                    <div className="cost-slider-container">
                       <input
-                        className="text-input"
-                        name="name"
-                        type="text"
-                        onChange={handleChangeFence}
-                        placeholder="שמך *"
+                        id="fe-height"
+                        className="cost-slider-input"
+                        name="height"
+                        type="number"
+                        value={fenceValues.height}
+                        onChange={handleFenceChange}
                       />
-                      <input
-                        className="text-input"
-                        name="email"
-                        type="text"
-                        onChange={handleChangeFence}
-                        placeholder="האימייל שלך *"
-                      />
-                      <input
-                        className="text-input"
-                        name="phone"
-                        type="text"
-                        onChange={handleChangeFence}
-                        placeholder="טלפון"
-                      />
-                    </fieldset>
-                    <fieldset className="column column-1-2">
-                      <textarea
-                        name="message"
-                        placeholder="הודעה *"
-                        onChange={handleChangeFence}
-                      />
-                    </fieldset>
-                  </div>
-                  <div className="row margin-top-30">
-                    <div className="column column-1-2">
-                      {messageReceiveFe == true ? (
-                        <p className="description t1">
-                          ניצור איתך קשר תוך יום עסקים אחד.
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                    <div className="column column-1-2 align-right">
-                      <input
-                        type="hidden"
-                        name="action"
-                        defaultValue="contact_form"
-                      />
-                      <input type="hidden" name="type" defaultValue="Fence" />
-                      <input
-                        type="hidden"
-                        name="total-cost"
-                        id="fe-total-cost"
-                        ref={feTotalCostRef}
-                      />
-                      <input
-                        type="submit"
-                        name="submit"
-                        defaultValue="שלח עכשיו"
-                        className="more active"
+                      <div
+                        className="cost-slider"
+                        data-value={5}
+                        data-step={1}
+                        data-min={4}
+                        data-max={8}
                       />
                     </div>
                   </div>
-                </div>
-              </form>
-            </div>
-            <div id="paver-walkway" className="margin-top-30">
-              <h1>מחשבון שביל מרוצף</h1>
-              <form
-                onSubmit={handleSubmitWalkWay}
-                className="contact-form cost-calculator-container"
-              >
-                <div className="cost-calculator-box clearfix">
-                  <label>רוחב משוער של השביל במטרים:</label>
-                  <div className="cost-slider-container">
+                  <div className="cost-calculator-box clearfix">
+                    <label>בחר סגנון פאנל:</label>
+                    <select
+                      name="panel"
+                      id="fe-panel"
+                      className="cost-dropdown"
+                      value={fenceValues.panel}
+                      onChange={handleFenceChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value="1.4">פאל מעוגל</option>
+                      <option value="1.8">מטופל טבילה</option>
+                      <option value={2}>מטופל לחץ</option>
+                      <option value="2.2">לוח סגור</option>
+                      <option value={3}>לוח סגור גל</option>
+                      <option value="5.9">מונטה קרלו</option>
+                      <option value="6.4">פאלומה גל</option>
+                    </select>
                     <input
-                      id="pw-area-width"
-                      className="cost-slider-input"
-                      name="areaWidth"
-                      type="number"
-                      value={paverWalkwayValues.areaWidth}
-                      onChange={handlePaverWalkwayChange}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={25}
-                      data-step={1}
-                      data-min={1}
-                      data-max={100}
-                    />
-                  </div>
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>אורך משוער של השביל במטרים:</label>
-                  <div className="cost-slider-container">
-                    <input
-                      id="pw-area-length"
-                      className="cost-slider-input"
-                      name="areaLength"
-                      type="number"
-                      value={paverWalkwayValues.areaLength}
-                      onChange={handlePaverWalkwayChange}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={20}
-                      data-step={1}
-                      data-min={1}
-                      data-max={100}
-                    />
-                  </div>
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>בחר ריצוף בלוקים:</label>
-                  <select
-                    name="blockPaving"
-                    id="pw-block-paving"
-                    className="cost-dropdown"
-                    value={paverWalkwayValues.blockPaving}
-                    onChange={handlePaverWalkwayChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value={45}>לוגאנו</option>
-                    <option value={48}>עתיק</option>
-                    <option value={55}>קלאסיקו</option>
-                    <option value={59}>רגטה</option>
-                    <option value={65}>אומגה</option>
-                    <option value={80}>אבן טבעית</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="pw-block-paving"
-                    name="block-paving-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>הכנת שטח:</label>
-                  <select
-                    name="surface"
-                    id="pw-surface"
-                    className="cost-dropdown"
-                    value={paverWalkwayValues.surface}
-                    onChange={handlePaverWalkwayChange}
-                  >
-                    <option value selected="selected">
-                      בחר...
-                    </option>
-                    <option value={10}>תת-בסיס גרנולרי</option>
-                    <option value={20}>תת-קרקע מוכן + תת-בסיס</option>
-                  </select>
-                  <input
-                    type="hidden"
-                    className="pw-surface"
-                    name="pw-surface-name"
-                    defaultValue
-                  />
-                </div>
-                <div className="cost-calculator-box clearfix">
-                  <label>אבן לחומת במטרים:</label>
-                  <div className="cost-slider-container">
-                    <input
-                      id="pw-stone-walling"
-                      className="cost-slider-input"
-                      name="stoneWalling"
-                      type="number"
-                      value={paverWalkwayValues.stoneWalling}
-                      onChange={handlePaverWalkwayChange}
-                    />
-                    <input
-                      id="pw-stone-walling-value"
                       type="hidden"
-                      defaultValue={0}
-                    />
-                    <div
-                      className="cost-slider"
-                      data-value={0}
-                      data-step={1}
-                      data-min={0}
-                      data-max={100}
-                      data-price={30}
+                      className="fe-panel"
+                      name="panel-name"
+                      defaultValue
                     />
                   </div>
-                </div>
-                <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
-                  <CostCalculator
-                    formula={`pw-area-width*${paverWalkwayValues.areaWidth}*${paverWalkwayValues.areaLength}*${paverWalkwayValues.blockPaving}+pw-surface*${paverWalkwayValues.surface}+pw-stone-walling*${paverWalkwayValues.stoneWalling}*30`}
-                    updateHidden={pwTotalCostRef.current}
-                  />
-                  <p className="description t1">עלות פרויקט משוערת</p>
-                </div>
-                <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
-                  <div className="row">
-                    <label>פרטי התקשרות</label>
+                  <div className="cost-calculator-box clearfix">
+                    <label>בחר סוג שער:</label>
+                    <select
+                      name="gate"
+                      id="fe-gate"
+                      className="cost-dropdown"
+                      value={fenceValues.gate}
+                      onChange={handleFenceChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value={210}>שער יחיד</option>
+                      <option value={1450}>שער יחיד + שער כניסה יחיד</option>
+                      <option value={2539}>שער יחיד + שער כניסה כפול</option>
+                      <option value={3500}>שער יחיד + שער כניסה נגרר</option>
+                      <option value={5900}>
+                        שער יחיד + שער כניסה נגרר כפול
+                      </option>
+                    </select>
+                    <input
+                      type="hidden"
+                      className="fe-gate"
+                      name="gate-name"
+                      defaultValue
+                    />
                   </div>
-                  <div className="row margin-top-20">
-                    <fieldset className="column column-1-2">
-                      <input
-                        className="text-input"
-                        name="name"
-                        type="text"
-                        onChange={handleChangeWalkway}
-                        placeholder="שמך *"
-                      />
-                      <input
-                        className="text-input"
-                        name="email"
-                        type="text"
-                        onChange={handleChangeWalkway}
-                        placeholder="האימייל שלך *"
-                      />
-                      <input
-                        className="text-input"
-                        name="phone"
-                        type="text"
-                        onChange={handleChangeWalkway}
-                        placeholder="טלפון"
-                      />
-                    </fieldset>
-                    <fieldset className="column column-1-2">
-                      <textarea
-                        name="message"
-                        placeholder="הודעה *"
-                        onChange={handleChangeWalkway}
-                      />
-                    </fieldset>
+                  <div className="cost-calculator-box clearfix">
+                    <label>תוספות נוספות:</label>
+                    <select
+                      name="extras"
+                      id="fe-extras"
+                      className="cost-dropdown"
+                      value={fenceValues.extras}
+                      onChange={handleFenceChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value={4}>גדר על קיר אבן</option>
+                      <option value={12}>גדר על קיר אבן + עמודי אבן</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      className="fe-extras"
+                      name="extras-name"
+                      defaultValue
+                    />
                   </div>
-                  <div className="row margin-top-30">
-                    <div className="column column-1-2">
-                      {messageReceiveWalkway ? (
-                        <p className="description t1">
-                          ניצור איתך קשר תוך יום עסקים אחד.
-                        </p>
-                      ) : (
-                        ""
-                      )}
+                  <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
+                    <CostCalculator
+                      formula={`fe-length*${fenceValues.length}*${fenceValues.height}+fe-panel*${fenceValues.panel}+fe-gate*${fenceValues.gate}+fe-extras*${fenceValues.extras}`}
+                      updateHidden={feTotalCostRef.current}
+                    />
+                    <p className="description t1">עלות פרויקט משוערת</p>
+                  </div>
+                  <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
+                    <div className="row">
+                      <label>פרטי התקשרות</label>
                     </div>
-                    <div className="column column-1-2 align-right">
+                    <div className="row margin-top-20">
+                      <fieldset className="column column-1-2">
+                        <input
+                          className="text-input"
+                          name="name"
+                          type="text"
+                          onChange={handleChangeFence}
+                          placeholder="שמך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="email"
+                          type="text"
+                          onChange={handleChangeFence}
+                          placeholder="האימייל שלך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="phone"
+                          type="text"
+                          onChange={handleChangeFence}
+                          placeholder="טלפון"
+                        />
+                      </fieldset>
+                      <fieldset className="column column-1-2">
+                        <textarea
+                          name="message"
+                          placeholder="הודעה *"
+                          onChange={handleChangeFence}
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="row margin-top-30">
+                      <div className="column column-1-2">
+                        {messageReceiveFe == true ? (
+                          <p className="description t1">
+                            ניצור איתך קשר תוך יום עסקים אחד.
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="column column-1-2 align-right">
+                        <input
+                          type="hidden"
+                          name="action"
+                          defaultValue="contact_form"
+                        />
+                        <input type="hidden" name="type" defaultValue="Fence" />
+                        <input
+                          type="hidden"
+                          name="total-cost"
+                          id="fe-total-cost"
+                          ref={feTotalCostRef}
+                        />
+                        <input
+                          type="submit"
+                          name="submit"
+                          defaultValue="שלח עכשיו"
+                          className="more active"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            )}
+            {isMeruzafClicked && (
+              <div id="paver-walkway" className="margin-top-30">
+                <h1>מחשבון שביל מרוצף</h1>
+                <form
+                  onSubmit={handleSubmitWalkWay}
+                  className="contact-form cost-calculator-container"
+                >
+                  <div className="cost-calculator-box clearfix">
+                    <label>רוחב משוער של השביל במטרים:</label>
+                    <div className="cost-slider-container">
                       <input
-                        type="hidden"
-                        name="action"
-                        defaultValue="contact_form"
+                        id="pw-area-width"
+                        className="cost-slider-input"
+                        name="areaWidth"
+                        type="number"
+                        value={paverWalkwayValues.areaWidth}
+                        onChange={handlePaverWalkwayChange}
                       />
-                      <input
-                        type="hidden"
-                        name="type"
-                        defaultValue="Paver Walkway"
-                      />
-                      <input
-                        type="hidden"
-                        name="total-cost"
-                        id="pw-total-cost"
-                        ref={pwTotalCostRef}
-                      />
-                      <input
-                        type="submit"
-                        name="submit"
-                        defaultValue="שלח עכשיו"
-                        className="more active"
+                      <div
+                        className="cost-slider"
+                        data-value={25}
+                        data-step={1}
+                        data-min={1}
+                        data-max={100}
                       />
                     </div>
                   </div>
-                </div>
-              </form>
-            </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>אורך משוער של השביל במטרים:</label>
+                    <div className="cost-slider-container">
+                      <input
+                        id="pw-area-length"
+                        className="cost-slider-input"
+                        name="areaLength"
+                        type="number"
+                        value={paverWalkwayValues.areaLength}
+                        onChange={handlePaverWalkwayChange}
+                      />
+                      <div
+                        className="cost-slider"
+                        data-value={20}
+                        data-step={1}
+                        data-min={1}
+                        data-max={100}
+                      />
+                    </div>
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>בחר ריצוף בלוקים:</label>
+                    <select
+                      name="blockPaving"
+                      id="pw-block-paving"
+                      className="cost-dropdown"
+                      value={paverWalkwayValues.blockPaving}
+                      onChange={handlePaverWalkwayChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value={45}>לוגאנו</option>
+                      <option value={48}>עתיק</option>
+                      <option value={55}>קלאסיקו</option>
+                      <option value={59}>רגטה</option>
+                      <option value={65}>אומגה</option>
+                      <option value={80}>אבן טבעית</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      className="pw-block-paving"
+                      name="block-paving-name"
+                      defaultValue
+                    />
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>הכנת שטח:</label>
+                    <select
+                      name="surface"
+                      id="pw-surface"
+                      className="cost-dropdown"
+                      value={paverWalkwayValues.surface}
+                      onChange={handlePaverWalkwayChange}
+                    >
+                      <option value selected="selected">
+                        בחר...
+                      </option>
+                      <option value={10}>תת-בסיס גרנולרי</option>
+                      <option value={20}>תת-קרקע מוכן + תת-בסיס</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      className="pw-surface"
+                      name="pw-surface-name"
+                      defaultValue
+                    />
+                  </div>
+                  <div className="cost-calculator-box clearfix">
+                    <label>אבן לחומת במטרים:</label>
+                    <div className="cost-slider-container">
+                      <input
+                        id="pw-stone-walling"
+                        className="cost-slider-input"
+                        name="stoneWalling"
+                        type="number"
+                        value={paverWalkwayValues.stoneWalling}
+                        onChange={handlePaverWalkwayChange}
+                      />
+                      <input
+                        id="pw-stone-walling-value"
+                        type="hidden"
+                        defaultValue={0}
+                      />
+                      <div
+                        className="cost-slider"
+                        data-value={0}
+                        data-step={1}
+                        data-min={0}
+                        data-max={100}
+                        data-price={30}
+                      />
+                    </div>
+                  </div>
+                  <div className="cost-calculator-box cost-calculator-sum sl-small-wallet clearfix">
+                    <CostCalculator
+                      formula={`pw-area-width*${paverWalkwayValues.areaWidth}*${paverWalkwayValues.areaLength}*${paverWalkwayValues.blockPaving}+pw-surface*${paverWalkwayValues.surface}+pw-stone-walling*${paverWalkwayValues.stoneWalling}*30`}
+                      updateHidden={pwTotalCostRef.current}
+                    />
+                    <p className="description t1">עלות פרויקט משוערת</p>
+                  </div>
+                  <div className="cost-calculator-box cost-calculator-contact clearfix margin-top-10">
+                    <div className="row">
+                      <label>פרטי התקשרות</label>
+                    </div>
+                    <div className="row margin-top-20">
+                      <fieldset className="column column-1-2">
+                        <input
+                          className="text-input"
+                          name="name"
+                          type="text"
+                          onChange={handleChangeWalkway}
+                          placeholder="שמך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="email"
+                          type="text"
+                          onChange={handleChangeWalkway}
+                          placeholder="האימייל שלך *"
+                        />
+                        <input
+                          className="text-input"
+                          name="phone"
+                          type="text"
+                          onChange={handleChangeWalkway}
+                          placeholder="טלפון"
+                        />
+                      </fieldset>
+                      <fieldset className="column column-1-2">
+                        <textarea
+                          name="message"
+                          placeholder="הודעה *"
+                          onChange={handleChangeWalkway}
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="row margin-top-30">
+                      <div className="column column-1-2">
+                        {messageReceiveWalkway ? (
+                          <p className="description t1">
+                            ניצור איתך קשר תוך יום עסקים אחד.
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="column column-1-2 align-right">
+                        <input
+                          type="hidden"
+                          name="action"
+                          defaultValue="contact_form"
+                        />
+                        <input
+                          type="hidden"
+                          name="type"
+                          defaultValue="Paver Walkway"
+                        />
+                        <input
+                          type="hidden"
+                          name="total-cost"
+                          id="pw-total-cost"
+                          ref={pwTotalCostRef}
+                        />
+                        <input
+                          type="submit"
+                          name="submit"
+                          defaultValue="שלח עכשיו"
+                          className="more active"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
         </div>
         <div className="column column-1-3">
